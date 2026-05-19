@@ -38,6 +38,7 @@ body {
   line-height: 20px;
   min-height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -621,6 +622,7 @@ strong { font-weight: 600; }
 }
 .right-arrow:hover { background-color: #2e1c1c; box-shadow: 0 0 12px rgba(148, 20, 101, 0.28); }
 .left-arrow svg, .right-arrow svg { width: 18px; height: 18px; }
+.slider-arrows { display: contents; }
 
 /* ============================================================
    TESTIMONIALS
@@ -827,8 +829,9 @@ strong { font-weight: 600; }
   .projects-marquee-container { width: 320vw; }
   .explore-button-copntainer { padding-bottom: 50px; }
   .button-2 { font-size: 15px; }
-  .left-arrow { width: 44px; height: 44px; top: -22px; right: 54px; }
-  .right-arrow { width: 44px; height: 44px; top: -22px; right: 0; }
+  .project-slider-el { display: flex; flex-direction: column; }
+  .slider-arrows { display: flex; justify-content: center; gap: 16px; padding-top: 20px; }
+  .left-arrow, .right-arrow { position: static; width: 48px; height: 48px; }
   .project-title { font-size: 24px; }
   .project-link { font-size: 14px; }
   .link-arrow { width: 9px; height: 9px; }
@@ -852,13 +855,13 @@ strong { font-weight: 600; }
   .explore-button-wrapper { padding-left: 6vw; padding-right: 6vw; }
   .arrow-circle { padding: 10px; }
   .project-info-container { margin-left: 6vw; margin-right: 6vw; }
-  .left-arrow, .right-arrow { top: -20px; margin-top: 0; width: 40px; height: 40px; }
-  .left-arrow { right: 50px; }
-  .right-arrow { right: 0; }
+  .left-arrow, .right-arrow { width: 44px; height: 44px; }
   .project-image { height: 70vw; }
   .slider-section-wrapper { padding-left: 6vw; padding-right: 6vw; }
   .slider-section-container { padding-top: 60px; }
-  .div-block-2 { width: 300px; }
+  .div-block-2 { width: min(300px, 80vw); }
+  .hero-content-conatiner { text-align: center; align-items: center; }
+  .section-container { max-width: 100%; }
   .footer-wrapper { height: 150px; margin-top: -150px; padding-left: 6vw; padding-right: 6vw; }
   .footer-container { flex-direction: column; align-items: center; row-gap: 10px; font-size: 10px; }
 }
@@ -1048,8 +1051,10 @@ strong { font-weight: 600; }
                 <div class="w-slide"><img class="project-image" src="assets/BNPParibas-realisation1.png" loading="lazy" alt=""/></div>
               </div>
             </div>
-            <button class="left-arrow"  data-slider="bnp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
-            <button class="right-arrow" data-slider="bnp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            <div class="slider-arrows">
+              <button class="left-arrow"  data-slider="bnp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+              <button class="right-arrow" data-slider="bnp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            </div>
           </div>
         </div>
 
@@ -1098,8 +1103,10 @@ strong { font-weight: 600; }
                 <div class="w-slide"><img class="project-image" src="assets/GRDF-realisation1.png" loading="lazy" alt=""/></div>
               </div>
             </div>
-            <button class="left-arrow"  data-slider="grdf" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
-            <button class="right-arrow" data-slider="grdf" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            <div class="slider-arrows">
+              <button class="left-arrow"  data-slider="grdf" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+              <button class="right-arrow" data-slider="grdf" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            </div>
           </div>
         </div>
 
@@ -1145,8 +1152,10 @@ strong { font-weight: 600; }
                 <div class="w-slide"><img class="project-image" src="assets/DICP-realisation1.png" loading="lazy" alt=""/></div>
               </div>
             </div>
-            <button class="left-arrow"  data-slider="dicp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
-            <button class="right-arrow" data-slider="dicp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            <div class="slider-arrows">
+              <button class="left-arrow"  data-slider="dicp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+              <button class="right-arrow" data-slider="dicp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+            </div>
           </div>
         </div>
 
