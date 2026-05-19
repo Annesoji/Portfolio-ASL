@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Anne-Sophie Leroy — Portfolio</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="shortcut icon" href="assets/Favicon-asl-1.png" type="image/x-icon"/>
+<style>
+/* ============================================================
+   CSS VARIABLES (exact Webflow values)
+   ============================================================ */
+:root {
+  --tomato: #ee0004;
+  --dark-navy-black: var(--black-grey);
+  --silver: #c2c2c2;
+  --brown: #693834;
+  --midnight-blue: var(--slate-blue);
+  --black-grey: #2c2d37;
+  --slate-blue: #4454fe;
+  --font: 'Anek Malayalam', sans-serif;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { height: 100%; scroll-behavior: smooth; }
+
+body {
+  background-color: var(--dark-navy-black);
+  background-image: linear-gradient(#131414, #131414);
+  color: #fcfcfc;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 100%;
+  margin: 0;
+}
+
+h1 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: var(--font);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+h2 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.3em;
+}
+p { margin-top: 0; margin-bottom: 10px; }
+a { background-color: transparent; }
+img { border: 0; max-width: 100%; display: inline-block; vertical-align: middle; }
+strong { font-weight: 600; }
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  z-index: 999;
+  background-color: transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: sticky;
+  top: 0;
+}
+.navigation-wrapper {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.navigation-container {
+  background-color: #1d1f25;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: .5rem 2rem;
+  flex: 0 auto;
+  overflow: visible;
+}
+.home {
+  color: #fff;
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.home:hover { color: #fff; }
+.site-name-text-span { font-weight: 400; }
+.image-10 { border-radius: 100px; width: 42px; height: 42px; object-fit: cover; }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -10px;
+  gap: 0;
+}
+.nav-bar-link {
+  color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  text-decoration: none;
+  transition: all .3s;
+}
+.nav-bar-link:hover .text-block-2,
+.nav-bar-link:hover .text-block-4,
+.nav-bar-link:hover .text-block-5,
+.nav-bar-link:hover .text-block-6 { color: var(--tomato); }
+.text-block-2, .text-block-4, .text-block-5, .text-block-6 { color: #fcfcfc; transition: color .3s; }
+.menu-button {
+  z-index: 1;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 80px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px; height: 60px;
+  margin-left: 40px;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+}
+.burger { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: 30px; height: 30px; padding: 5px; }
+.burger-line { background-color: #fff; width: 20px; margin-top: 2px; margin-bottom: 2px; padding-top: 1px; padding-bottom: 1px; }
+.burger-line.bl-mid { width: 15px; }
+.lang-toggle {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  gap: 0;
+  position: relative;
+  transition: background .3s;
+}
+.lang-toggle:hover { background: rgba(255,255,255,0.10); }
+.lang-thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  background: rgba(255,255,255,0.18);
+  border-radius: 14px;
+  transition: transform .3s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+}
+.lang-thumb.is-fr { transform: translateX(100%); }
+.lang-opt {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  color: rgba(255,255,255,0.35);
+  position: relative;
+  z-index: 1;
+  transition: color .3s;
+  line-height: 1;
+}
+.lang-opt.active { color: #fff; }
+
+/* ============================================================
+   SECTION WRAPPER / CONTAINER
+   ============================================================ */
+.section-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.section-wrapper.glow-3 {
+  background-image: radial-gradient(circle farthest-side at 50% 150%, #4454fe1a, #4454fe00 75%);
+  margin-top: -80px;
+}
+.section-wrapper.glow-1 {
+  background-image: radial-gradient(circle closest-corner at 0%, #ff32001a, #ff6f4c00);
+}
+.section-wrapper.glow-2 {
+  background-image: radial-gradient(circle closest-corner at 100%, #1e1f26, #4454fe00);
+}
+.section-container {
+  flex: 1;
+  max-width: 1400px;
+}
+.section-container.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 60px;
+}
+.section-container.service { padding-top: 50px; }
+.section-container.process { padding-top: 125px; }
+.section-container.contact { padding-top: 125px; padding-bottom: 100px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero-content-conatiner {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  max-width: 560px;
+  row-gap: 20px;
+}
+.hero-title {
+  color: #fcfcfc;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.hero-paragraph {
+  color: #c7c7c7;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.65;
+}
+.section-2 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.magnetic-element { display: flex; }
+
+/* Download CV button */
+.button-1 {
+  color: #fcfcfc;
+  background-image: linear-gradient(72deg, #941465, #ee0004 33%, #fff);
+  border: 0 solid #000;
+  border-radius: 50px;
+  padding: 2px;
+  text-decoration: none;
+  transition-duration: .4s;
+  display: inline-block;
+}
+.button-1:hover { transform: scale(1.05); box-shadow: 0 0 24px rgba(148, 20, 101, 0.35), 0 0 8px rgba(238, 0, 4, 0.18); }
+.button-1:hover .button-content { background-color: #1e1418; }
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fcfcfc;
+  background-color: #161821;
+  border-radius: 50px;
+  padding: 20px 25px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1em;
+  text-decoration: none;
+}
+.button-content:hover { color: #fff; }
+.button-text { display: flex; align-items: center; }
+.button-arrow { justify-content: center; align-items: center; width: 12px; height: 12px; display: flex; position: relative; }
+
+/* Hero image block */
+.div-block-2 { width: 400px; height: 400px; }
+.div-block-2 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ============================================================
+   SECTION TAG HEADER
+   ============================================================ */
+.section-tag-container {
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 60px;
+  font-family: var(--font);
+  font-size: 11px;
+  line-height: 1em;
+}
+.section-tag-line {
+  background-image: linear-gradient(#e4e4e480, #e4e4e480);
+  border-radius: 60px;
+  flex: 1;
+  height: 1px;
+  margin-left: 20px;
+}
+
+/* ============================================================
+   SKILLS — SERVICE CARDS
+   ============================================================ */
+.service-cards-wrapper {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 16px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+.service-card {
+  flex: 1 1 0;
+  min-width: 0;
+  background-color: transparent;
+  background-image: linear-gradient(rgba(30,31,38,0.72), rgba(30,31,38,0.72));
+  border-radius: 16px;
+  padding: 20px;
+  transition: all .4s;
+}
+.service-card:hover { background-color: rgba(68,84,254,0.10); }
+.service-card-title {
+  color: #fff;
+  margin-bottom: 15px;
+  font-family: var(--font);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1em;
+}
+.service-card-list {
+  min-width: 180px;
+  max-width: 350px;
+  margin-bottom: 0;
+  line-height: 1.7em;
+  color: #c7c7c7;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* ============================================================
+   PROJECTS — MARQUEE WITH FLOATING BUTTON
+   ============================================================ */
+.projects-wrapper {
+  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.projects-marquee-container {
+  width: 240vw;
+  display: flex;
+}
+.project-marquee { width: 50%; display: flex; }
+.project-thumbnail-container {
+  background-color: transparent;
+  border-radius: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+  flex-shrink: 0;
+}
+.image, .image-2, .image-3, .image-4 {
+  border: 2px solid #29292d;
+  border-radius: 17px;
+  display: block;
+  height: 270px;
+  width: auto;
+  object-fit: cover;
+}
+
+/* Marquee animation */
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: 240vw;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Floating "Explore projects" button */
+.explore-button-wrapper {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  position: absolute;
+  inset: auto 0% 0%;
+}
+.explore-button-copntainer {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1400px;
+  padding-bottom: 70px;
+}
+/* Explore projects / button-2 */
+.button-2 {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 12px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #fff;
+  background-color: rgba(44,45,55,0.80);
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding: 12px 13px 12px 28px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1em;
+  text-decoration: none;
+  transition-duration: .4s;
+}
+.button-2:hover { color: #fff; transform: scale(1.05); background-color: rgba(60, 44, 70, 0.92); border-color: rgba(238, 0, 4, 0.55); }
+.arrow-circle {
+  background-image: linear-gradient(115deg, #ee0004, #941465);
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-circle svg { width: 14px; height: 14px; display: block; }
+
+/* ============================================================
+   PROJECTS — SLIDER SECTIONS
+   ============================================================ */
+.slider-section-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.slider-section-wrapper.glow-1 {
+  background-image: radial-gradient(circle closest-corner at 0%, rgba(255,111,76,0.10), rgba(255,111,76,0) 95%);
+  display: block;
+}
+.slider-section-container {
+  flex: 1;
+  max-width: 1400px;
+  margin-left: 0;
+  padding-top: 125px;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 0;
+  gap: 40px;
+}
+.project-info-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  order: -9999;
+  align-items: flex-start;
+  width: 42%;
+  max-width: 520px;
+  line-height: 1.6em;
+  height: 480px;
+}
+.project-title {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.3em;
+}
+.project-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 5px;
+  line-height: 1em;
+}
+.project-tag {
+  color: #fff;
+  white-space: nowrap;
+  background-color: rgba(255,255,255,0.10);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1em;
+}
+.project-description {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  margin-bottom: 0;
+  font-weight: 300;
+  color: #c7c7c7;
+  font-size: 14px;
+  line-height: 1.7em;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.project-description::-webkit-scrollbar { width: 3px; }
+.project-description::-webkit-scrollbar-track { background: transparent; }
+.project-description::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+.project-description strong { color: #fff; font-weight: 600; }
+.project-link {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  color: #fff;
+  margin-left: 0;
+  padding: 10px;
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.project-link:hover { opacity: 1; color: rgba(238, 0, 4, 0.85); }
+.link-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px; height: 10px;
+  position: relative;
+}
+.link-arrow img { width: 10px; height: 10px; }
+
+/* Slider */
+.project-image-container {
+  width: 50%;
+  position: relative;
+}
+/* The slider element needs relative positioning for absolute arrows */
+.project-slider-el {
+  position: relative;
+  background-color: transparent;
+}
+/* The mask has margin-bottom to create space for arrows */
+.project-sldier-mask {
+  overflow: hidden;
+  position: relative;
+}
+.slider-track {
+  display: flex;
+  transition: transform .5s cubic-bezier(0.25,1,0.5,1);
+  will-change: transform;
+}
+.w-slide { flex: 0 0 100%; }
+.project-image {
+  object-fit: cover;
+  border: 1px solid #141415;
+  border-radius: 17px;
+  height: 480px;
+  min-height: auto;
+  width: 100%;
+  display: block;
+}
+/* Arrows — absolutely positioned within .project-slider-el */
+.left-arrow {
+  background-color: #1d1f25;
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  transition: all .3s;
+  position: absolute;
+  top: -24px;
+  right: 58px;
+  bottom: auto;
+  left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  z-index: 3;
+}
+.left-arrow:hover { background-color: #2e1e1e; box-shadow: 0 0 12px rgba(238, 0, 4, 0.22); }
+.right-arrow {
+  background-color: #1d1f25;
+  border: none;
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  transition: all .3s;
+  position: absolute;
+  top: -24px;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  z-index: 3;
+}
+.right-arrow:hover { background-color: #2e1c1c; box-shadow: 0 0 12px rgba(148, 20, 101, 0.28); }
+.left-arrow svg, .right-arrow svg { width: 18px; height: 18px; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.process-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  row-gap: 20px;
+  color: #fff;
+  width: 46%;
+  max-width: 450px;
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+.section-title { margin-top: 0; margin-bottom: 0; }
+.process-card-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  width: 50%;
+}
+.process-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  background-color: rgba(255,255,255,0.10);
+  border-radius: 17px;
+  padding: 50px;
+}
+.process-card-title {
+  color: #fff;
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1em;
+}
+.process-card-paragraph {
+  margin-bottom: 0;
+  font-weight: 300;
+  color: #c7c7c7;
+  font-size: 14px;
+  line-height: 1.75em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-wrapper {
+  background-color: rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-top: -120px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.footer-container {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  max-width: 1400px;
+  font-family: var(--font);
+  font-size: 12px;
+}
+.home.footer { align-self: center; font-size: 18px; }
+
+/* ============================================================
+   ANIM (fade-in on scroll)
+   ============================================================ */
+[data-w-id] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+[data-w-id].visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   RESPONSIVE — 1280px+
+   ============================================================ */
+@media screen and (min-width: 1280px) {
+  .service-card { padding: 55px; }
+  .service-card-list { min-width: auto; }
+}
+@media screen and (min-width: 1440px) {
+  .section-container.hero { padding-top: 110px; padding-bottom: 150px; }
+  .hero-content-conatiner { max-width: 620px; }
+  .hero-title { font-size: 42px; }
+  .hero-paragraph { font-size: 18px; }
+  .button-content { font-size: 17px; }
+  .service-card-title { font-size: 26px; }
+  .process-card-title { font-size: 22px; }
+  .process-card-paragraph { font-size: 15px; }
+  .button-2, .project-tag-container { font-size: 17px; }
+  .project-description { font-size: 15px; }
+  .navbar { padding-top: 17px; padding-bottom: 17px; }
+}
+@media screen and (min-width: 1920px) {
+  .section-wrapper.glow-3 { margin-top: -87px; }
+  .section-container.hero { padding-top: 120px; padding-bottom: 170px; }
+  .service-card { padding: 60px; }
+  .section-title-container { max-width: 530px; }
+  .section-title { font-size: 40px; }
+  .projects-marquee-container { width: 200vw; }
+  .project-title { font-size: 40px; }
+}
+
+/* ============================================================
+   RESPONSIVE — 991px
+   ============================================================ */
+@media screen and (max-width: 991px) {
+  h1 { font-size: 34px; }
+  .menu-button { border-radius: 80px; display: flex; }
+  .nav-bar-link {
+    background-color: transparent;
+    justify-content: flex-start;
+    height: auto;
+    margin-left: 0;
+    padding: 20px 2.5vw;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .nav-menu {
+    background-color: var(--black-grey);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 0;
+    padding: 20px 0 20px 2.5vw;
+    display: none;
+    position: absolute;
+    left: 0; right: 0;
+    top: 70px;
+    z-index: 100;
+  }
+  .nav-menu.open { display: flex; }
+  .navigation-wrapper { padding-right: 0; }
+  .navbar { padding-top: 0; padding-bottom: 0; }
+  .section-container.hero { flex-flow: column; padding-top: 100px; padding-bottom: 100px; }
+  .section-container.service { padding-top: 0; }
+  .section-container.process { padding-top: 100px; }
+  .section-container.contact { padding-top: 100px; padding-bottom: 220px; }
+  .hero-content-conatiner { max-width: 500px; }
+  .hero-paragraph { font-size: 15px; }
+  .button-1:hover { transform: none; }
+  .section-tag-container { margin-bottom: 50px; }
+  .service-cards-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .service-card { padding: 35px 25px; }
+  .service-card-title { font-size: 20px; }
+  .service-card-list { font-size: 12px; }
+  .section-title-container { font-size: 15px; }
+  .section-title { font-size: 26px; }
+  .process-card { row-gap: 10px; padding: 30px; }
+  .process-card-paragraph { font-size: 12px; }
+  .projects-marquee-container { width: 250vw; }
+  .button-2 { padding: 8px 9px 8px 21px; }
+  .button-2:hover { transform: none; }
+  .project-container { flex-direction: column-reverse; align-items: stretch; }
+  .project-info-container { width: auto; max-width: none; margin-top: 50px; height: auto; }
+  .project-image-container { align-items: center; width: auto; display: flex; position: relative; }
+  .left-arrow { top: -24px; right: 58px; bottom: auto; left: auto; }
+  .right-arrow { top: -24px; right: 0; bottom: auto; left: auto; }
+  .project-description { flex: 0 0 auto; overflow-y: visible; padding-right: 0; margin-bottom: 10px; }
+  .project-title { margin-bottom: 0; font-size: 26px; }
+  .project-image { width: 100%; height: 450px; min-height: auto; }
+  .slider-section-container { padding-top: 100px; }
+  .footer-wrapper { height: 120px; margin-top: -120px; }
+}
+@media screen and (max-width: 767px) {
+  h1 { font-size: 30px; }
+  .nav-bar-link { margin-top: 5px; margin-bottom: 5px; padding-top: 15px; padding-bottom: 15px; font-size: 16px; }
+  .section-container { max-width: 500px; }
+  .section-container.hero { flex-flow: column; padding-top: 75px; padding-bottom: 75px; }
+  .section-container.process { padding-top: 75px; }
+  .section-container.contact { padding-top: 75px; padding-bottom: 160px; }
+  .hero-content-conatiner { row-gap: 16px; max-width: 470px; }
+  .hero-paragraph { margin-bottom: 20px; font-size: 14px; }
+  .button-1 { padding: 1px; }
+  .button-content { padding: 16px 20px; font-size: 15px; }
+  .button-arrow { width: 10px; height: 10px; }
+  .section-tag-container { margin-bottom: 40px; font-size: 10px; }
+  .service-cards-wrapper { flex-direction: column; row-gap: 20px; display: flex; }
+  .service-card { padding: 40px; }
+  .service-card-title { font-size: 22px; }
+  .service-card-list { font-size: 14px; line-height: 1.6em; }
+  .section-title-container { width: 100%; max-width: none; }
+  .section-title { font-size: 24px; }
+  .process-content-container { flex-direction: column; row-gap: 40px; }
+  .process-card-container { width: 100%; }
+  .process-card { row-gap: 15px; padding: 40px; }
+  .process-card-paragraph { font-size: 14px; }
+  .projects-wrapper { padding-bottom: 80px; }
+  .projects-marquee-container { width: 320vw; }
+  .explore-button-copntainer { padding-bottom: 50px; }
+  .button-2 { font-size: 15px; }
+  .left-arrow { width: 44px; height: 44px; top: -22px; right: 54px; }
+  .right-arrow { width: 44px; height: 44px; top: -22px; right: 0; }
+  .project-title { font-size: 24px; }
+  .project-link { font-size: 14px; }
+  .link-arrow { width: 9px; height: 9px; }
+  .project-image { height: 320px; min-height: auto; }
+  .slider-section-container { max-width: 500px; padding-top: 75px; }
+}
+@media screen and (max-width: 479px) {
+  .menu-button { border-radius: 80px; }
+  .section-wrapper { padding-left: 6vw; padding-right: 6vw; }
+  .section-container.hero { flex-flow: column; padding-top: 60px; padding-bottom: 60px; }
+  .hero-content-conatiner { justify-content: center; align-items: center; }
+  .section-tag-container { margin-bottom: 30px; }
+  .service-card { padding: 30px; }
+  .service-card-title { margin-bottom: 12px; font-size: 20px; }
+  .service-card-list { font-size: 13px; }
+  .process-card { padding: 30px; }
+  .process-card-paragraph { font-size: 13px; }
+  .projects-wrapper { padding-bottom: 60px; }
+  .projects-marquee-container { width: 500vw; }
+  .explore-button-copntainer { padding-bottom: 35px; }
+  .explore-button-wrapper { padding-left: 6vw; padding-right: 6vw; }
+  .arrow-circle { padding: 10px; }
+  .project-info-container { margin-left: 6vw; margin-right: 6vw; }
+  .left-arrow, .right-arrow { top: -20px; margin-top: 0; width: 40px; height: 40px; }
+  .left-arrow { right: 50px; }
+  .right-arrow { right: 0; }
+  .project-image { height: 70vw; }
+  .slider-section-wrapper { padding-left: 6vw; padding-right: 6vw; }
+  .slider-section-container { padding-top: 60px; }
+  .div-block-2 { width: 300px; }
+  .footer-wrapper { height: 150px; margin-top: -150px; padding-left: 6vw; padding-right: 6vw; }
+  .footer-container { flex-direction: column; align-items: center; row-gap: 10px; font-size: 10px; }
+}
+</style>
+</head>
+<body class="body-1">
+<div class="page-wrapper">
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+  <div class="navigation-wrapper">
+    <div class="navigation-container">
+      <img src="assets/ASL-nav.png"
+           loading="lazy" width="42" height="42" alt="" class="image-10"/>
+      <a href="/" class="home">
+        <div class="text-block">Anne-Sophie <span class="site-name-text-span">Leroy</span></div>
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#Competences" class="nav-bar-link"><div class="text-block-6" id="nav-skills-txt">Skills</div></a>
+        <a href="#Projets"     class="nav-bar-link"><div class="text-block-5" id="nav-projects-txt">Projects</div></a>
+        <a href="#Recommandation" class="nav-bar-link"><div class="text-block-2" id="nav-testi-txt">Testimonials</div></a>
+        <a href="mailto:leroy.annesophie02@gmail.com" class="nav-bar-link"><div class="text-block-4" id="nav-contact-txt">Contact me</div></a>
+      </nav>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+        <span class="lang-thumb" id="lang-thumb"></span>
+        <span class="lang-opt active" id="lang-opt-en">EN</span>
+        <span class="lang-opt" id="lang-opt-fr">FR</span>
+      </button>
+      <button class="menu-button" id="burger-btn" aria-label="Menu">
+        <div class="burger">
+          <div class="burger-line"></div>
+          <div class="burger-line bl-mid"></div>
+          <div class="burger-line"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section>
+  <div class="section-wrapper glow-3">
+    <div class="section-container hero">
+
+      <div class="hero-content-conatiner">
+        <h1 class="hero-title" data-w-id="hero-title" id="hero-title-txt">Product Designer | 4+ Years of Experience</h1>
+        <p class="hero-paragraph" data-w-id="hero-para" id="hero-para-txt">I am a UX/UI Designer passionate about creating<strong> user-centered digital</strong> experiences and <strong>driving innovation</strong>. I've had the opportunity to collaborate with global brands such as Balmain, Kering, GRDF and BNP Paribas CIB. Currently, at mc2i in Paris, I design intuitive interfaces that integrate Artificial Intelligence into complex business applications at BNP Paribas CIB.</p>
+        <section class="section-2">
+          <div class="magnetic-element" data-w-id="hero-btn">
+            <a href="https://drive.google.com/file/d/1VuuJNZ8zhT9oVDuOcstfiUzJA2yWvZEy/view?usp=sharing" target="_blank" class="button-1">
+              <div class="button-content">
+                <div class="button-text" id="hero-cv-txt">Download CV</div>
+                <img src="assets/Arrow.svg" loading="lazy" alt="" class="button-arrow"/>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <div class="div-block-2" data-w-id="hero-img">
+        <img src="assets/ASL-hero.png"
+             loading="lazy" alt=""/>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="projects-wrapper">
+  <div class="marquee-track">
+    <div class="project-marquee">
+      <div class="project-thumbnail-container"><img src="assets/P-DICP.png"         loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-McdonP-ld.png"              loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-JustDecP-rb.png"            loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-VitP-liz2.png"             loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-BNPParibas.png"           loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-CaisseDesDepots.png"      loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-VitP-liz.png"             loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-BloomBar.png"             loading="lazy" alt="" class="image"/></div>
+    </div>
+    <div class="project-marquee">
+      <div class="project-thumbnail-container"><img src="assets/P-DICP.png"         loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-McdonP-ld.png"              loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-JustDecP-rb.png"            loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-VitP-liz2.png"             loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-BNPParibas.png"           loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-CaisseDesDepots.png"      loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-VitP-liz.png"             loading="lazy" alt="" class="image"/></div>
+      <div class="project-thumbnail-container"><img src="assets/P-BloomBar.png"             loading="lazy" alt="" class="image"/></div>
+    </div>
+  </div>
+
+  <!-- Floating "Explore projects" button -->
+  <div class="explore-button-wrapper">
+    <div class="explore-button-copntainer">
+      <a href="#Projets" class="button-2">
+        <span id="explore-txt">Explore projects</span>
+        <div class="arrow-circle">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 13L13 1M13 1H1M13 1V13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SKILLS ===== -->
+<section id="Competences">
+  <div class="section-wrapper glow-1">
+    <div class="section-container service">
+
+      <div class="section-tag-container">
+        <div id="skills-tag-txt">SKILLS</div>
+        <div class="section-tag-line"></div>
+      </div>
+
+      <div class="service-cards-wrapper" data-w-id="skills-cards">
+        <div class="service-card">
+          <div class="service-card-title" id="skill-1-title">UX UI Design</div>
+          <p class="service-card-list" id="skill-1-list">• End-to-end UX &amp; AI-Driven Solutions<br>• Design System Governance<br>• User Research &amp; Testing<br>• Prototyping (Figma Expert)<br>• Accessibility &amp; Eco-design</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-title" id="skill-2-title">Strategy &amp; Management</div>
+          <p class="service-card-list" id="skill-2-list">• Workshop facilitation<br>• Agile &amp; Scrum methodologies<br>• Stakeholders alignment<br>• Product thinking</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-title" id="skill-3-title">Tools &amp; tech</div>
+          <p class="service-card-list" id="skill-3-list">• Creative Suite: Photoshop, Illustrator, After Effect<br>• Collaboration: Jira, Confluence<br>• Development: HTML &amp; CSS (Handoff)<br>• AI: Prompt Engineering, Vibe-coding</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-title" id="skill-4-title">Digital project</div>
+          <p class="service-card-list" id="skill-4-list">• Data Analysis &amp; KPIs<br>• Digital strategy: SEO, SEA, CRM</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="Projets">
+
+  <!-- Project overview tag -->
+  <div class="section-wrapper" style="padding-top:100px;">
+    <div class="section-container">
+      <div class="section-tag-container" style="margin-bottom:0;">
+        <div id="projects-tag-txt">PROJECT OVERVIEW</div>
+        <div class="section-tag-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BNP Paribas CIB ── -->
+  <div class="slider-section-wrapper glow-1">
+    <div class="slider-section-container">
+      <div class="project-container">
+
+        <div class="project-info-container" data-w-id="bnp-info">
+          <h2 class="project-title" id="bnp-title">BNP&nbsp;Paribas CIB - Product&nbsp;Designer</h2>
+          <div class="project-tag-container">
+            <div class="project-tag" id="bnp-tag-1">User Research &amp; Interface</div>
+            <div class="project-tag" id="bnp-tag-2">Design system Governance</div>
+            <div class="project-tag" id="bnp-tag-3">Bank</div>
+          </div>
+          <p class="project-description" id="bnp-desc">
+            <strong>Scope:</strong> Full redesign of "MyCreditApp," an end-to-end corporate credit management platform. (15 modules)<br><br>
+            <strong>Team:</strong> Collaborated within a core team of three UX Designers.<br><br>
+            <strong>Complexity:</strong> Managed the concurrent redesign of 5 different modules to ensure seamless user flows and cross-platform consistency.<br><br>
+            <strong>Industry Expertise:</strong> Developed a deep understanding of complex banking journeys and business-specific requirements.<br><br>
+            <strong>Cross-functional Collaboration:</strong> Partnered closely with Product Owners, Business Analysts, and Developers to deliver optimized, high-performance solutions.
+          </p>
+          <a href="https://drive.google.com/file/d/1VuuJNZ8zhT9oVDuOcstfiUzJA2yWvZEy/view?usp=sharing" target="_blank" class="project-link">
+            <span id="bnp-link-txt">Learn more</span>
+            <div class="link-arrow"><img src="assets/Arrow.svg" loading="lazy" alt=""/></div>
+          </a>
+        </div>
+
+        <div class="project-image-container">
+          <div class="project-slider-el">
+            <div class="project-sldier-mask">
+              <div class="slider-track" id="bnp-track">
+                <div class="w-slide"><img class="project-image" src="assets/BNPParibas-presentation.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/BNPParibas-realisation.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/BNPParibas-designsystem.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/BNPParibas-realisation1.png" loading="lazy" alt=""/></div>
+              </div>
+            </div>
+            <button class="left-arrow"  data-slider="bnp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+            <button class="right-arrow" data-slider="bnp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GRDF ── -->
+  <div class="slider-section-wrapper glow-1">
+    <div class="slider-section-container">
+      <div class="project-container">
+
+        <div class="project-info-container" data-w-id="grdf-info">
+          <h2 class="project-title" id="grdf-title">GRDF - UX&nbsp;UI&nbsp;Designer</h2>
+          <div class="project-tag-container">
+            <div class="project-tag" id="grdf-tag-1">User Research &amp; Interface</div>
+            <div class="project-tag" id="grdf-tag-2">Design system</div>
+            <div class="project-tag" id="grdf-tag-3">Energy</div>
+          </div>
+          <p class="project-description" id="grdf-desc">
+            <strong>Vision:</strong> Rebranding and redesigning the Act4Gaz platform into justdecarb.grdf.fr to establish GRDF as a leader in France's decarbonization efforts.<br><br>
+            <strong>Scope:</strong> Transformation of the digital experience, focusing on high performance, accessibility, and brand awareness.<br><br>
+            <strong>Strategic Objectives:</strong> Enhanced the user experience, optimized SEO (Search Engine Optimization), and increased digital accessibility.<br><br>
+            <strong>Sustainability Focus:</strong> Promoted eco-responsibility by adhering to digital sustainability standards and reducing the platform's carbon footprint.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0;">
+            <a href="https://justdecarb.grdf.fr/" target="_blank" class="project-link">
+              <span id="grdf-link-1-txt">Website JustDecarb</span>
+              <div class="link-arrow"><img src="assets/Arrow.svg" loading="lazy" alt=""/></div>
+            </a>
+            <a href="https://www.figma.com/proto/bRCddnUzlotCFXHBfThuI1/Portfolio-file?node-id=7-42633&t=aTEbOueyUS06yxbL-0&scaling=min-zoom&content-scaling=fixed&page-id=2%3A1791&starting-point-node-id=50%3A122678" target="_blank" class="project-link">
+              <span id="grdf-link-2-txt">Prototype</span>
+              <div class="link-arrow"><img src="assets/Arrow.svg" loading="lazy" alt=""/></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-image-container">
+          <div class="project-slider-el">
+            <div class="project-sldier-mask">
+              <div class="slider-track" id="grdf-track">
+                <div class="w-slide"><img class="project-image" src="assets/GRDF-presentation.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/GRDF-Userjouney.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/GRDF-moodboard.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/GRDF-realisation.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/GRDF-realisation1.png" loading="lazy" alt=""/></div>
+              </div>
+            </div>
+            <button class="left-arrow"  data-slider="grdf" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+            <button class="right-arrow" data-slider="grdf" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DICP ── -->
+  <div class="slider-section-wrapper glow-1">
+    <div class="slider-section-container">
+      <div class="project-container">
+
+        <div class="project-info-container" data-w-id="dicp-info">
+          <h2 class="project-title" id="dicp-title">DICP - UX&nbsp;UI&nbsp;Designer /&nbsp;Product owner</h2>
+          <div class="project-tag-container">
+            <div class="project-tag" id="dicp-tag-1">User Research &amp; Interface</div>
+            <div class="project-tag" id="dicp-tag-2">Storymap &amp; User stories</div>
+            <div class="project-tag" id="dicp-tag-3">Public</div>
+          </div>
+          <p class="project-description" id="dicp-desc">
+            <strong>Vision:</strong> Simplifying and digitizing the user journey for business tax contributions (Patentes) for individual entrepreneurs, artisans, and merchants.<br><br>
+            <strong>Discovery &amp; Analysis:</strong> Identified core needs and analyzed the ecosystem for both internal (administration) and external (taxpayers) users. K<strong>Key Actions:</strong><br>
+            • Mapped the global end-to-end journey as well as specific flows for each user persona.<br>
+            • Authored detailed User Stories to align design requirements with development.<br>
+            • Implemented and led the Agile Scrum framework to ensure iterative delivery.<br>
+            • Built the new platform's interactive prototypes while strictly adhering to Digital Accessibility principles.
+          </p>
+          <a href="https://www.figma.com/proto/bRCddnUzlotCFXHBfThuI1/Portfolio-file?node-id=43-33442&t=e6Vdxe4fxJNe1Ldj-0&scaling=min-zoom&content-scaling=fixed&page-id=2%3A1791&starting-point-node-id=50%3A122678" target="_blank" class="project-link">
+            <span id="dicp-link-txt">Prototype</span>
+            <div class="link-arrow"><img src="assets/Arrow.svg" loading="lazy" alt=""/></div>
+          </a>
+        </div>
+
+        <div class="project-image-container">
+          <div class="project-slider-el">
+            <div class="project-sldier-mask">
+              <div class="slider-track" id="dicp-track">
+                <div class="w-slide"><img class="project-image" src="assets/DICP-storymap.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/DICP-flows.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/DICP-Personas.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/DICP-workflow.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/DICP-realisation.png" loading="lazy" alt=""/></div>
+                <div class="w-slide"><img class="project-image" src="assets/DICP-realisation1.png" loading="lazy" alt=""/></div>
+              </div>
+            </div>
+            <button class="left-arrow"  data-slider="dicp" aria-label="Previous"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6L8 12L16 18V6Z"/></svg></button>
+            <button class="right-arrow" data-slider="dicp" aria-label="Next"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6L16 12L8 18V6Z"/></svg></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="Recommandation">
+  <div class="section-wrapper glow-2">
+    <div class="section-container process">
+
+      <div class="section-tag-container">
+        <div id="testi-tag-txt">Testimonials</div>
+        <div class="section-tag-line"></div>
+      </div>
+
+      <div class="process-content-container">
+
+        <div class="section-title-container" data-w-id="testi-left">
+          <h2 class="section-title" id="testi-title">What my colleagues say</h2>
+          <div id="testi-subtitle">Collaborations &amp; Feedback</div>
+          <a href="https://www.linkedin.com/in/anne-sophie-leroy/" target="_blank">
+            <img width="48" src="assets/linkedin-logo.webp"
+                 loading="lazy" alt="LinkedIn" style="width:48px;height:48px;object-fit:contain;"/>
+          </a>
+        </div>
+
+        <div class="process-card-container" data-w-id="testi-cards">
+          <div class="process-card">
+            <div class="process-card-title" id="testi-1-title">Laureen Brabant - Project manager at Kering</div>
+            <p class="process-card-paragraph" id="testi-1-para">What a joy it was to recruit Anne-Sophie as a UX/UI expert in my team! Anne-Sophie is a sparkling individual who adapted very quickly to her new environment. She is autonomous, responsible, and self-taught, and I very quickly knew that I could trust her and delegate the management of very large projects to her. In particular, Anne-Sophie worked on major UX assignments, such as the development of a global multi-brand application and its entire universe of associated features. Proactive and resourceful, Anne-Sophie has a natural ease for knowing how to be discreet when needed and how to position herself at the right level when necessary. I hope that we will one day have the opportunity to work together again.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-card-title" id="testi-2-title">Anna Van Der Aa - Mentor at Kering</div>
+            <p class="process-card-paragraph" id="testi-2-para">I had the pleasure of working in a duo with Anne-Sophie on a major UX project. Despite being at the start of her career, Anne-Sophie demonstrates great maturity in her approach. She has her own toolkit and knows exactly how and when to use each tool. This project also gave her the opportunity to put her research skills (interviews, analysis, synthesis) into practice with users. The results led us to propose a creative solution different from the one originally planned (demonstrating mental flexibility and an ability to follow the evidence). Throughout the project, Anne-Sophie maintained her commitment to delivering real added value to the people the project was intended for. I recommend her without hesitation.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-card-title" id="testi-3-title">Sébastien Canal - Industrial Designer</div>
+            <p class="process-card-paragraph" id="testi-3-para">A real gem...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact anchor section (keeps footer overlap) -->
+<section id="Get-in-touch">
+  <div class="section-wrapper glow-1">
+    <div class="section-container contact">
+      <div class="section-tag-container"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<div>
+  <div class="footer-wrapper">
+    <div class="footer-container">
+      <a href="/" class="home footer">
+        Anne-Sophie <span class="site-name-text-span">Leroy</span>
+      </a>
+      <a href="https://www.linkedin.com/in/anne-sophie-leroy/" target="_blank">
+        <img width="48" src="assets/linkedin-logo.webp"
+             loading="lazy" alt="LinkedIn" style="width:48px;height:48px;object-fit:contain;"/>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div><!-- /page-wrapper -->
+
+<script>
+(function () {
+
+  /* ── Scroll-reveal ── */
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-w-id]').forEach(function (el) { observer.observe(el); });
+
+  /* ── Sliders ── */
+  var state = { bnp: 0, grdf: 0, dicp: 0 };
+  var currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+  var slideTexts = {
+    bnp: {
+      en: [
+        '<strong>Scope:</strong> Full redesign of "MyCreditApp," an end-to-end corporate credit management platform. (15 modules)<br><br><strong>Team:</strong> Collaborated within a core team of three UX Designers.<br><br><strong>Complexity:</strong> Managed the concurrent redesign of 5 different modules to ensure seamless user flows and cross-platform consistency.<br><br><strong>Industry Expertise:</strong> Developed a deep understanding of complex banking journeys and business-specific requirements.<br><br><strong>Cross-functional Collaboration:</strong> Partnered closely with Product Owners, Business Analysts, and Developers to deliver optimized, high-performance solutions.',
+        '• Analyzed complex business requirements and user needs to drive design decisions.<br>• Managed the full design lifecycle, including user journey mapping, wireframing, and high-fidelity prototyping.<br><br>• Estimated and prioritized product improvements based on user impact and technical feasibility.<br>• Engineered and maintained a scalable UI component library, including detailed technical specifications.<br>• Led functional and visual QA testing in close collaboration with engineering teams.<br>• Supported internal communication and change management strategies to ensure adoption.',
+        '<strong>Design system</strong> view',
+        '<strong>Mockup</strong> view'
+      ],
+      fr: [
+        '<strong>Périmètre :</strong> Refonte complète de "MyCreditApp", une plateforme de gestion du crédit corporate de bout en bout. (15 modules)<br><br><strong>Équipe :</strong> Collaboration au sein d\'une équipe principale de trois UX Designers.<br><br><strong>Complexité :</strong> Gestion de la refonte simultanée de 5 modules différents pour assurer une cohérence des flux utilisateurs et une uniformité multiplateforme.<br><br><strong>Expertise sectorielle :</strong> Développement d\'une compréhension approfondie des parcours bancaires complexes et des exigences métier spécifiques.<br><br><strong>Collaboration transverse :</strong> Travail en étroite collaboration avec les Product Owners, Analystes Métier et Développeurs pour délivrer des solutions optimisées et performantes.',
+        '• Analyse des exigences métier complexes et des besoins utilisateurs pour orienter les décisions de conception.<br>• Gestion du cycle de conception complet : cartographie des parcours, wireframing et prototypage haute fidélité.<br><br>• Estimation et priorisation des améliorations produit selon l\'impact utilisateur et la faisabilité technique.<br>• Conception et maintenance d\'une bibliothèque de composants UI scalable avec spécifications techniques détaillées.<br>• Pilotage des tests de recette fonctionnelle et visuelle en étroite collaboration avec les équipes d\'ingénierie.<br>• Soutien aux stratégies de communication interne et de conduite du changement pour assurer l\'adoption.',
+        'Vue <strong>Design system</strong>',
+        'Vue <strong>Maquette</strong>'
+      ]
+    },
+    grdf: {
+      en: [
+        '<strong>Vision:</strong> Rebranding and redesigning the Act4Gaz platform into justdecarb.grdf.fr to establish GRDF as a leader in France\'s decarbonization efforts.<br><br><strong>Scope:</strong> Transformation of the digital experience, focusing on high performance, accessibility, and brand awareness.<br><br><strong>Strategic Objectives:</strong> Enhanced the user experience, optimized SEO (Search Engine Optimization), and increased digital accessibility.<br><br><strong>Sustainability Focus:</strong> Promoted eco-responsibility by adhering to digital sustainability standards and reducing the platform\'s carbon footprint.',
+        '• Conducted a comprehensive usability and accessibility audit.<br>• Researched and defined a new sustainable graphic identity.<br>• Collected and analyzed both user and business requirements to align project goals.<br>• Created detailed personas and mapped user journeys to optimize the navigation experience.<br>• Facilitated collaborative design workshops with stakeholders to co-create user-centric solutions.<br>• Led a Mobile-first design approach, followed by desktop adaptation.<br>• Built and documented UI components.<br>• Developed animated high-fidelity prototypes.',
+        '<strong>Moodboard</strong> view',
+        '<strong>Mobile</strong> view',
+        '<strong>Desktop</strong> view'
+      ],
+      fr: [
+        '<strong>Vision :</strong> Rebranding et refonte de la plateforme Act4Gaz en justdecarb.grdf.fr pour établir GRDF comme leader de la décarbonation en France.<br><br><strong>Périmètre :</strong> Transformation de l\'expérience digitale, axée sur la haute performance, l\'accessibilité et la notoriété de la marque.<br><br><strong>Objectifs stratégiques :</strong> Amélioration de l\'expérience utilisateur, optimisation du SEO et renforcement de l\'accessibilité numérique.<br><br><strong>Focus durabilité :</strong> Promotion de l\'éco-responsabilité en adhérant aux standards du numérique responsable et en réduisant l\'empreinte carbone de la plateforme.',
+        '• Réalisation d\'un audit complet d\'utilisabilité et d\'accessibilité.<br>• Recherche et définition d\'une nouvelle identité graphique durable.<br>• Collecte et analyse des exigences utilisateurs et métier pour aligner les objectifs du projet.<br>• Création de personas détaillés et cartographie des parcours utilisateurs.<br>• Animation d\'ateliers de co-création avec les parties prenantes.<br>• Adoption d\'une approche Mobile-first, suivie d\'une adaptation desktop.<br>• Construction et documentation des composants UI.<br>• Développement de prototypes haute fidélité animés.',
+        'Vue <strong>Moodboard</strong>',
+        'Vue <strong>Mobile</strong>',
+        'Vue <strong>Desktop</strong>'
+      ]
+    },
+    dicp: {
+      en: [
+        '<strong>Vision:</strong> Simplifying and digitizing the user journey for business tax contributions (Patentes) for individual entrepreneurs, artisans, and merchants.<br><br><strong>Discovery &amp; Analysis:</strong> Identified core needs and analyzed the ecosystem for both internal (administration) and external (taxpayers) users. <strong>Key Actions:</strong><br>• Mapped the global end-to-end journey as well as specific flows for each user persona.<br>• Authored detailed User Stories to align design requirements with development.<br>• Implemented and led the Agile Scrum framework to ensure iterative delivery.<br>• Built the new platform\'s interactive prototypes while strictly adhering to Digital Accessibility principles.',
+        '<strong>User Journey:</strong> Currently, users must navigate between three different agencies (CCISM, DICP, and the Treasury) to create, modify, or pay for their business tax (Patente).<br><br>• Manual &amp; Paper-Based Processes: Key administrative actions remain paper-based.<br>• Data Inconsistency: Information scattered across multiple websites.<br>• Digital Gap: Agencies lack modern digital tools.<br>• Operational Inefficiency: Unclear roles and high volume of manual data entry increase the risk of errors.',
+        '<strong>User Journey by user type</strong><br><br>Optimization opportunities:<br>• Developing a centralized platform that consolidates business creation, tax declaration, calculation, payment, and history within a single interface.<br>• Improving the overall user experience through dedicated personal spaces, real-time notifications, and comprehensive history logs.<br>• Ensuring automated and consistent data synchronization between the CCISM, DICP, and the Treasury.',
+        'As part of a broader IT modernization initiative, the redesign of the business tax contribution process (Patente) centers on the creation of a unified digital portal. The primary objective is to streamline the contributor journey, with a specific focus on business creation, while providing users with a clearer understanding of tax calculations and all procedures related to managing their professional activity.',
+        '<strong>Key features of the Future Portal:</strong><br>• Consolidating features and data from DICP, CCISM, and the Treasury into a single access point.<br>• Tailored interfaces for Business Owner, Artisans, and Freelancers.<br>• Providing live guidance and support for users.<br>• Enabling seamless online payments and real-time transaction tracking.<br>• Providing full visibility into past administrative actions.<br>• Clarifying tax calculation logic and providing a built-in simulation tool.',
+        'For this project, a focused preview of the Business Creation interface for entrepreneurs has been developed. You can access the interactive prototype preview via the link below.'
+      ],
+      fr: [
+        '<strong>Vision :</strong> Simplifier et digitaliser le parcours utilisateur pour les contributions fiscales professionnelles (Patentes) des entrepreneurs individuels, artisans et commerçants.<br><br><strong>Découverte &amp; Analyse :</strong> Identification des besoins essentiels et analyse de l\'écosystème pour les utilisateurs internes (administration) et externes (contribuables). <strong>Actions clés :</strong><br>• Cartographie du parcours global de bout en bout et des flux spécifiques pour chaque persona.<br>• Rédaction de User Stories détaillées pour aligner conception et développement.<br>• Mise en œuvre et pilotage du cadre Agile Scrum pour une livraison itérative.<br>• Construction des prototypes interactifs en respectant les principes d\'Accessibilité Numérique.',
+        '<strong>Parcours utilisateur :</strong> Actuellement, les utilisateurs naviguent entre trois agences différentes (CCISM, DICP et la Trésorerie) pour créer, modifier ou payer leur taxe professionnelle (Patente).<br><br>• Processus manuels et papier : Les actions administratives clés restent basées sur le papier.<br>• Incohérence des données : Informations dispersées sur plusieurs sites web.<br>• Fracture numérique : Les agences manquent d\'outils numériques modernes.<br>• Inefficacité opérationnelle : Rôles peu clairs et saisie manuelle intensive augmentant le risque d\'erreurs.',
+        '<strong>Parcours utilisateur par type d\'utilisateur</strong><br><br>Opportunités d\'optimisation :<br>• Développement d\'une plateforme centralisée consolidant création d\'entreprise, déclaration fiscale, calcul, paiement et historique en une seule interface.<br>• Amélioration de l\'expérience via des espaces personnels dédiés, notifications en temps réel et journaux d\'historique complets.<br>• Synchronisation automatisée et cohérente des données entre le CCISM, la DICP et la Trésorerie.',
+        'Dans le cadre d\'une initiative de modernisation informatique, la refonte du processus de contribution à la taxe professionnelle (Patente) s\'articule autour d\'un portail numérique unifié. L\'objectif est de simplifier le parcours du contribuable, en mettant l\'accent sur la création d\'entreprise, tout en offrant une meilleure compréhension du calcul des taxes.',
+        '<strong>Fonctionnalités clés du futur portail :</strong><br>• Consolidation des fonctionnalités de la DICP, du CCISM et de la Trésorerie en un point d\'accès unique.<br>• Interfaces personnalisées pour Chefs d\'entreprise, Artisans et Freelances.<br>• Assistance et accompagnement en temps réel.<br>• Paiements en ligne fluides et suivi des transactions en temps réel.<br>• Visibilité complète sur les actions administratives passées.<br>• Clarification de la logique de calcul fiscal et outil de simulation intégré.',
+        'Pour ce projet, un aperçu de l\'interface Création d\'entreprise pour les entrepreneurs a été développé. Vous pouvez accéder au prototype interactif via le lien ci-dessous.'
+      ]
+    }
+  };
+
+  /* ── Translations ── */
+  var translations = {
+    en: {
+      'nav-skills-txt':    'Skills',
+      'nav-projects-txt':  'Projects',
+      'nav-testi-txt':     'Testimonials',
+      'nav-contact-txt':   'Contact me',
+      'hero-title-txt':    'Product Designer | 4+ Years of Experience',
+      'hero-para-txt':     'I am a UX/UI Designer passionate about creating<strong> user-centered digital</strong> experiences and <strong>driving innovation</strong>. I\'ve had the opportunity to collaborate with global brands such as Balmain, Kering, GRDF and BNP Paribas CIB. Currently, at mc2i in Paris, I design intuitive interfaces that integrate Artificial Intelligence into complex business applications at BNP Paribas CIB.',
+      'hero-cv-txt':       'Download CV',
+      'explore-txt':       'Explore projects',
+      'skills-tag-txt':    'SKILLS',
+      'skill-1-title':     'UX UI Design',
+      'skill-1-list':      '• End-to-end UX &amp; AI-Driven Solutions<br>• Design System Governance<br>• User Research &amp; Testing<br>• Prototyping (Figma Expert)<br>• Accessibility &amp; Eco-design',
+      'skill-2-title':     'Strategy &amp; Management',
+      'skill-2-list':      '• Workshop facilitation<br>• Agile &amp; Scrum methodologies<br>• Stakeholders alignment<br>• Product thinking',
+      'skill-3-title':     'Tools &amp; tech',
+      'skill-3-list':      '• Creative Suite: Photoshop, Illustrator, After Effect<br>• Collaboration: Jira, Confluence<br>• Development: HTML &amp; CSS (Handoff)<br>• AI: Prompt Engineering, Vibe-coding',
+      'skill-4-title':     'Digital project',
+      'skill-4-list':      '• Data Analysis &amp; KPIs<br>• Digital strategy: SEO, SEA, CRM',
+      'projects-tag-txt':  'PROJECT OVERVIEW',
+      'bnp-tag-3':         'Bank',
+      'grdf-tag-3':        'Energy',
+      'bnp-link-txt':      'Learn more',
+      'grdf-link-1-txt':   'Website JustDecarb',
+      'grdf-link-2-txt':   'Prototype',
+      'dicp-link-txt':     'Prototype',
+      'testi-tag-txt':     'Testimonials',
+      'testi-title':       'What my colleagues say',
+      'testi-subtitle':    'Collaborations &amp; Feedback',
+      'testi-1-title':     'Laureen Brabant - Project manager at Kering',
+      'testi-1-para':      'What a joy it was to recruit Anne-Sophie as a UX/UI expert in my team! Anne-Sophie is a sparkling individual who adapted very quickly to her new environment. She is autonomous, responsible, and self-taught, and I very quickly knew that I could trust her and delegate the management of very large projects to her. In particular, Anne-Sophie worked on major UX assignments, such as the development of a global multi-brand application and its entire universe of associated features. Proactive and resourceful, Anne-Sophie has a natural ease for knowing how to be discreet when needed and how to position herself at the right level when necessary. I hope that we will one day have the opportunity to work together again.',
+      'testi-2-title':     'Anna Van Der Aa - Mentor at Kering',
+      'testi-2-para':      'I had the pleasure of working in a duo with Anne-Sophie on a major UX project. Despite being at the start of her career, Anne-Sophie demonstrates great maturity in her approach. She has her own toolkit and knows exactly how and when to use each tool. This project also gave her the opportunity to put her research skills (interviews, analysis, synthesis) into practice with users. The results led us to propose a creative solution different from the one originally planned (demonstrating mental flexibility and an ability to follow the evidence). Throughout the project, Anne-Sophie maintained her commitment to delivering real added value to the people the project was intended for. I recommend her without hesitation.',
+      'testi-3-title':     'Sébastien Canal - Industrial Designer',
+      'testi-3-para':      'A real gem...'
+    },
+    fr: {
+      'nav-skills-txt':    'Compétences',
+      'nav-projects-txt':  'Projets',
+      'nav-testi-txt':     'Recommandations',
+      'nav-contact-txt':   'Me contacter',
+      'hero-title-txt':    'Product Designer | 4+ ans d\'expérience',
+      'hero-para-txt':     'Je suis UX/UI Designer passionnée par la création d\'expériences numériques<strong> centrées sur l\'utilisateur</strong> et par l\'<strong>innovation</strong>. J\'ai eu l\'opportunité de collaborer avec des marques internationales telles que Balmain, Kering, GRDF et BNP Paribas CIB. Actuellement chez mc2i, entreprise de conseil à Paris, je conçois des interfaces intuitives intégrant l\'Intelligence Artificielle dans des applications métier complexes chez BNP Paribas CIB.',
+      'hero-cv-txt':       'Télécharger le CV',
+      'explore-txt':       'Explorer les projets',
+      'skills-tag-txt':    'COMPÉTENCES',
+      'skill-1-title':     'UX UI Design',
+      'skill-1-list':      '• Solutions UX end-to-end &amp; IA<br>• Gouvernance Design System<br>• Recherche &amp; Tests utilisateurs<br>• Prototypage (Expert Figma)<br>• Accessibilité &amp; Éco-conception',
+      'skill-2-title':     'Stratégie &amp; Management',
+      'skill-2-list':      '• Animation d\'ateliers<br>• Méthodologies Agile &amp; Scrum<br>• Alignement des parties prenantes<br>• Product thinking',
+      'skill-3-title':     'Outils &amp; tech',
+      'skill-3-list':      '• Creative Suite: Photoshop, Illustrator, After Effect<br>• Collaboration: Jira, Confluence<br>• Développement: HTML &amp; CSS (Handoff)<br>• IA: Prompt Engineering, Vibe-coding',
+      'skill-4-title':     'Projet digital',
+      'skill-4-list':      '• Analyse de données &amp; KPIs<br>• Stratégie digitale : SEO, SEA, CRM',
+      'projects-tag-txt':  'APERÇU DES PROJETS',
+      'bnp-tag-3':         'Banque',
+      'grdf-tag-3':        'Énergie',
+      'bnp-link-txt':      'En savoir plus',
+      'grdf-link-1-txt':   'Site JustDecarb',
+      'grdf-link-2-txt':   'Prototype',
+      'dicp-link-txt':     'Prototype',
+      'testi-tag-txt':     'Recommandations',
+      'testi-title':       'Ce que disent mes collègues',
+      'testi-subtitle':    'Collaborations &amp; Retours',
+      'testi-1-title':     'Laureen Brabant - Cheffe de projet chez Kering',
+      'testi-1-para':      'Quelle joie d\'avoir recruté Anne-Sophie en tant qu\'experte UX/UI dans mon équipe ! Anne-Sophie est une personne pétillante qui s\'est très vite adaptée à son nouvel environnement. Elle est autonome, responsable et autodidacte, et j\'ai très vite su que je pouvais lui faire confiance et lui déléguer la gestion de très grands projets. Notamment, Anne-Sophie a travaillé sur des missions UX majeures, comme le développement d\'une application multi-marques mondiale et tout son univers de fonctionnalités associées. Proactive et débrouillarde, Anne-Sophie a une aisance naturelle pour savoir se faire discrète quand il le faut et se positionner au bon niveau quand c\'est nécessaire. J\'espère qu\'un jour nous aurons l\'opportunité de travailler à nouveau ensemble.',
+      'testi-2-title':     'Anna Van Der Aa - Mentor chez Kering',
+      'testi-2-para':      'J\'ai eu le plaisir de travailler en duo avec Anne-Sophie sur un grand projet UX. Malgré son début de carrière, Anne-Sophie fait preuve d\'une grande maturité dans son approche. Elle possède sa propre boîte à outils et sait exactement comment et quand utiliser chaque outil. Ce projet lui a également permis de mettre en pratique ses compétences en recherche (interviews, analyse, synthèse) avec les utilisateurs. Les résultats nous ont amenés à proposer une solution créative différente de celle initialement prévue, démontrant une flexibilité mentale et une capacité à suivre les données probantes. Tout au long du projet, Anne-Sophie a maintenu son engagement à apporter une réelle valeur ajoutée. Je la recommande sans hésitation.',
+      'testi-3-title':     'Sébastien Canal - Designer Industriel',
+      'testi-3-para':      'Une vraie pépite...'
+    }
+  };
+
+  function applyLang(lang) {
+    var t = translations[lang];
+    for (var id in t) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = t[id];
+    }
+    /* update current slide descriptions */
+    ['bnp', 'grdf', 'dicp'].forEach(function(key) {
+      var desc = document.getElementById(key + '-desc');
+      var texts = slideTexts[key][lang];
+      if (desc && texts && texts[state[key]] !== undefined) {
+        desc.innerHTML = texts[state[key]];
+      }
+    });
+    var thumb = document.getElementById('lang-thumb');
+    var optEn = document.getElementById('lang-opt-en');
+    var optFr = document.getElementById('lang-opt-fr');
+    if (thumb) thumb.classList.toggle('is-fr', lang === 'fr');
+    if (optEn) optEn.classList.toggle('active', lang === 'en');
+    if (optFr) optFr.classList.toggle('active', lang === 'fr');
+    localStorage.setItem('portfolio-lang', lang);
+    currentLang = lang;
+  }
+
+  /* lang toggle */
+  var langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', function () {
+      applyLang(currentLang === 'en' ? 'fr' : 'en');
+    });
+  }
+
+  /* apply saved lang on load */
+  if (currentLang === 'fr') applyLang('fr');
+
+  function go(key, delta) {
+    var track = document.getElementById(key + '-track');
+    if (!track) return;
+    var n = track.children.length;
+    state[key] = ((state[key] + delta) % n + n) % n;
+    track.style.transform = 'translateX(-' + (state[key] * 100) + '%)';
+    var desc = document.getElementById(key + '-desc');
+    var texts = slideTexts[key][currentLang];
+    if (desc && texts && texts[state[key]] !== undefined) {
+      desc.innerHTML = texts[state[key]];
+      desc.scrollTop = 0;
+    }
+  }
+
+  document.querySelectorAll('.left-arrow, .right-arrow').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = this.getAttribute('data-slider');
+      go(key, this.classList.contains('right-arrow') ? 1 : -1);
+    });
+  });
+
+  /* ── Mobile nav ── */
+  var burger = document.getElementById('burger-btn');
+  var navMenu = document.getElementById('nav-menu');
+  if (burger && navMenu) {
+    burger.addEventListener('click', function () { navMenu.classList.toggle('open'); });
+    navMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { navMenu.classList.remove('open'); });
+    });
+  }
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id === '#') return;
+      var el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
