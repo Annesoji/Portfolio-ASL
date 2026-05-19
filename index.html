@@ -829,9 +829,25 @@ strong { font-weight: 600; }
   .projects-marquee-container { width: 320vw; }
   .explore-button-copntainer { padding-bottom: 50px; }
   .button-2 { font-size: 15px; }
-  .project-slider-el { display: flex; flex-direction: column; }
-  .slider-arrows { display: flex; justify-content: center; gap: 16px; padding-top: 20px; }
-  .left-arrow, .right-arrow { position: static; width: 48px; height: 48px; }
+  .slider-arrows {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    gap: 16px;
+    background: rgba(18, 18, 22, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 4px 28px rgba(0,0,0,0.5);
+  }
+  .slider-arrows.visible { display: flex; }
+  .left-arrow, .right-arrow { position: static; width: 44px; height: 44px; }
   .project-title { font-size: 24px; }
   .project-link { font-size: 14px; }
   .link-arrow { width: 9px; height: 9px; }
@@ -1437,6 +1453,32 @@ strong { font-weight: 600; }
       a.addEventListener('click', function () { navMenu.classList.remove('open'); });
     });
   }
+
+  /* ── Floating arrows on mobile ── */
+  (function () {
+    var mq = window.matchMedia('(max-width: 767px)');
+    var sections = document.querySelectorAll('.slider-section-wrapper');
+    var io = new IntersectionObserver(function (entries) {
+      if (!mq.matches) return;
+      entries.forEach(function (entry) {
+        var arrows = entry.target.querySelector('.slider-arrows');
+        if (!arrows) return;
+        if (entry.isIntersecting) {
+          arrows.classList.add('visible');
+        } else {
+          arrows.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.25 });
+    sections.forEach(function (s) { io.observe(s); });
+    mq.addEventListener('change', function () {
+      if (!mq.matches) {
+        document.querySelectorAll('.slider-arrows').forEach(function (a) {
+          a.classList.remove('visible');
+        });
+      }
+    });
+  })();
 
   /* ── Smooth scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
