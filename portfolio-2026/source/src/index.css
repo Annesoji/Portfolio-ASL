@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Design Tokens — fonds unis, filets fins, couleur portée par
+   les boutons et les pastilles d'icône.
+   Olive Moss #5A5E27 · Deep Burgundy #640017 · Espresso #2F1B1A
+   Warm Cream #EFEFC9 · + Vermillon #E9552B (couleur ajoutée)
+------------------------------------------------------------------- */
+:root {
+  --bg: #f6f5ea;
+  --sidebar: #f0efd9;
+  --surface: rgba(255, 255, 255, 0.52);
+  --surface-2: rgba(47, 27, 26, 0.07);
+  --elevated: #fffffb;
+  --line: rgba(47, 27, 26, 0.17);
+  --rule: #2f1b1a;
+  --ink: #2f1b1a;
+  --muted: #655251;
+  --accent: #640017;
+  --accent-hover: #7d0a24;
+  --accent-fg: #faf9f0;
+  --accent-text: #640017;
+  --accent-tint: rgba(100, 0, 23, 0.08);
+  --olive: #5a5e27;
+  --olive-fg: #faf9f0;
+  --olive-text: #474b1c;
+  --olive-tint: rgba(90, 94, 39, 0.14);
+  --vermillion: #e9552b;
+  --warn-text: #9a3412;
+  --warn-tint: rgba(233, 85, 43, 0.12);
+  --ai: #00a0ac;
+  --ai-text: #00727b;
+  --ai-tint: rgba(0, 160, 172, 0.13);
+  --bubble: #2f1b1a;
+  --bubble-fg: #f6f5ea;
+  --code-bg: #2f1b1a;
+  --code-ink: #efefc9;
+  --code-muted: #b3a595;
+  --code-key: #c6cd7e;
+  --code-key-tint: rgba(198, 205, 126, 0.16);
+  --code-heading: #f2a3b3;
+  --code-line: rgba(255, 255, 255, 0.1);
+  --code-hover: rgba(255, 255, 255, 0.05);
+  --overlay: rgba(0, 0, 0, 0.5);
+  --shadow: 0 8px 30px -6px rgba(47, 27, 26, 0.14);
+
+
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #2f1b1a;
+  --sidebar: #241413;
+  --surface: rgba(239, 239, 201, 0.06);
+  --surface-2: rgba(239, 239, 201, 0.1);
+  --elevated: #3a2422;
+  --line: #452b29;
+  --rule: rgba(239, 239, 201, 0.75);
+  --ink: #efefc9;
+  --muted: #c4b9a8;
+  --accent: #a61c3c;
+  --accent-hover: #8c1430;
+  --accent-fg: #faf9f0;
+  --accent-text: #f2a3b3;
+  --accent-tint: rgba(239, 239, 201, 0.08);
+  --olive: #8a913c;
+  --olive-fg: #1e1110;
+  --olive-text: #c9d083;
+  --olive-tint: rgba(138, 145, 60, 0.22);
+  --vermillion: #f0693f;
+  --warn-text: #f6a583;
+  --warn-tint: rgba(240, 105, 63, 0.18);
+  --ai: #2bb9c4;
+  --ai-text: #7fdde4;
+  --ai-tint: rgba(43, 185, 196, 0.18);
+  --bubble: #efefc9;
+  --bubble-fg: #2f1b1a;
+  --code-bg: #1a0d0c;
+  --code-ink: #efefc9;
+  --code-muted: #a89a8c;
+  --shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.4);
+
+
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+textarea:focus-visible {
+  outline: none;
+}
+textarea::placeholder {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+@layer components {
+  .t-all {
+    @apply transition-all duration-200 ease-out;
+  }
+  /* Petit libellé : titre de section, étiquette */
+  .eyebrow {
+    @apply text-[12.5px] font-medium leading-normal;
+  }
+  /* Légende en italique */
+  .caption {
+    @apply text-[11.5px] font-normal italic leading-relaxed;
+  }
+  /* Action principale : plein, vert olive, seule à porter l'ombre */
+  .btn-primary {
+    @apply t-all inline-flex items-center justify-center gap-2 rounded-full bg-olive px-5 py-3 text-[13.5px] font-semibold text-olive-fg shadow-signature hover:opacity-90 active:scale-[0.98];
+  }
+  /* Action voisine, moins importante : contour */
+  .btn-secondary {
+    @apply t-all inline-flex items-center justify-center gap-2 rounded-full border border-rule bg-transparent px-5 py-3 text-[13.5px] font-semibold text-ink hover:bg-surface-2 active:scale-[0.98];
+  }
+  /* Tag : une information, jamais cliquable. Une seule taille ; la couleur s'ajoute à côté */
+  .tag {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  .icon-btn {
+    @apply t-all inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent-tint text-accent-text hover:bg-accent hover:text-accent-fg;
+  }
+  /* Pastille d'icône colorée à l'intérieur d'un bouton */
+  .icon-chip {
+    @apply t-all inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full;
+  }
+}
+
+/* Monogramme : aplat bordeaux */
+.monogram {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  border-radius: 2px;
+  background: var(--vermillion);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.thinking-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--vermillion);
+  animation: dot 1.2s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.rise {
+  animation: rise 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Impression : fallback « Télécharger en PDF » du CV
+------------------------------------------------------------------- */
+@media print {
+  :root,
+  :root[data-theme='dark'] {
+    --bg: #ffffff;
+    --elevated: #ffffff;
+    --line: rgba(47, 27, 26, 0.2);
+    --rule: #2f1b1a;
+    --ink: #2f1b1a;
+    --muted: #5c4a49;
+    --accent-text: #640017;
+    --olive: #5a5e27;
+    --olive-text: #474b1c;
+    --olive-tint: rgba(90, 94, 39, 0.12);
+    color-scheme: light;
+  }
+  html, body { height: auto; background: #fff; }
+  /* Seul le CV s'imprime */
+  body * { visibility: hidden; }
+  .cv-print, .cv-print * { visibility: visible; }
+  .cv-print {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  #root, #root div, #root main { overflow: visible !important; height: auto !important; }
+  .cv-section { break-inside: avoid; }
+  @page { margin: 14mm; }
+}
