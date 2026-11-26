@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  // skill-test : page de revue des tests du skill (développement uniquement)
+  content: ['./index.html', './src/**/*.{ts,tsx}', './skill-test.html', './skill-test/**/*.tsx'],
   theme: {
     extend: {
       fontFamily: {

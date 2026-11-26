@@ -414,3 +414,61 @@ export function GrdfPrototype({ id, lang }: { id: string; lang: Lang }) {
     </section>
   );
 }
+
+/* ------------------------------------------------------------------ Rebranding : images et maquettes défilantes */
+
+const rebrandImage = (file: string) => `${import.meta.env.BASE_URL}rebrand/${file}.jpg`;
+
+const REBRAND: Localized<{ logo: string; hero: string; desktop: string; mobile: string; scroll: string }> = {
+  fr: {
+    logo: 'Le nouveau logo',
+    hero: 'Haut de la page d’accueil : le montage photo',
+    desktop: 'La page d’accueil sur ordinateur',
+    mobile: 'Sur mobile',
+    scroll: 'Maquette à faire défiler',
+  },
+  en: {
+    logo: 'The new logo',
+    hero: 'Top of the home page: the photo composite',
+    desktop: 'The home page on desktop',
+    mobile: 'On mobile',
+    scroll: 'Scrollable mockup',
+  },
+};
+
+export function RebrandShot({ lang, shot }: { lang: Lang; shot: 'logo' | 'hero' }) {
+  const caption = REBRAND[lang][shot];
+  return (
+    <figure className={`my-4 overflow-hidden rounded-2xl border border-line bg-elevated ${shot === 'logo' ? 'max-w-[420px]' : ''}`}>
+      <img src={rebrandImage(shot)} alt={caption} loading="lazy" className="block h-auto w-full" />
+      <figcaption className="border-t border-line px-4 py-2.5 text-[12.5px] font-light leading-snug text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
+/** Une maquette très haute, dans un cadre à hauteur fixe que l'on fait défiler comme une vraie page. */
+function ScrollFrame({ file, caption, label, phone }: { file: string; caption: string; label: string; phone?: boolean }) {
+  return (
+    <figure className={phone ? 'mx-auto w-[230px] max-w-full' : 'min-w-0'}>
+      <div
+        tabIndex={0}
+        role="region"
+        aria-label={`${label} — ${caption}`}
+        className={`h-[460px] overflow-y-auto border bg-elevated ${phone ? 'rounded-xl border-rule' : 'rounded-2xl border-line'}`}
+      >
+        <img src={rebrandImage(file)} alt={caption} loading="lazy" className="block h-auto w-full" />
+      </div>
+      <figcaption className="mt-2 text-[12.5px] font-light leading-snug text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
+export function RebrandScreens({ lang }: { lang: Lang }) {
+  const t = REBRAND[lang];
+  return (
+    <div className="my-4 grid grid-cols-1 items-start gap-4 md:grid-cols-[1fr_230px]">
+      <ScrollFrame file="desktop" caption={t.desktop} label={t.scroll} />
+      <ScrollFrame file="mobile" caption={t.mobile} label={t.scroll} phone />
+    </div>
+  );
+}

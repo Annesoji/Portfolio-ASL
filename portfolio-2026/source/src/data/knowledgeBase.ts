@@ -1202,6 +1202,125 @@ Figma (Expert), Storybook, Zeroheight.`,
 
   /* ------------------------------------------------------------------ */
   {
+    id: 'rebrand',
+    question: {
+      fr: "Parle-moi du rebranding de McDonald's : comment a-t-elle repositionné une marque connue pour une autre cible ?",
+      en: "Tell me about the McDonald's rebranding: how did she reposition a well-known brand for a different audience?",
+    },
+    chip: { fr: "Rebranding de McDonald's", en: "McDonald's rebranding" },
+    keywords: [
+      ['mcdo', 7], ['mcdonald', 7], ['mc donald', 7], ['rebranding', 6], ['rebrand', 6], ['identite visuelle', 6], ['visual identity', 6],
+      ['direction artistique', 6], ['art direction', 6], ['logo', 5], ['branding', 5], ['photoshop', 5], ['illustrator', 5],
+      ['montage photo', 5], ['projet perso', 5], ['projet personnel', 5], ['personal project', 5], ['burger', 4],
+    ],
+    answer: {
+      fr: {
+        standard: `### Contexte
+Exercice libre de rebranding, en Master 1 à la Digital School of Paris. La consigne : reprendre une marque existante et la faire parler à une autre cible. Marque choisie : McDonald's.
+
+*Projet d'école, sans lien avec McDonald's.*
+
+### Problématique
+Tout le monde connaît la marque : rapide, bon marché, standardisée. Comment en faire une adresse plus haut de gamme, plus saine et toujours familiale, sans la rendre méconnaissable ?
+
+### Son rôle
+Direction artistique complète : logo, palette, typographies, messages, montages photo (Photoshop, Illustrator), maquettes ordinateur et mobile (Figma).
+
+### La solution
+Un McDonald's « rétro chic » : garder les codes que l'on reconnaît, changer ce qu'ils racontent.
+
+### 1 · La cible
+Des familles urbaines, des parents de 30 à 45 ans attentifs à ce qu'ils mangent. Ils veulent un vrai moment à table avec leurs enfants : de bons produits, un cadre confortable, et le plaisir du burger intact.
+
+### 2 · Le logo
+[[rebrand-logo]]
+
+- **Des cercles à la place des arches** : une assiette vue de dessus, et un clin d'œil rétro.
+- **Le rouge et le jaune restent**, adoucis : on reconnaît la marque. **Le vert s'ajoute**, pour le frais.
+- **Deux typographies** : un « Mc » à empattements, élégant ; un « Donald's » rond et gras, convivial. Le haut de gamme et la famille dans le même logo.
+
+### 3 · L'univers photo
+[[rebrand-hero]]
+
+- **Le burger devient un objet précieux** : posé dans des blocs de verre coloré, par montage photo.
+- **Un burger vert à côté du classique** : le choix existe, le plaisir reste. C'est le sens de « I prefer that ».
+- **Un décor de restaurant**, pas de fast-food : banquettes de velours rouge, laiton, lumière douce.
+
+### 4 · Les messages
+- **« Le confort McDonald's »** : on s'installe, on ne fait plus que passer.
+- **« Faites la connaissance de nos producteurs »** et **« La transparence »** : l'origine des produits devient un argument.
+- **« Le McDonald's intemporel »** : la marque assume son histoire.
+- **Commander, récupérer, savourer** : le parcours reste simple, en trois étapes.
+
+### 5 · Les écrans
+Ordinateur et mobile : faites défiler chaque maquette.
+
+[[rebrand-screens]]
+
+### Ce que ce projet montre
+Une identité construite de bout en bout, du logo aux écrans : la direction artistique au service d'un positionnement.`,
+        express: `- **Contexte** : exercice libre de rebranding en Master 1 — faire parler McDonald's à une autre cible. Projet d'école, sans lien avec la marque.
+- **Problématique** : rendre la marque plus haut de gamme, plus saine et familiale, sans la rendre méconnaissable.
+- **Son rôle** : direction artistique complète — logo, palette, typographies, messages, montages photo, maquettes.
+- **Solution** : un McDonald's « rétro chic », du logo aux écrans ordinateur et mobile.`,
+      },
+      en: {
+        standard: `### Context
+A free rebranding exercise, in the first year of a Master's at the Digital School of Paris. The brief: take an existing brand and make it speak to a different audience. Brand chosen: McDonald's.
+
+*School project, not affiliated with McDonald's.*
+
+### The problem
+Everyone knows the brand: fast, cheap, standardised. How do you turn it into a more premium, healthier and still family-friendly place, without making it unrecognisable?
+
+### Her role
+Full art direction: logo, palette, typography, messages, photo compositing (Photoshop, Illustrator), desktop and mobile mockups (Figma).
+
+### The solution
+A “retro chic” McDonald's: keep the codes people recognise, change what they say.
+
+### 1 · The audience
+Urban families, parents aged 30 to 45 who care about what they eat. They want a real moment at the table with their children: good produce, a comfortable setting, and the pleasure of the burger intact.
+
+### 2 · The logo
+[[rebrand-logo]]
+
+- **Circles instead of the arches**: a plate seen from above, with a retro wink.
+- **Red and yellow stay**, softened: the brand is recognisable. **Green is added**, for freshness.
+- **Two typefaces**: an elegant serif “Mc”; a round, bold, friendly “Donald's”. Premium and family in the same logo.
+
+### 3 · The photographic world
+[[rebrand-hero]]
+
+- **The burger becomes a precious object**: set inside blocks of coloured glass, through photo compositing.
+- **A green burger next to the classic one**: the choice exists, the pleasure stays. That is the meaning of “I prefer that”.
+- **A restaurant setting**, not a fast-food one: red velvet banquettes, brass, soft light.
+
+### 4 · The messages
+- **“Le confort McDonald's”** (comfort): you settle in instead of passing through.
+- **“Meet our producers”** and **“Transparency”**: where the produce comes from becomes an argument.
+- **“The timeless McDonald's”**: the brand owns its history.
+- **Order, collect, enjoy**: the journey stays simple, in three steps.
+
+### 5 · The screens
+Desktop and mobile: scroll each mockup.
+
+[[rebrand-screens]]
+
+### What this project shows
+An identity built end to end, from the logo to the screens: art direction in the service of a positioning.`,
+        express: `- **Context**: a free rebranding exercise in Master's year 1 — making McDonald's speak to a different audience. School project, not affiliated with the brand.
+- **Problem**: make the brand more premium, healthier and family-friendly, without making it unrecognisable.
+- **Her role**: full art direction — logo, palette, typography, messages, photo compositing, mockups.
+- **Solution**: a “retro chic” McDonald's, from the logo to the desktop and mobile screens.`,
+      },
+    },
+    anchors: true,
+    followUps: ['portfoliods', 'grdf', 'background'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
     id: 'portfoliods',
     question: {
       fr: 'Peut-on voir le Design System de ce portfolio ?',

@@ -482,6 +482,26 @@ Deux versions d'un même écran, superposées, avec une séparation que l'on fai
 - La séparation est un curseur (`input type="range"`) : elle se déplace au clavier et porte un `aria-label`.
 - La légende dit en mots ce que montrent les deux images.
 
+### Maquette défilante
+
+Une maquette de page entière est trop haute pour être montrée d'un bloc. Elle s'affiche dans un cadre à hauteur fixe, que l'on fait défiler comme la vraie page.
+
+#### Anatomie
+
+1. Un cadre à hauteur fixe (`h-[460px] overflow-y-auto`), au contour fin
+2. L'image entière à l'intérieur, à la largeur du cadre
+3. Une légende sous le cadre
+4. Pour un écran mobile : un cadre étroit, au format téléphone, à côté du cadre ordinateur
+
+#### À éviter
+
+- Réduire la maquette pour la faire tenir : elle deviendrait illisible.
+- Un cadre sans légende : rien n'indiquerait qu'il se fait défiler.
+
+#### Accessibilité
+
+- Le cadre reçoit le focus (`tabIndex={0}`) et porte un `aria-label`, pour se faire défiler au clavier.
+
 ### Parcours en étapes
 
 Qui fait quoi, étape par étape, et où ça coince. Utilise `src/components/FlowBoard.tsx` avec des données, sur le modèle de `src/data/covenantFlow.ts`.

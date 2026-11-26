@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowDownToLine, ChevronDown, Folder, FolderOpen, Linkedin, Mail, Moon, Phone, Plus, Sun, X } from 'lucide-react';
 import type { UIStrings } from '../data/i18n';
-import { contact, projects } from '../data/profile';
+import { contact, personalProjects, projects } from '../data/profile';
 import type { Lang, Theme } from '../types';
 import Monogram from './Monogram';
 
@@ -69,7 +69,7 @@ export default function Sidebar(p: Props) {
   const { t, lang } = p;
   const [folderOpen, setFolderOpen] = useState(false);
   // Le dossier s'ouvre de lui-même quand son projet est affiché
-  const showFolder = folderOpen || p.designSystemActive;
+  const showFolder = folderOpen || p.designSystemActive || personalProjects.some((pr) => pr.id === p.activeProject);
   const FolderIcon = showFolder ? FolderOpen : Folder;
   return (
     <>
@@ -156,7 +156,7 @@ export default function Sidebar(p: Props) {
             >
               <FolderIcon size={15} className="shrink-0 text-accent-text" aria-hidden />
               <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-ink">{t.personalProjects}</span>
-              <span className="text-[11px] font-normal text-muted">1</span>
+              <span className="text-[11px] font-normal text-muted">{personalProjects.length + 1}</span>
               <ChevronDown size={15} className={`t-all shrink-0 text-muted ${showFolder ? 'rotate-180' : ''}`} aria-hidden />
             </button>
             {showFolder && (
@@ -184,6 +184,34 @@ export default function Sidebar(p: Props) {
                     </span>
                   </button>
                 </li>
+                {personalProjects.map((pr, i) => {
+                  const active = p.activeProject === pr.id;
+                  return (
+                    <li key={pr.id}>
+                      <button
+                        onClick={() => p.onProject(pr.id)}
+                        aria-current={active ? 'page' : undefined}
+                        className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
+                          active ? 'bg-surface-2' : 'hover:bg-surface-2'
+                        }`}
+                      >
+                        <span
+                          className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
+                            active ? 'text-vermillion' : 'text-accent-text'
+                          }`}
+                        >
+                          0{i + 2}
+                        </span>
+                        <span className="min-w-0">
+                          <span className={`block text-[13.5px] leading-snug text-ink ${active ? 'font-semibold' : 'font-normal'}`}>
+                            {pr.title[lang]}
+                          </span>
+                          <span className="mt-1 block text-[11px] font-normal text-muted">{pr.tag[lang]}</span>
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>

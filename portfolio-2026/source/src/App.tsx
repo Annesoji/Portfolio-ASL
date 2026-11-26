@@ -12,7 +12,10 @@ import { COVENANT_PROTOTYPE, flowStrings } from './data/covenantFlow';
 import { dsStrings } from './data/designSystem';
 import { ui } from './data/i18n';
 import { getIntent } from './data/knowledgeBase';
-import { contact, projects } from './data/profile';
+import { contact, personalProjects, projects } from './data/profile';
+
+/** Tous les projets ouvrables depuis le menu : missions, puis projets personnels. */
+const allProjects = [...projects, ...personalProjects];
 import { useChat } from './hooks/useChat';
 import { useLang } from './hooks/useLang';
 import { useTheme } from './hooks/useTheme';
@@ -89,12 +92,13 @@ export default function App() {
   };
 
   const openProject = (id: string) => {
-    const project = projects.find((p) => p.id === id);
+    const project = allProjects.find((p) => p.id === id);
     if (!project) return;
     setView('chat');
     chat.reset();
     // Une étude de cas se lit depuis le haut : pas de défilement automatique
-    stick.current = !getIntent(project.intentId).flow;
+    const intent = getIntent(project.intentId);
+    stick.current = !(intent.flow || intent.anchors);
     setActiveProject(id);
     setDrawerOpen(false);
     chat.askIntent(project.intentId);
@@ -116,7 +120,7 @@ export default function App() {
 
   const first = chat.messages[0];
   const sessionTitle = activeProject
-    ? projects.find((p) => p.id === activeProject)!.title[lang]
+    ? allProjects.find((p) => p.id === activeProject)!.title[lang]
     : first?.role === 'user'
       ? (first.text ?? getIntent(first.questionOf ?? '').question[lang])
       : t.newSession;

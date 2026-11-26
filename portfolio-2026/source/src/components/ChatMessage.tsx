@@ -11,7 +11,7 @@ import FlowBoard from './FlowBoard';
 import Markdown from './Markdown';
 import Monogram from './Monogram';
 import RepoMap from './RepoMap';
-import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RelaySteps, RoleCards, SkillLessons, SkillTest } from './CaseVisuals';
+import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RebrandScreens, RebrandShot, RelaySteps, RoleCards, SkillLessons, SkillTest } from './CaseVisuals';
 import SectionNav, { type SectionLink } from './SectionNav';
 import SkillPreview from './SkillPreview';
 
@@ -111,6 +111,9 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
                 'grdf-map': <GrdfGallery lang={lang} set="map" />,
                 'grdf-moodboard': <GrdfGallery lang={lang} set="moodboard" />,
                 'grdf-screens': <GrdfGallery lang={lang} set="screens" />,
+                'rebrand-logo': <RebrandShot lang={lang} shot="logo" />,
+                'rebrand-hero': <RebrandShot lang={lang} shot="hero" />,
+                'rebrand-screens': <RebrandScreens lang={lang} />,
                 'repo-map': <RepoMap lang={lang} />,
                 'bnp-figures': <FigureTiles lang={lang} />,
                 'ds-principles': <PrincipleCards lang={lang} />,

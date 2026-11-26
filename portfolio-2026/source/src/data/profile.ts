@@ -52,6 +52,19 @@ export const projects: Project[] = [
   },
 ];
 
+/** Projets personnels, rangés dans le dossier repliable du menu (après le Design System du portfolio). */
+export const personalProjects: Project[] = [
+  {
+    id: 'rebrand',
+    intentId: 'rebrand',
+    title: {
+      fr: 'Rebranding de McDonald’s pour une nouvelle cible',
+      en: 'Rebranding McDonald’s for a new audience',
+    },
+    tag: { fr: '2021 · Master 1 · Identité visuelle', en: '2021 · Master’s year 1 · Visual identity' },
+  },
+];
+
 export const experiences: Experience[] = [
   {
     company: 'mc2i',

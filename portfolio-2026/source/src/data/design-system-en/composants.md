@@ -1,4 +1,4 @@
-<!-- source-hash: bcf579b2c98a -->
+<!-- source-hash: 27ae0c0e0ba5 -->
 # Components
 
 All the portfolio's components, organised by function. Every component follows the same outline: when to use it, example, anatomy, states, do, don't. Reuse what exists before creating; if you need a component that is not here, build it with the same building blocks (pill, card, badge) and say so when you deliver.
@@ -482,6 +482,26 @@ Two versions of the same screen, stacked, with a divider you drag to move from o
 
 - The divider is a slider (`input type="range"`): it moves with the keyboard and carries an `aria-label`.
 - The caption says in words what the two images show.
+
+### Scrollable mockup
+
+A full-page mockup is too tall to be shown in one block. It is displayed in a fixed-height frame that you scroll like the real page.
+
+#### Anatomy
+
+1. A fixed-height frame (`h-[460px] overflow-y-auto`), with a thin outline
+2. The whole image inside, at the width of the frame
+3. A caption under the frame
+4. For a mobile screen: a narrow, phone-sized frame next to the desktop frame
+
+#### Don't
+
+- Shrinking the mockup to make it fit: it would become unreadable.
+- A frame without a caption: nothing would indicate that it scrolls.
+
+#### Accessibility
+
+- The frame takes focus (`tabIndex={0}`) and carries an `aria-label`, so it can be scrolled with the keyboard.
 
 ### Step flow
 
