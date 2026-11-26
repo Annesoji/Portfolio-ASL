@@ -543,7 +543,7 @@ export function RebrandShot({ lang, shot }: { lang: Lang; shot: 'logo' | 'hero' 
 }
 
 /** Une maquette très haute, dans un cadre à hauteur fixe que l'on fait défiler comme une vraie page. */
-function ScrollFrame({ file, caption, label, phone }: { file: string; caption: string; label: string; phone?: boolean }) {
+function ScrollFrame({ file, caption, label, phone, src }: { file: string; caption: string; label: string; phone?: boolean; src?: string }) {
   return (
     <figure className={phone ? 'mx-auto w-[230px] max-w-full' : 'min-w-0'}>
       <div
@@ -552,7 +552,7 @@ function ScrollFrame({ file, caption, label, phone }: { file: string; caption: s
         aria-label={`${label} — ${caption}`}
         className={`h-[460px] overflow-y-auto border bg-elevated ${phone ? 'rounded-xl border-rule' : 'rounded-2xl border-line'}`}
       >
-        <img src={rebrandImage(file)} alt={caption} loading="lazy" className="block h-auto w-full" />
+        <img src={src ?? rebrandImage(file)} alt={caption} loading="lazy" className="block h-auto w-full" />
       </div>
       <figcaption className="mt-2 text-[12.5px] font-light leading-snug text-muted">{caption}</figcaption>
     </figure>
@@ -565,6 +565,48 @@ export function RebrandScreens({ lang }: { lang: Lang }) {
     <div className="my-4 grid grid-cols-1 items-start gap-4 md:grid-cols-[1fr_230px]">
       <ScrollFrame file="desktop" caption={t.desktop} label={t.scroll} />
       <ScrollFrame file="mobile" caption={t.mobile} label={t.scroll} phone />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ Bloom Bar : univers, packaging et page */
+
+const bloomImage = (file: string) => `${import.meta.env.BASE_URL}bloombar/${file}.jpg`;
+
+const BLOOM: Localized<{ hero: string; box: string; wireframe: string; page: string; scroll: string }> = {
+  fr: {
+    hero: 'Le haut de la page d’accueil : les fleurs en relief',
+    box: 'Le packaging et le coffret à composer',
+    wireframe: 'Le wireframe de départ',
+    page: 'La même page, avec la direction artistique',
+    scroll: 'Maquette à faire défiler',
+  },
+  en: {
+    hero: 'Top of the home page: the flowers in relief',
+    box: 'The packaging and the box to build',
+    wireframe: 'The starting wireframe',
+    page: 'The same page, with the art direction',
+    scroll: 'Scrollable mockup',
+  },
+};
+
+export function BloomShot({ lang, shot }: { lang: Lang; shot: 'hero' | 'box' }) {
+  const caption = BLOOM[lang][shot];
+  return (
+    <figure className="my-4 overflow-hidden rounded-2xl border border-line bg-elevated">
+      <img src={bloomImage(shot)} alt={caption} loading="lazy" className="block h-auto w-full" />
+      <figcaption className="border-t border-line px-4 py-2.5 text-[12.5px] font-light leading-snug text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
+
+/** Le wireframe et la page finale côte à côte, chacun à faire défiler. */
+export function BloomScreens({ lang }: { lang: Lang }) {
+  const t = BLOOM[lang];
+  return (
+    <div className="my-4 grid grid-cols-1 items-start gap-4 sm:grid-cols-2">
+      <ScrollFrame file="wireframe" src={bloomImage('wireframe')} caption={t.wireframe} label={t.scroll} />
+      <ScrollFrame file="maquette" src={bloomImage('maquette')} caption={t.page} label={t.scroll} />
     </div>
   );
 }

@@ -8,9 +8,9 @@ interface Props {
   lang: Lang;
 }
 
-/** Met en gras la partie « Impact : … » des puces du CV. */
+/** Met en évidence la partie « Résultats : … » des puces du CV. */
 function Bullet({ text }: { text: string }) {
-  const m = text.match(/^(Impact\s?:)(.*)$/);
+  const m = text.match(/^((?:Résultats|Results|Impact)\s?:)(.*)$/);
   return (
     <li className="flex gap-2.5 text-sm leading-relaxed text-ink">
       <span className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-vermillion" aria-hidden />

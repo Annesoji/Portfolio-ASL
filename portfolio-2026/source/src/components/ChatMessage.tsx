@@ -11,7 +11,7 @@ import FlowBoard from './FlowBoard';
 import Markdown from './Markdown';
 import Monogram from './Monogram';
 import RepoMap from './RepoMap';
-import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RebrandScreens, RebrandShot, RelaySteps, RoleCards, SkillLessons, SkillTest, VitalizDecision, VitalizePrototype, VitalizeShot } from './CaseVisuals';
+import { BloomScreens, BloomShot, FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RebrandScreens, RebrandShot, RelaySteps, RoleCards, SkillLessons, SkillTest, VitalizDecision, VitalizePrototype, VitalizeShot } from './CaseVisuals';
 import SectionNav, { type SectionLink } from './SectionNav';
 import SkillPreview from './SkillPreview';
 
@@ -121,6 +121,9 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
                 'vitalize-map': <VitalizeShot lang={lang} shot="map" />,
                 'vitalize-brand': <VitalizeShot lang={lang} shot="brand" />,
                 'vitalize-shop': <VitalizeShot lang={lang} shot="shop" />,
+                'bloombar-hero': <BloomShot lang={lang} shot="hero" />,
+                'bloombar-box': <BloomShot lang={lang} shot="box" />,
+                'bloombar-screens': <BloomScreens lang={lang} />,
                 'repo-map': <RepoMap lang={lang} />,
                 'bnp-figures': <FigureTiles lang={lang} />,
                 'ds-principles': <PrincipleCards lang={lang} />,

@@ -18,8 +18,8 @@ export const title: Localized = {
 };
 
 export const pitch: Localized = {
-  fr: "Product Designer spécialisée en UX/UI, Design Ops et workflows IA. Je conjugue un héritage créatif issu des arts visuels et de la mode avec une forte expertise technique (Design System, AI Skills, vibecoding) pour concevoir des produits complexes plus lisibles et industrialiser la production des équipes design.",
-  en: 'Product Designer specialising in UX/UI, Design Ops and AI workflows. I combine a creative heritage from visual arts and fashion with strong technical expertise (Design System, AI Skills, vibecoding) to make complex products more readable and to industrialise how design teams deliver.',
+  fr: 'Product Designer à l’intersection de l’UX/UI, du Design System et de l’IA. Je conçois des interfaces complexes et industrialise les workflows design. Du cadrage au prototypage en vibecoding, avec un regard façonné par les arts visuels.',
+  en: 'Product Designer at the intersection of UX/UI, Design Systems and AI. I design complex interfaces and industrialise design workflows. From framing to vibecoded prototypes, with an eye shaped by the visual arts.',
 };
 
 export const projects: Project[] = [
@@ -62,6 +62,15 @@ export const personalProjects: Project[] = [
       en: 'Vitaliz From personas to the mobile app',
     },
     tag: { fr: '2023 · Master 2 · Étude UX complète', en: '2023 · Master’s year 2 · Full UX study' },
+  },
+  {
+    id: 'bloombar',
+    intentId: 'bloombar',
+    title: {
+      fr: 'Bloom Bar Direction artistique et illustration 3D',
+      en: 'Bloom Bar Art direction and 3D illustration',
+    },
+    tag: { fr: '2023 · Master 2 · Direction artistique', en: '2023 · Master’s year 2 · Art direction' },
   },
   {
     id: 'rebrand',
@@ -116,28 +125,42 @@ export const experiences: Experience[] = [
       {
         client: 'La Caisse des Dépôts',
         period: { fr: 'Avr. 2024 – Août 2024', en: 'Apr 2024 – Aug 2024' },
-        role: { fr: 'Product Designer UX/UI', en: 'Product Designer UX/UI' },
+        role: { fr: 'UX UI Designer', en: 'UX UI Designer' },
         bullets: {
           fr: [
-            'Refonte d’Emaj, outil interne de gestion stratégique des carrières : entretiens utilisateurs, analyse de données, ateliers de co-création, prototypage haute fidélité, tests utilisateurs et coordination inter-équipes.',
+            'Design et refonte d’Emaj, outil interne de gestion stratégique des carrières.',
+            'Insights utilisateurs & analyse : entretiens utilisateurs et analyse de données pour en extraire des insights exploitables et définir les besoins fondamentaux des utilisateurs.',
+            'Facilitation d’ateliers : planification et animation d’ateliers collaboratifs pour aligner les parties prenantes et co-créer des solutions.',
+            'Prototypage haute fidélité et tests utilisateurs : prototypes interactifs pour valider les flux utilisateurs et les fonctionnalités.',
+            'Coordination de projet : organisation des activités inter-équipes.',
           ],
           en: [
-            'Redesign of Emaj, an internal strategic career-management tool: user interviews, data analysis, co-creation workshops, high-fidelity prototyping, user testing and cross-team coordination.',
+            'Design and redesign of Emaj, an internal strategic career-management tool.',
+            'User insights & analysis: user interviews and data analysis to extract actionable insights and define users’ core needs.',
+            'Workshop facilitation: planned and ran collaborative workshops to align stakeholders and co-create solutions.',
+            'High-fidelity prototyping and user testing: interactive prototypes to validate user flows and features.',
+            'Project coordination: organised cross-team activities.',
           ],
         },
       },
       {
         client: 'GRDF',
         period: { fr: 'Janv. 2024 – Mai 2024', en: 'Jan 2024 – May 2024' },
-        role: { fr: 'Product Designer UX/UI', en: 'Product Designer UX/UI' },
+        role: { fr: 'UX UI Designer', en: 'UX UI Designer' },
         bullets: {
           fr: [
-            'Refonte et rebranding d’Act4Gaz vers justdecarb.grdf.fr : audits UX et accessibilité (RGAA), nouvelle identité graphique, Design System dédié sobre et accessible, maquettes mobile-first.',
-            'Impact : Note C EcoIndex et conformité RGAA.',
+            'Refonte et rebranding de la plateforme Act4Gaz en justdecarb.grdf.fr, pour une expérience digitale performante, accessible et éco-conçue.',
+            'Audits UX & ergonomie : audits approfondis d’accessibilité et d’utilisabilité pour identifier les points de friction et garantir la conformité aux normes de durabilité numérique (RGAA).',
+            'Identité visuelle & Design System : nouvelle identité graphique et bibliothèque de Design System dédiée, accessible et éco-responsable.',
+            'Prototypage haute fidélité : maquettes responsives mobile first et prototypes interactifs pour valider les parcours utilisateurs sur tous les appareils.',
+            'Résultats : amélioration de la performance environnementale, avec la note C EcoIndex pour le nouveau site, tout en garantissant la conformité RGAA.',
           ],
           en: [
-            'Redesign and rebranding of Act4Gaz into justdecarb.grdf.fr: UX and accessibility (RGAA) audits, new visual identity, dedicated lean and accessible Design System, mobile-first mockups.',
-            'Impact: EcoIndex grade C and RGAA compliance.',
+            'Redesign and rebranding of the Act4Gaz platform into justdecarb.grdf.fr, for a fast, accessible and eco-designed digital experience.',
+            'UX & usability audits: in-depth accessibility and usability audits to identify pain points and ensure compliance with digital sustainability standards (RGAA).',
+            'Visual identity & Design System: new visual identity and a dedicated, accessible and eco-responsible Design System library.',
+            'High-fidelity prototyping: responsive mobile-first mockups and interactive prototypes to validate user journeys on every device.',
+            'Results: better environmental performance, with an EcoIndex grade C for the new site, while ensuring RGAA compliance.',
           ],
         },
       },
@@ -150,14 +173,20 @@ export const experiences: Experience[] = [
     location: 'Paris',
     bullets: {
       fr: [
-        'Numérisation d’une carte de réduction physique en application mobile évolutive (Privilege Card).',
-        'Recherche utilisateurs, ateliers, audits et cartographies UX, conception UI et composants de Design System, tests utilisateurs itératifs.',
-        'Impact : 40 000 utilisateurs actifs ; fiabilisation des quotas d’achat et des restrictions de vente en boutique.',
+        'Numérisation d’une carte de réduction physique, offrant une solution mobile évolutive pour une base de 40 000 utilisateurs.',
+        'Recherche utilisateurs : direction d’entretiens et d’ateliers pour définir les besoins fondamentaux des utilisateurs.',
+        'Stratégie UX : audits et cartographies UX pour simplifier les parcours utilisateurs complexes.',
+        'Design UI : interfaces haute fidélité et composants de Design System évolutifs.',
+        'Tests utilisateurs : tests itératifs pour valider et affiner les solutions de design.',
+        'Résultats : 40 000 utilisateurs utilisent aujourd’hui l’application Privilege Card ; gestion des quotas d’achat optimisée et respect des restrictions de vente en boutique fiabilisé.',
       ],
       en: [
-        'Turned a physical discount card into a scalable mobile app (Privilege Card).',
-        'User research, workshops, UX audits and journey maps, UI design and Design System components, iterative user testing.',
-        'Impact: 40,000 active users; more reliable purchase quotas and in-store sales restrictions.',
+        'Turned a physical discount card into a scalable mobile solution for a base of 40,000 users.',
+        'User research: led interviews and workshops to define users’ core needs.',
+        'UX strategy: UX audits and journey maps to simplify complex user journeys.',
+        'UI design: high-fidelity interfaces and scalable Design System components.',
+        'User testing: iterative tests to validate and refine design solutions.',
+        'Results: 40,000 people use the Privilege Card app today; optimised purchase-quota management and more reliable in-store sales restrictions.',
       ],
     },
   },
@@ -171,12 +200,18 @@ export const experiences: Experience[] = [
     location: 'Paris',
     bullets: {
       fr: [
-        'Pilotage de projets digitaux de bout en bout, calendrier éditorial, maintenance UX du site web, production visuelle (photo/vidéo) pour campagnes SMO/SEA.',
-        'Impact : +20 % de ventes e-commerce en 1 an.',
+        'Coordination de projets digitaux de bout en bout, de la stratégie éditoriale à la création de contenu visuel pour le web et les réseaux sociaux.',
+        'Stratégie éditoriale : gestion du calendrier de contenu et du flux de publication du site web.',
+        'Maintenance du site web : gestion des tickets de maintenance liés au design et des mises à jour UX.',
+        'Production visuelle : visuels photo et vidéo pour les campagnes SMO/SEA.',
+        'Résultats : +20 % de ventes e-commerce en 1 an.',
       ],
       en: [
-        'End-to-end digital project management, editorial calendar, website UX maintenance, visual production (photo/video) for SMO/SEA campaigns.',
-        'Impact: +20% e-commerce sales in one year.',
+        'End-to-end coordination of digital projects, from editorial strategy to visual content for the web and social media.',
+        'Editorial strategy: managed the content calendar and the website publishing flow.',
+        'Website maintenance: handled design-related maintenance tickets and UX updates.',
+        'Visual production: photo and video visuals for SMO/SEA campaigns.',
+        'Results: +20% e-commerce sales in one year.',
       ],
     },
   },
@@ -186,7 +221,7 @@ export const experiences: Experience[] = [
       fr: 'Designer Broderie (Balmain) · Designer Studio (Indress)',
       en: 'Embroidery Designer (Balmain) · Studio Designer (Indress)',
     },
-    period: { fr: '2019', en: '2019' },
+    period: { fr: 'Oct. – Déc. 2019', en: 'Oct – Dec 2019' },
     location: 'Paris',
     bullets: { fr: [], en: [] },
   },
@@ -196,29 +231,43 @@ export const skillGroups: { label: Localized; items: Localized<string[]> }[] = [
   {
     label: { fr: 'Design & Prototypage', en: 'Design & Prototyping' },
     items: {
-      fr: ['Figma (Expert)', 'Storybook', 'Zeroheight', 'After Effects', 'Illustrator', 'Photoshop'],
-      en: ['Figma (Expert)', 'Storybook', 'Zeroheight', 'After Effects', 'Illustrator', 'Photoshop'],
+      fr: ['Figma (Expert)', 'After Effects', 'Photoshop', 'Illustrator', 'Storybook', 'Zeroheight', 'Vibecoding'],
+      en: ['Figma (Expert)', 'After Effects', 'Photoshop', 'Illustrator', 'Storybook', 'Zeroheight', 'Vibecoding'],
     },
   },
   {
-    label: { fr: 'IA & Vibecoding', en: 'AI & Vibecoding' },
+    label: { fr: 'Outils d’IA', en: 'AI tools' },
     items: {
-      fr: ['Claude Code', 'AI Skills', 'Prompt Engineering', 'Gemini', 'Midjourney', 'Adobe Firefly'],
-      en: ['Claude Code', 'AI Skills', 'Prompt Engineering', 'Gemini', 'Midjourney', 'Adobe Firefly'],
+      fr: ['Prompt Engineering', 'Claude Code', 'Midjourney', 'Adobe Firefly', 'Gemini'],
+      en: ['Prompt Engineering', 'Claude Code', 'Midjourney', 'Adobe Firefly', 'Gemini'],
     },
   },
   {
-    label: { fr: 'Product & Tech', en: 'Product & Tech' },
+    label: { fr: 'Produit & collaboration', en: 'Product & collaboration' },
     items: {
-      fr: ['Discovery', 'Design Ops', 'Design System', 'Specs .md', 'HTML/CSS (Handoff)', 'Jira', 'Confluence'],
-      en: ['Discovery', 'Design Ops', 'Design System', '.md specs', 'HTML/CSS (Handoff)', 'Jira', 'Confluence'],
+      fr: ['Jira', 'Confluence', 'Teams'],
+      en: ['Jira', 'Confluence', 'Teams'],
+    },
+  },
+  {
+    label: { fr: 'Développement', en: 'Development' },
+    items: {
+      fr: ['HTML & CSS (handoff design-to-dev)'],
+      en: ['HTML & CSS (design-to-dev handoff)'],
+    },
+  },
+  {
+    label: { fr: 'Compétences relationnelles', en: 'Interpersonal skills' },
+    items: {
+      fr: ['Communication transversale', 'Apprentissage adaptatif', 'Résolution de problèmes complexes'],
+      en: ['Cross-functional communication', 'Adaptive learning', 'Complex problem solving'],
     },
   },
 ];
 
 export const education: { title: Localized; school: string; period: string }[] = [
   {
-    title: { fr: 'Master Design UX/UI & Gestion de projet', en: 'Master’s in UX/UI Design & Project Management' },
+    title: { fr: 'Master Design UX/UI & Gestion de projet, en alternance', en: 'Master’s in UX/UI Design & Project Management, work-study' },
     school: 'Digital School of Paris',
     period: '2021 – 2023',
   },
@@ -228,15 +277,15 @@ export const education: { title: Localized; school: string; period: string }[] =
     period: '2016 – 2020',
   },
   {
-    title: { fr: 'MANAA — Arts Appliqués', en: 'MANAA — Applied Arts foundation year' },
+    title: { fr: 'Année préparatoire en Arts Appliqués (MANAA)', en: 'Applied Arts foundation year (MANAA)' },
     school: 'IMAD, Caen',
-    period: '',
+    period: '2018 – 2019',
   },
 ];
 
 export const languages: Localized<string[]> = {
-  fr: ['Français — Natif', 'Anglais — Courant', 'Espagnol — B1'],
-  en: ['French — Native', 'English — Fluent', 'Spanish — B1'],
+  fr: ['Français — Langue maternelle', 'Anglais — Courant', 'Espagnol — Compétences professionnelles limitées (B1)'],
+  en: ['French — Native', 'English — Fluent', 'Spanish — Limited working proficiency (B1)'],
 };
 
 export const interests: Localized<string[]> = {

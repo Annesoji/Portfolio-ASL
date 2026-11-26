@@ -1331,7 +1331,105 @@ Reasoning held from end to end: a need of the audience, a decision, a screen. An
     },
     attachment: 'vitalize',
     anchors: true,
-    followUps: ['rebrand', 'grdf', 'background'],
+    followUps: ['bloombar', 'rebrand', 'grdf'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    id: 'bloombar',
+    question: {
+      fr: "Parle-moi de Bloom Bar : comment a-t-elle créé l'univers visuel d'un nouveau produit ?",
+      en: 'Tell me about Bloom Bar: how did she create the visual world of a new product?',
+    },
+    chip: { fr: 'Bloom Bar, direction artistique', en: 'Bloom Bar, art direction' },
+    keywords: [
+      ['bloom bar', 9], ['bloombar', 9], ['bloom', 7], ['barre', 5], ['cereale', 5], ['fleur', 5], ['flower', 5],
+      ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4],
+    ],
+    answer: {
+      fr: {
+        standard: `### Contexte
+Projet de Master 2, en 2023 : inventer une marque et la direction artistique d'un nouveau produit. Bloom Bar : des barres de céréales aux fleurs, fabriquées en France.
+
+*Projet d'école : marque fictive.*
+
+### Problématique
+Une barre de céréales se perd au milieu de dizaines d'autres. Comment rendre désirable une saveur inattendue, la fleur, et donner envie de goûter ?
+
+### Son rôle
+Direction artistique, charte graphique et toutes les illustrations, dessinées en 3D sous Illustrator, jusqu'au packaging et à la page d'accueil.
+
+### La solution
+Un univers gourmand et joyeux, où chaque fleur devient un objet en volume que l'on a envie de croquer.
+
+### 1 · L'univers
+[[bloombar-hero]]
+
+- **Des fleurs en relief**, brillantes comme des bonbons : la fleur n'est plus un décor, elle devient l'ingrédient.
+- **Quatre couleurs franches**, rouge, rose, bleu et jaune, sur des fonds pastel : gourmand sans être enfantin.
+- **Une bibliothèque de fleurs** déclinée en dizaines de variantes, pour composer chaque visuel sans jamais se répéter.
+
+### 2 · Le packaging
+[[bloombar-box]]
+
+- **L'emballage reprend le volume des fleurs** : il semble gonflé, et le nom se lit en relief.
+- **Une barre par saveur, une couleur par barre** : on reconnaît le goût avant de lire l'étiquette.
+
+### 3 · De la structure à l'univers
+La structure de la page existait ; la direction artistique lui donne son identité. Faites défiler les deux versions.
+
+[[bloombar-screens]]
+
+### Ce que ce projet montre
+Une direction artistique complète, de l'illustration 3D au packaging : un savoir-faire visuel qui nourrit aujourd'hui ses interfaces.`,
+        express: `- **Contexte** : projet de Master 2 en 2023 — inventer une marque et la direction artistique de Bloom Bar, des barres de céréales aux fleurs. Projet d'école, marque fictive.
+- **Problématique** : rendre désirable une saveur inattendue, la fleur.
+- **Son rôle** : direction artistique, charte et illustrations 3D sous Illustrator, jusqu'au packaging et à la page d'accueil.
+- **Solution** : des fleurs en relief, quatre couleurs franches et un packaging qui reprend le même volume.`,
+      },
+      en: {
+        standard: `### Context
+Master's year 2 project, in 2023: invent a brand and the art direction for a new product. Bloom Bar: cereal bars with flowers, made in France.
+
+*School project: fictional brand.*
+
+### The problem
+A cereal bar gets lost among dozens of others. How do you make an unexpected flavour, the flower, desirable, and make people want to taste it?
+
+### Her role
+Art direction, brand guidelines and every illustration, drawn in 3D with Illustrator, down to the packaging and the home page.
+
+### The solution
+A joyful, indulgent world where each flower becomes an object in relief you want to bite into.
+
+### 1 · The world
+[[bloombar-hero]]
+
+- **Flowers in relief**, shiny like sweets: the flower is no longer decoration, it becomes the ingredient.
+- **Four bold colours**, red, pink, blue and yellow, on pastel backgrounds: indulgent without being childish.
+- **A library of flowers** in dozens of variants, to compose every visual without repeating itself.
+
+### 2 · The packaging
+[[bloombar-box]]
+
+- **The wrapper takes on the volume of the flowers**: it looks inflated, and the name reads in relief.
+- **One bar per flavour, one colour per bar**: you recognise the taste before reading the label.
+
+### 3 · From structure to world
+The page structure already existed; the art direction gives it its identity. Scroll both versions.
+
+[[bloombar-screens]]
+
+### What this project shows
+A complete art direction, from 3D illustration to packaging: a visual craft that feeds her interfaces today.`,
+        express: `- **Context**: Master's year 2 project in 2023 — invent a brand and the art direction for Bloom Bar, cereal bars with flowers. School project, fictional brand.
+- **Problem**: make an unexpected flavour, the flower, desirable.
+- **Her role**: art direction, brand guidelines and 3D illustrations in Illustrator, down to the packaging and the home page.
+- **Solution**: flowers in relief, four bold colours and packaging with the same volume.`,
+      },
+    },
+    anchors: true,
+    followUps: ['vitalize', 'rebrand', 'grdf'],
   },
 
   /* ------------------------------------------------------------------ */
