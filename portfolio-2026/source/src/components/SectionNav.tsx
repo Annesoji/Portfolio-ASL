@@ -19,7 +19,7 @@ export default function SectionNav({ links, label }: { links: SectionLink[]; lab
               onClick={() => go(l.id)}
               className="t-all inline-flex items-center gap-1.5 rounded-full border border-line bg-elevated px-3 py-1.5 text-xs font-medium text-ink hover:border-rule hover:bg-surface-2"
             >
-              <span className="font-display text-[11px] italic opacity-60">0{i + 1}</span>
+              <span className="font-display text-[11px] italic opacity-60">{String(i + 1).padStart(2, '0')}</span>
               {l.label}
             </button>
           </li>

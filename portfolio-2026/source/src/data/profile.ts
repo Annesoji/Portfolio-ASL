@@ -36,8 +36,8 @@ export const projects: Project[] = [
     id: 'covenant',
     intentId: 'covenant',
     title: {
-      fr: 'Banque d’investissement · Covenant monitoring assisté par l’IA',
-      en: 'Investment bank · AI-assisted covenant monitoring',
+      fr: 'Banque d’investissement · Suivi des clauses de crédit assisté par l’IA',
+      en: 'Investment bank · AI-assisted monitoring of loan clauses',
     },
     tag: { fr: '2026 · Crédit · IA', en: '2026 · Lending · AI' },
   },

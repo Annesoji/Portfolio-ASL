@@ -88,7 +88,7 @@ export default function RepoMap({ lang }: { lang: Lang }) {
           <ol className="mt-4 space-y-2.5">
             {e.parts.map((p, i) => (
               <li key={p.title} className="flex gap-2.5">
-                <span className="font-display text-[12px] font-medium italic leading-[1.5] text-accent-text">0{i + 1}</span>
+                <span className="font-display text-[12px] font-medium italic leading-[1.5] text-accent-text">{String(i + 1).padStart(2, '0')}</span>
                 <span className="min-w-0">
                   <span className="block text-[13px] font-semibold leading-snug text-ink">{p.title}</span>
                   <span className="block text-[12px] font-light leading-snug text-muted">{p.detail}</span>

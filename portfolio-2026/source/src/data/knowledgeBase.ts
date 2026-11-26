@@ -427,10 +427,10 @@ The file below is the real one: it is also the one the Design System page displa
   {
     id: 'covenant',
     question: {
-      fr: "Montre-moi l'étude de cas Covenant monitoring : comment a-t-elle conçu un suivi des covenants assisté par IA pour une banque d'investissement ?",
-      en: 'Show me the Covenant monitoring case study: how did she design AI-assisted covenant monitoring for an investment bank?',
+      fr: "Montre-moi le suivi des clauses de crédit : comment a-t-elle conçu ce suivi assisté par IA pour une banque d'investissement ?",
+      en: 'Show me the loan clause monitoring project: how did she design this AI-assisted monitoring for an investment bank?',
     },
-    chip: { fr: 'Banque · Covenant monitoring', en: 'Bank · Covenant monitoring' },
+    chip: { fr: 'Banque · Clauses de crédit et IA', en: 'Bank · Loan clauses and AI' },
     keywords: [
       ['covenant', 8], ['covenants', 8], ['monitoring', 4], ['compliance certificate', 6], ['breach', 5],
       ['waiver', 4], ['matching', 4], ['rapprochement', 4], ['extraction', 4], ['mycreditapp', 5],
@@ -441,6 +441,8 @@ The file below is the real one: it is also the one the Design System page displa
       fr: {
         standard: `### Contexte
 Dans une **banque d'investissement**, le métier Trade Finance contrôle ses covenants, certificat après certificat. Un projet d'un mois, en binôme avec un développeur.
+
+*Un covenant est un engagement inscrit dans un contrat de crédit, comme un ratio financier à respecter, que la banque vérifie à chaque période.*
 
 ### Problématique
 Ce contrôle se faisait à la main, dans un outil séparé du reste du système, en passant d'un module à l'autre. Les irritants : des relances répétées pour obtenir les pièces, un délai entre la réception et la saisie, des erreurs de saisie, des calculs refaits par l'analyste.
@@ -507,7 +509,7 @@ Le design la rend lisible : un message indique quel document est attendu, et la
 - Première itération livrée dans le dépôt central.
 - Approche réutilisée sur d'autres objets métiers.
 - **Piste suivante** : afficher un indice de confiance de l'IA pour chaque correspondance proposée.`,
-        express: `- **Contexte** : contrôle des covenants de Trade Finance dans une banque d'investissement.
+        express: `- **Contexte** : contrôle des covenants (les engagements inscrits dans les contrats de crédit) de Trade Finance, dans une banque d'investissement.
 - **Problématique** : un contrôle manuel, dans un outil séparé, avec relances, délais et erreurs de saisie.
 - **Son rôle** : Product Designer, en binôme avec un développeur — ateliers, parcours, prototype avec Claude Code.
 - **Solution** : l'IA lit et propose, l'analyste valide chaque valeur face à sa source ; certificat manquant, correspondances multiples, échec de l'IA et doublons sont traités.
@@ -521,6 +523,8 @@ Le design la rend lisible : un message indique quel document est attendu, et la
       en: {
         standard: `### Context
 At an **investment bank**, the Trade Finance business checks its covenants, certificate after certificate. A one-month project, paired with one developer.
+
+*A covenant is a commitment written into a loan agreement, such as a financial ratio to respect, that the bank checks every period.*
 
 ### The problem
 That control was done by hand, in a tool separate from the rest of the system, moving from one module to another. The pain points: repeated reminders to obtain the documents, a delay between receipt and entry, entry errors, calculations redone by the analyst.
@@ -587,7 +591,7 @@ The design makes it readable: a message states which document is expected, and t
 - First iteration delivered to the central repository.
 - Approach reused on other business objects.
 - **Next path**: show an AI confidence score for each suggested match.`,
-        express: `- **Context**: Trade Finance covenant control at an investment bank.
+        express: `- **Context**: Trade Finance covenant control (the commitments written into loan agreements) at an investment bank.
 - **Problem**: a manual control, in a separate tool, with reminders, delays and entry errors.
 - **Her role**: Product Designer, paired with one developer — workshops, journeys, prototype with Claude Code.
 - **Solution**: the AI reads and suggests, the analyst validates each value against its source; missing certificate, multiple matches, AI failure and duplicates are handled.
@@ -1947,7 +1951,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 | Projet | Sujet | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Cadrer une équipe UX augmentée par l'IA | ==+5 modules sur 17== · ==~1 500 utilisateurs== |
-| **Banque d'investissement** | Covenant monitoring assisté par IA | Parcours avant / après · prototype navigable |
+| **Banque d'investissement** | Suivi des clauses de crédit assisté par l'IA | Parcours avant / après · prototype navigable |
 | **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |
 
 ### Projets personnels
@@ -1956,7 +1960,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 - **Bloom Bar · Direction artistique et illustration 3D** (2023, Master 2) : direction artistique et illustration 3D d'une marque de barres aux fleurs.
 - **McDonald's · Rebranding pour une nouvelle cible** (2021, Master 1) : repositionner une marque connue pour une nouvelle cible.`,
         express: `- **BNP Paribas CIB** : équipe UX augmentée par l'IA — ==+5 modules sur 17==.
-- **Covenant monitoring** : parcours avant / après, prototype navigable.
+- **Clauses de crédit** : suivi assisté par l'IA, parcours avant / après, prototype navigable.
 - **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.
 - **Projets personnels** : Design System du portfolio, Vitaliz, Bloom Bar, McDonald's.`,
       },
@@ -1968,7 +1972,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 | Project | Topic | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Framing an AI-augmented UX team | ==+5 of 17 modules== · ==~1,500 users== |
-| **Investment bank** | AI-assisted covenant monitoring | Before / after journey · navigable prototype |
+| **Investment bank** | AI-assisted monitoring of loan clauses | Before / after journey · navigable prototype |
 | **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |
 
 ### Personal projects
@@ -1977,7 +1981,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 - **Bloom Bar · Art direction and 3D illustration** (2023, Master's year 2): art direction and 3D illustration for a brand of flower bars.
 - **McDonald's · Rebranding for a new audience** (2021, Master's year 1): repositioning a well-known brand for a new audience.`,
         express: `- **BNP Paribas CIB**: AI-augmented UX team — ==+5 of 17 modules==.
-- **Covenant monitoring**: before / after journey, navigable prototype.
+- **Loan clauses**: AI-assisted monitoring, before / after journey, navigable prototype.
 - **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.
 - **Personal projects**: portfolio Design System, Vitaliz, Bloom Bar, McDonald's.`,
       },
