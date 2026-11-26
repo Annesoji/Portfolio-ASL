@@ -11,7 +11,7 @@ import type { UIStrings } from '../data/i18n';
 import type { Lang, Localized } from '../types';
 
 type DsPage = DsPageBase & { path: string };
-import { FigureTiles, PrincipleCards } from './CaseVisuals';
+import { FigureTiles, GrdfCompare, PrincipleCards } from './CaseVisuals';
 import FlowBoard from './FlowBoard';
 import Markdown from './Markdown';
 import Monogram from './Monogram';
@@ -504,6 +504,9 @@ function Specimen({ id, lang, t }: { id: string; lang: Lang; t: UIStrings }) {
           </div>
         </div>
       );
+
+    case 'compare':
+      return <GrdfCompare lang={lang} />;
 
     case 'figures':
       return <FigureTiles lang={lang} />;

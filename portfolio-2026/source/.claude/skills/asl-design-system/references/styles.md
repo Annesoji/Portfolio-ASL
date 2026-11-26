@@ -119,7 +119,7 @@ Une seule bibliothèque, `lucide-react`, entre 12 et 18 px.
 
 - Dans un bouton avec libellé, l'icône est toujours à droite du libellé.
 - Dans un tag ou devant un nom (un fichier, un rôle), elle est devant : elle qualifie l'information.
-- Dans un lien écrit comme du texte (LinkedIn, téléphone, Design System dans le menu), elle est devant aussi : elle dit de quel lien il s'agit. Ce n'est pas un bouton : pas de fond, pas de contour.
+- Dans un lien écrit comme du texte (LinkedIn, téléphone), elle est devant aussi : elle dit de quel lien il s'agit. Ce n'est pas un bouton : pas de fond, pas de contour.
 
 ### Règles
 

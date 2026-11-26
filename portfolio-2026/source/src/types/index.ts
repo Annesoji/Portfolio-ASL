@@ -2,7 +2,7 @@ export type Lang = 'fr' | 'en';
 export type Theme = 'light' | 'dark';
 export type ModelId = 'standard' | 'express' | 'deepdive';
 export type ActionId = 'cv' | 'email';
-export type AttachmentId = 'skill' | 'covenant' | 'ds';
+export type AttachmentId = 'skill' | 'covenant' | 'ds' | 'grdf';
 
 export type Localized<T = string> = Record<Lang, T>;
 
@@ -30,7 +30,7 @@ export interface Intent {
   actions?: ActionId[];
   attachment?: AttachmentId;
   /** Schéma de flow affiché en tête de réponse */
-  flow?: 'covenant' | 'ux';
+  flow?: 'covenant' | 'ux' | 'grdf';
   /** Longue réponse : affiche une barre d'ancres vers ses sections (titres ###) */
   anchors?: boolean;
 }

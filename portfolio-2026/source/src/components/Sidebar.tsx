@@ -1,6 +1,6 @@
-import { ArrowDownToLine, LayoutGrid, Linkedin, Mail, Moon, Phone, Plus, Sun, X } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowDownToLine, ChevronDown, Folder, FolderOpen, Linkedin, Mail, Moon, Phone, Plus, Sun, X } from 'lucide-react';
 import type { UIStrings } from '../data/i18n';
-import { dsStrings } from '../data/designSystem';
 import { contact, projects } from '../data/profile';
 import type { Lang, Theme } from '../types';
 import Monogram from './Monogram';
@@ -18,6 +18,8 @@ interface Props {
   onNew: () => void;
   onProject: (id: string) => void;
   onDesignSystem: () => void;
+  /** L'onglet Design System est affiché */
+  designSystemActive: boolean;
   onCV: () => void;
   onEmail: () => void;
   setLang: (l: Lang) => void;
@@ -65,6 +67,10 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Sidebar(p: Props) {
   const { t, lang } = p;
+  const [folderOpen, setFolderOpen] = useState(false);
+  // Le dossier s'ouvre de lui-même quand son projet est affiché
+  const showFolder = folderOpen || p.designSystemActive;
+  const FolderIcon = showFolder ? FolderOpen : Folder;
   return (
     <>
       {/* Overlay mobile */}
@@ -139,6 +145,48 @@ export default function Sidebar(p: Props) {
               );
             })}
           </ul>
+
+          {/* Projets personnels : un dossier repliable, fermé par défaut pour alléger le menu */}
+          <div className="mt-3">
+            <button
+              onClick={() => setFolderOpen((o) => !o)}
+              aria-expanded={showFolder}
+              aria-controls="personal-projects"
+              className="t-all -mx-2 flex w-[calc(100%+1rem)] items-center gap-2.5 rounded-2xl px-2 py-2 text-left hover:bg-surface-2"
+            >
+              <FolderIcon size={15} className="shrink-0 text-accent-text" aria-hidden />
+              <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-ink">{t.personalProjects}</span>
+              <span className="text-[11px] font-normal text-muted">1</span>
+              <ChevronDown size={15} className={`t-all shrink-0 text-muted ${showFolder ? 'rotate-180' : ''}`} aria-hidden />
+            </button>
+            {showFolder && (
+              <ul id="personal-projects" className="-mx-2 mt-1 pl-3">
+                <li>
+                  <button
+                    onClick={p.onDesignSystem}
+                    aria-current={p.designSystemActive ? 'page' : undefined}
+                    className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
+                      p.designSystemActive ? 'bg-surface-2' : 'hover:bg-surface-2'
+                    }`}
+                  >
+                    <span
+                      className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
+                        p.designSystemActive ? 'text-vermillion' : 'text-accent-text'
+                      }`}
+                    >
+                      01
+                    </span>
+                    <span className="min-w-0">
+                      <span className={`block text-[13.5px] leading-snug text-ink ${p.designSystemActive ? 'font-semibold' : 'font-normal'}`}>
+                        {t.dsProject.title}
+                      </span>
+                      <span className="mt-1 block text-[11px] font-normal text-muted">{t.dsProject.tag}</span>
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            )}
+          </div>
         </nav>
 
         {/* Accès rapide & contact */}
@@ -170,9 +218,6 @@ export default function Sidebar(p: Props) {
             <a href={contact.phoneHref} className="t-all inline-flex items-center gap-1.5 hover:text-ink">
               <Phone size={13} className="text-accent-text" aria-hidden /> {contact.phone}
             </a>
-            <button onClick={p.onDesignSystem} className="t-all inline-flex items-center gap-1.5 hover:text-ink">
-              <LayoutGrid size={13} className="text-accent-text" aria-hidden /> {dsStrings[lang].link}
-            </button>
           </div>
 
           {/* Contrôles */}

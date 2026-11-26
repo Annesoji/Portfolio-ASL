@@ -1,4 +1,6 @@
-import { ArrowRight, Bot, Check, ClipboardList, Code2, PenTool, UserCheck, X } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, ArrowUpRight, Bot, Check, ChevronsLeftRight, ClipboardList, Code2, PenTool, UserCheck, X } from 'lucide-react';
+import { GRDF_PROTOTYPE, GRDF_PROTOTYPE_LINK, GRDF_SITE, grdfStrings } from '../data/grdfFlow';
 import type { Lang, Localized } from '../types';
 
 /**
@@ -307,5 +309,108 @@ export function SkillLessons({ lang }: { lang: Lang }) {
         </li>
       ))}
     </ol>
+  );
+}
+
+/* ------------------------------------------------------------------ GRDF : images et prototype */
+
+const grdfImage = (file: string) => `${import.meta.env.BASE_URL}grdf/${file}.jpg`;
+
+const COMPARE: Localized<{ before: string; after: string; slider: string; caption: string }> = {
+  fr: { before: 'Avant', after: 'Après', slider: 'Déplacer la séparation entre avant et après', caption: 'La page d’accueil sur ordinateur : Act4Gaz, puis justdecarb.grdf.fr. Faites glisser la séparation.' },
+  en: { before: 'Before', after: 'After', slider: 'Move the divider between before and after', caption: 'The home page on desktop: Act4Gaz, then justdecarb.grdf.fr. Drag the divider.' },
+};
+
+/** Comparaison interactive : une séparation que l'on fait glisser entre l'ancien écran et le nouveau. */
+export function GrdfCompare({ lang }: { lang: Lang }) {
+  const t = COMPARE[lang];
+  const [pos, setPos] = useState(50);
+  return (
+    <figure className="my-4">
+      <div className="relative aspect-[16/10] select-none overflow-hidden rounded-2xl border border-line bg-elevated">
+        <img src={grdfImage('apres-accueil')} alt={t.after} className="absolute inset-0 h-full w-full object-cover object-top" />
+        <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+          <img src={grdfImage('avant-accueil')} alt={t.before} className="absolute inset-0 h-full w-full object-cover object-top" />
+        </div>
+        <span className="tag absolute left-3 top-3 bg-ink text-bg">{t.before}</span>
+        <span className="tag absolute right-3 top-3 bg-ink text-bg">{t.after}</span>
+        <div className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-1/2 bg-ink" style={{ left: `${pos}%` }}>
+          <span className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-bg">
+            <ChevronsLeftRight size={16} aria-hidden />
+          </span>
+        </div>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={pos}
+          onChange={(e) => setPos(Number(e.target.value))}
+          aria-label={t.slider}
+          className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
+        />
+      </div>
+      <figcaption className="mt-2 text-[12.5px] font-light leading-snug text-muted">{t.caption}</figcaption>
+    </figure>
+  );
+}
+
+type GrdfSet = 'persona' | 'map' | 'moodboard' | 'screens';
+
+const GRDF_SHOTS: Record<GrdfSet, { file: string; caption: Localized }[]> = {
+  persona: [{ file: 'persona', caption: { fr: 'Le persona : Julien, ses besoins, ce qu’il aime, ses frustrations', en: 'The persona: Julien, his needs, likes and frustrations' } }],
+  map: [{ file: 'parcours', caption: { fr: 'Carte d’expérience sur l’ancienne plateforme : actions, réflexions, émotions', en: 'Experience map on the old platform: actions, thoughts, emotions' } }],
+  moodboard: [{ file: 'moodboard', caption: { fr: 'Moodboard de la nouvelle identité', en: 'Moodboard for the new identity' } }],
+  screens: [
+    { file: 'apres-accueil', caption: { fr: 'La une : un contenu à la fois, puis les chiffres clés', en: 'Front page: one piece of content at a time, then the key figures' } },
+    { file: 'apres-contenus', caption: { fr: 'Les contenus : une thématique, puis un filtre par format', en: 'Content: a topic, then a filter by format' } },
+  ],
+};
+
+export function GrdfGallery({ lang, set }: { lang: Lang; set: GrdfSet }) {
+  const shots = GRDF_SHOTS[set];
+  const single = shots.length === 1;
+  return (
+    // Le persona est une image en hauteur : on la limite en largeur pour qu'elle tienne à l'écran sans défiler
+    <ul className={`my-4 grid grid-cols-1 gap-3 ${single ? '' : 'sm:grid-cols-2'} ${set === 'persona' ? 'max-w-[420px]' : ''}`}>
+      {shots.map((shot) => (
+        <li key={shot.file} className="flex">
+          {/* La carte prend toute la hauteur de sa ligne : les légendes ont ainsi la même hauteur, celle de la plus longue */}
+          <a href={grdfImage(shot.file)} target="_blank" rel="noopener noreferrer" className="t-all flex w-full flex-col overflow-hidden rounded-2xl border border-line bg-elevated hover:border-rule">
+            {/* Une image seule s'affiche en entier ; une paire est recadrée à la même hauteur */}
+            <img src={grdfImage(shot.file)} alt={shot.caption[lang]} loading="lazy" className={single ? 'block h-auto w-full' : 'block aspect-[16/10] w-full object-cover object-top'} />
+            <span className="block flex-1 border-t border-line px-4 py-2.5 text-[12.5px] font-light leading-snug text-muted">{shot.caption[lang]}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Le prototype Figma, en version mobile, intégré à la fin de l'étude de cas : il charge pendant la lecture. */
+export function GrdfPrototype({ id, lang }: { id: string; lang: Lang }) {
+  const t = grdfStrings[lang];
+  return (
+    <section id={id} className="mt-6 scroll-mt-16 rounded-3xl border border-line bg-elevated p-5">
+      <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto]">
+        <div className="min-w-0">
+          <p className="eyebrow text-muted">{t.protoEyebrow}</p>
+          <h3 className="mt-1 font-display text-[1.2rem] font-semibold leading-tight tracking-[-0.02em] text-ink">{t.ctaTitle}</h3>
+          <p className="mt-2 text-[13.5px] font-light leading-relaxed text-muted">{t.ctaText}</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a href={GRDF_SITE} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              {t.site} <ArrowUpRight size={15} aria-hidden />
+            </a>
+            <a href={GRDF_PROTOTYPE_LINK} target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              {t.openFigma} <ArrowUpRight size={15} aria-hidden />
+            </a>
+          </div>
+        </div>
+        {/* ds-ignore: le prototype est toujours clair, son support reste blanc dans les deux thèmes */}
+        <div className="relative mx-auto aspect-[375/700] w-[300px] max-w-full overflow-hidden rounded-xl border border-rule bg-white">
+          {/* Le cadre Figma dépasse en haut et en bas : ses flèches de navigation sortent du champ et ne recouvrent plus le menu du prototype */}
+          <iframe src={GRDF_PROTOTYPE} title={t.viewerTitle} loading="eager" allowFullScreen className="absolute inset-x-0 -top-10 block h-[calc(100%+5rem)] w-full border-0" />
+        </div>
+      </div>
+    </section>
   );
 }

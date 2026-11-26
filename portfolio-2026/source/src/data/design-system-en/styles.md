@@ -1,4 +1,4 @@
-<!-- source-hash: a4aef17224d1 -->
+<!-- source-hash: 8377417deca8 -->
 # Styles
 
 Colour, typography, shapes, elevation, icons. The source of truth for values remains `src/index.css`:
@@ -120,7 +120,7 @@ A single library, `lucide-react`, between 12 and 18 px.
 
 - In a button with a label, the icon is always to the right of the label.
 - In a tag or before a name (a file, a role), it comes first: it qualifies the information.
-- In a link written as text (LinkedIn, phone, Design System in the menu), it comes first too: it says which link it is. It is not a button: no background, no outline.
+- In a link written as text (LinkedIn, phone), it comes first too: it says which link it is. It is not a button: no background, no outline.
 
 ### Rules
 

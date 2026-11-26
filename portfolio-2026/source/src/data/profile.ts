@@ -30,7 +30,7 @@ export const projects: Project[] = [
       fr: 'Cadrer une équipe UX augmentée par l’IA',
       en: 'Framing an AI-augmented UX team',
     },
-    tag: { fr: 'Banque · Design Ops IA', en: 'Banking · AI Design Ops' },
+    tag: { fr: '2026 · Banque · Design Ops IA', en: '2026 · Banking · AI Design Ops' },
   },
   {
     id: 'covenant',
@@ -39,25 +39,16 @@ export const projects: Project[] = [
       fr: 'Covenant monitoring assisté par IA',
       en: 'AI-assisted covenant monitoring',
     },
-    tag: { fr: 'Banque d’investissement · IA', en: 'Investment bank · AI' },
+    tag: { fr: '2026 · Banque d’investissement · IA', en: '2026 · Investment bank · AI' },
   },
   {
     id: 'grdf',
     intentId: 'grdf',
     title: {
-      fr: 'GRDF — Refonte éco-conçue & RGAA',
-      en: 'GRDF — Eco-designed redesign & RGAA',
+      fr: 'GRDF Refonte éco-conçue et RGAA',
+      en: 'GRDF Eco-designed redesign and RGAA',
     },
-    tag: { fr: 'Énergie · A11y', en: 'Energy · A11y' },
-  },
-  {
-    id: 'cdc',
-    intentId: 'cdc',
-    title: {
-      fr: 'Caisse des Dépôts — Refonte d’un outil métier de gestion de carrière',
-      en: 'Caisse des Dépôts — Redesign of a career-management business tool',
-    },
-    tag: { fr: 'Secteur public · Outil métier', en: 'Public sector · Business tool' },
+    tag: { fr: '2024 · Énergie · Accessibilité', en: '2024 · Energy · Accessibility' },
   },
 ];
 

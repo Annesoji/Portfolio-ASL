@@ -672,7 +672,7 @@ From September 2022 to December 2023, Anne-Sophie was a Product Designer at **Ke
       fr: 'Comment a-t-elle mené la refonte éco-conçue et accessible de la plateforme GRDF (Act4Gaz → justdecarb.grdf.fr) ?',
       en: 'How did she lead the eco-designed, accessible redesign of the GRDF platform (Act4Gaz → justdecarb.grdf.fr)?',
     },
-    chip: { fr: 'GRDF — éco-conception & RGAA', en: 'GRDF — eco-design & RGAA' },
+    chip: { fr: 'GRDF Refonte éco-conçue et RGAA', en: 'GRDF Eco-designed redesign and RGAA' },
     keywords: [
       ['grdf', 6], ['rgaa', 5], ['accessib', 5], ['a11y', 5], ['wcag', 4], ['eco', 3], ['ecoindex', 6],
       ['eco conception', 5], ['eco design', 5], ['ecoconcep', 5], ['justdecarb', 6], ['act4gaz', 6],
@@ -682,23 +682,75 @@ From September 2022 to December 2023, Anne-Sophie was a Product Designer at **Ke
     answer: {
       fr: {
         standard: `### Contexte
-De janvier à mai 2024, Anne-Sophie est UX UI Designer pour **GRDF** (via mc2i), sur la plateforme **Act4Gaz**.
+**GRDF** (via mc2i), janvier – mai 2024. La plateforme **Act4Gaz** devient **justdecarb.grdf.fr**.
+
+- **Ambition** : faire de GRDF une référence de la décarbonation en France.
+- **Cadre** : une refonte en ==trois mois==, pensée **mobile first**.
 
 ### Problématique
-Refondre et rebrander la plateforme, devenue **justdecarb.grdf.fr**, pour en faire une expérience performante, accessible (RGAA) et éco-conçue.
+Beaucoup de contenus, mais des lecteurs perdus : navigation complexe, contenu mal hiérarchisé, formats mélangés, liens cassés, aucun partage, lecture difficile sur mobile.
+
+Deux exigences en plus : l'**accessibilité** (RGAA) et l'**éco-conception**.
 
 ### Son rôle
-Elle réalise les audits, définit la nouvelle identité graphique, crée le Design System et conçoit les maquettes et les prototypes.
+UX UI Designer : audits, recherche, identité graphique, Design System, maquettes et prototype.
 
 ### La solution
-- **Audits** UX et accessibilité (RGAA) de l'existant.
-- **Nouvelle identité graphique** pour la plateforme.
-- **Design System dédié**, sobre et accessible.
-- **Maquettes mobile-first**.
+Trouver un contenu en trois gestes : la une, un filtre par thématique et par format, la recherche.
+
+### 1 · Le persona
+Julien, 28 ans, ingénieur en énergies renouvelables.
+
+[[grdf-persona]]
+
+### 2 · La carte d'expérience
+Son parcours sur l'ancienne plateforme : là où il décroche.
+
+[[grdf-map]]
+
+### 3 · Le parcours, avant et après
+Chaque friction de l'ancien parcours trouve sa réponse dans le nouveau.
+
+[[flow]]
+
+### 4 · Le moodboard et les partis pris
+[[grdf-moodboard]]
+
+**Améliorations et décisions graphiques**
+
+- **Glassmorphisme maîtrisé** : le panneau translucide floute la photo derrière le texte. Le contraste et la lisibilité restent stables, quelle que soit l'image.
+- **La couleur porte un sens, jamais seule** : deux verts et un bleu pour les thématiques et les actions, toujours doublés d'un libellé ou d'une icône.
+- **De l'air** : un fond clair, une idée par bloc. Moins de charge cognitive, la page se balaie.
+- **Hiérarchie typographique nette** : grands titres, texte lisible, chiffres clés au trait qui se voient sans concurrencer le texte.
+- **Zones d'action généreuses** : boutons larges et espacés, pensés pour le pouce.
+
+**Optimisation de la navigation**
+
+- **Un menu toujours visible**, identique sur chaque page : plus de bouton « Menu », et un repère stable au clavier comme au lecteur d'écran.
+- **Des parcours courts** : la une, un filtre ou la recherche mènent au contenu. Moins de pages chargées, moins de données échangées.
+- **Rien ne bouge sans le lecteur** : fini le carrousel automatique. Un contenu à la fois, à lire, passer ou reprendre.
+- **Le format annoncé avant le clic** : lecture, audio ou vidéo. Chacun choisit, sans lancer une vidéo par erreur.
+- **Une barre fixe en bas sur mobile** : trois rubriques sous le pouce, chacune avec son libellé.
+
+### 5 · Les écrans
+Mobile first, puis ordinateur, à partir d'un Design System dédié.
+
+[[grdf-screens]]
+
+### 6 · Avant / Après
+[[grdf-compare]]
+
+### Accessibilité
+- **Audit RGAA** de l'existant, pour partir des blocages réels.
+- **Jamais la couleur seule** : thématique et format sont écrits, avec une icône.
+- **Des boutons explicites** : « Retour », « Lire », « Passer ».
+- **Le lecteur garde la main** : plus de défilement automatique à la une.
+- **Des composants accessibles** dès le Design System.
 
 ### Impact
-- ==Note C EcoIndex== — performance environnementale.
-- Conformité ==RGAA== garantie.`,
+- ==Note C EcoIndex==
+- Conformité ==RGAA==
+- En ligne : [justdecarb.grdf.fr](https://justdecarb.grdf.fr/)`,
         express: `- **Contexte** : plateforme Act4Gaz de GRDF, devenue **justdecarb.grdf.fr** (janv. – mai 2024).
 - **Problématique** : refondre et rebrander, avec une exigence d'accessibilité (RGAA) et d'éco-conception.
 - **Son rôle** : audits, identité graphique, Design System, maquettes et prototypes.
@@ -712,23 +764,75 @@ Elle réalise les audits, définit la nouvelle identité graphique, crée le Des
       },
       en: {
         standard: `### Context
-From January to May 2024, Anne-Sophie was a UX/UI Designer for **GRDF** (through mc2i), on the **Act4Gaz** platform.
+**GRDF** (through mc2i), January – May 2024. The **Act4Gaz** platform becomes **justdecarb.grdf.fr**.
+
+- **Ambition**: make GRDF a reference in decarbonisation in France.
+- **Frame**: a redesign in ==three months==, designed **mobile first**.
 
 ### The problem
-Redesign and rebrand the platform, now **justdecarb.grdf.fr**, into an experience that performs well, is accessible (RGAA) and eco-designed.
+A lot of content, but lost readers: complex navigation, poorly ranked content, mixed formats, broken links, no sharing, difficult reading on mobile.
+
+Two further requirements: **accessibility** (RGAA) and **eco-design**.
 
 ### Her role
-She ran the audits, defined the new visual identity, created the Design System and designed the mockups and prototypes.
+UX/UI Designer: audits, research, visual identity, Design System, mockups and prototype.
 
 ### The solution
-- UX and accessibility (RGAA) **audits** of the existing platform.
-- **New visual identity** for the platform.
-- **Dedicated Design System**, lean and accessible.
-- **Mobile-first mockups**.
+Find content in three moves: the front page, a filter by topic and by format, the search.
+
+### 1 · The persona
+Julien, 28, a renewable energy engineer.
+
+[[grdf-persona]]
+
+### 2 · The experience map
+His journey on the old platform: where he drops off.
+
+[[grdf-map]]
+
+### 3 · The journey, before and after
+Every pain point of the old journey finds its answer in the new one.
+
+[[flow]]
+
+### 4 · The moodboard and design choices
+[[grdf-moodboard]]
+
+**Visual improvements and decisions**
+
+- **Controlled glassmorphism**: the translucent panel blurs the photo behind the text. Contrast and readability stay stable, whatever the image.
+- **Colour carries meaning, never alone**: two greens and a blue for topics and actions, always doubled with a label or an icon.
+- **Breathing room**: a light background, one idea per block. Less cognitive load; the page can be scanned.
+- **Clear typographic hierarchy**: large headings, readable text, outlined key figures that show without competing with the text.
+- **Generous action areas**: wide, well-spaced buttons, designed for the thumb.
+
+**Navigation optimisation**
+
+- **An always-visible menu**, identical on every page: no more “Menu” button, and a stable landmark for keyboard and screen reader users.
+- **Short journeys**: the front page, a filter or the search lead to the content. Fewer pages loaded, less data exchanged.
+- **Nothing moves without the reader**: the automatic carousel is gone. One piece of content at a time, to read, skip or come back to.
+- **Format announced before the click**: reading, audio or video. Everyone chooses, and no video is launched by mistake.
+- **Fixed bottom bar on mobile**: three sections under the thumb, each with its label.
+
+### 5 · The screens
+Mobile first, then desktop, from a dedicated Design System.
+
+[[grdf-screens]]
+
+### 6 · Before / After
+[[grdf-compare]]
+
+### Accessibility
+- **RGAA audit** of the existing platform, to start from the real blockers.
+- **Never colour alone**: topic and format are written out, with an icon.
+- **Explicit buttons**: “Back”, “Read”, “Skip”.
+- **The reader stays in control**: no more auto-advancing front page.
+- **Accessible components** from the Design System up.
 
 ### Impact
-- ==EcoIndex grade C== — environmental performance.
-- ==RGAA== compliance ensured.`,
+- ==EcoIndex grade C==
+- ==RGAA== compliance
+- Live: [justdecarb.grdf.fr](https://justdecarb.grdf.fr/)`,
         express: `- **Context**: GRDF's Act4Gaz platform, now **justdecarb.grdf.fr** (Jan – May 2024).
 - **Problem**: redesign and rebrand, with accessibility (RGAA) and eco-design requirements.
 - **Her role**: audits, visual identity, Design System, mockups and prototypes.
@@ -741,6 +845,9 @@ She ran the audits, defined the new visual identity, created the Design System a
 - **Mobile-first**: designing for the small screen first forces content prioritisation.`,
       },
     },
+    attachment: 'grdf',
+    flow: 'grdf',
+    anchors: true,
     followUps: ['covenant', 'designsystem', 'impact'],
   },
 
@@ -1482,35 +1589,31 @@ The button below opens a pre-filled email with the subject of your choice.`,
     ],
     answer: {
       fr: {
-        standard: `Quatre études de cas, à explorer dans la barre latérale ou via les questions ci-dessous.
+        standard: `Trois études de cas, à explorer dans la barre latérale ou via les questions ci-dessous.
 
 | Projet | Sujet | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Cadrer une équipe UX augmentée par l'IA | ==+5 modules sur 17== · ==~1 500 utilisateurs== |
 | **Banque d'investissement** | Covenant monitoring assisté par IA | Parcours avant / après · prototype navigable |
-| **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |
-| **Caisse des Dépôts** | Refonte d'un outil métier de gestion de carrière | Entretiens, ateliers de co-création, tests utilisateurs |`,
+| **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |`,
         express: `- **BNP Paribas CIB** : équipe UX augmentée par l'IA — ==+5 modules sur 17==.
 - **Covenant monitoring** : parcours avant / après, prototype navigable.
-- **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.
-- **Caisse des Dépôts** : refonte d'un outil métier de gestion de carrière.`,
+- **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.`,
       },
       en: {
-        standard: `Four case studies, to explore in the sidebar or through the questions below.
+        standard: `Three case studies, to explore in the sidebar or through the questions below.
 
 | Project | Topic | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Framing an AI-augmented UX team | ==+5 of 17 modules== · ==~1,500 users== |
 | **Investment bank** | AI-assisted covenant monitoring | Before / after journey · navigable prototype |
-| **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |
-| **Caisse des Dépôts** | Redesign of a career-management business tool | Interviews, co-creation workshops, user testing |`,
+| **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |`,
         express: `- **BNP Paribas CIB**: AI-augmented UX team — ==+5 of 17 modules==.
 - **Covenant monitoring**: before / after journey, navigable prototype.
-- **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.
-- **Caisse des Dépôts**: redesign of a career-management business tool.`,
+- **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.`,
       },
     },
-    followUps: ['bnp', 'covenant', 'grdf', 'cdc'],
+    followUps: ['bnp', 'covenant', 'grdf'],
   },
 
   /* ------------------------------------------------------------------ */

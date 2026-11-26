@@ -1,6 +1,7 @@
 import { ArrowUpRight, FileText, LayoutGrid, Mail, Play, Square } from 'lucide-react';
 import { dsStrings } from '../data/designSystem';
 import { covenantBoard, flowStrings } from '../data/covenantFlow';
+import { grdfBoard, grdfStrings } from '../data/grdfFlow';
 import { uxBoard } from '../data/uxFlow';
 import { getAnswerText, getIntent } from '../data/knowledgeBase';
 import type { UIStrings } from '../data/i18n';
@@ -10,7 +11,7 @@ import FlowBoard from './FlowBoard';
 import Markdown from './Markdown';
 import Monogram from './Monogram';
 import RepoMap from './RepoMap';
-import { FigureTiles, PrincipleCards, RelaySteps, RoleCards, SkillLessons, SkillTest } from './CaseVisuals';
+import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RelaySteps, RoleCards, SkillLessons, SkillTest } from './CaseVisuals';
 import SectionNav, { type SectionLink } from './SectionNav';
 import SkillPreview from './SkillPreview';
 
@@ -23,7 +24,7 @@ interface Props {
   isLast: boolean;
   onAction: (a: ActionId) => void;
   onFollowUp: (intentId: string) => void;
-  onOpenPrototype: () => void;
+  onOpenPrototype: (id: 'covenant') => void;
   onOpenDesignSystem: () => void;
 }
 
@@ -55,8 +56,14 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
     <FlowBoard
       id={`${message.id}-flow`}
       lang={lang}
-      board={intent.flow === 'covenant' ? covenantBoard : uxBoard}
-      cta={intent.flow === 'covenant' ? { label: flowStrings[lang].open, onClick: onOpenPrototype } : undefined}
+      board={intent.flow === 'covenant' ? covenantBoard : intent.flow === 'grdf' ? grdfBoard : uxBoard}
+      cta={
+        intent.flow === 'covenant'
+          ? { label: flowStrings[lang].open, onClick: () => onOpenPrototype('covenant') }
+          : intent.flow === 'grdf'
+            ? { label: grdfStrings[lang].open, onClick: () => document.getElementById(`${message.id}-proto`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+            : undefined
+      }
     />
   ) : null;
 
@@ -66,7 +73,7 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
     ? [
         ...(intent.flow && !flowInText ? [{ id: `${message.id}-flow`, label: intent.flow === 'covenant' ? fs.navFlow : fs.navUxFlow }] : []),
         ...[...full.matchAll(/^###\s+(.+)$/gm)].map((m, i) => ({ id: `${message.id}-s${i}`, label: m[1] })),
-        ...(intent.attachment === 'covenant' ? [{ id: `${message.id}-proto`, label: fs.navProto }] : []),
+        ...(intent.attachment === 'covenant' || intent.attachment === 'grdf' ? [{ id: `${message.id}-proto`, label: fs.navProto }] : []),
       ]
     : [];
 
@@ -99,6 +106,11 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
               anchorPrefix={intent.anchors ? message.id : undefined}
               embeds={{
                 flow: flowBoard,
+                'grdf-compare': <GrdfCompare lang={lang} />,
+                'grdf-persona': <GrdfGallery lang={lang} set="persona" />,
+                'grdf-map': <GrdfGallery lang={lang} set="map" />,
+                'grdf-moodboard': <GrdfGallery lang={lang} set="moodboard" />,
+                'grdf-screens': <GrdfGallery lang={lang} set="screens" />,
                 'repo-map': <RepoMap lang={lang} />,
                 'bnp-figures': <FigureTiles lang={lang} />,
                 'ds-principles': <PrincipleCards lang={lang} />,
@@ -132,6 +144,9 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
           </div>
         )}
 
+        {/* Le prototype est monté dès le début de la réponse : il charge pendant la lecture */}
+        {!thinking && intent.attachment === 'grdf' && <GrdfPrototype id={`${message.id}-proto`} lang={lang} />}
+
         {complete && intent.attachment === 'covenant' && (
           <div
             id={`${message.id}-proto`}
@@ -141,7 +156,7 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
               <p className="text-sm font-semibold text-ink">{flowStrings[lang].ctaTitle}</p>
               <p className="mt-1 text-[13px] font-light leading-relaxed text-muted">{flowStrings[lang].ctaText}</p>
             </div>
-            <button onClick={onOpenPrototype} className="btn-primary">
+            <button onClick={() => onOpenPrototype('covenant')} className="btn-primary">
               {flowStrings[lang].open} <Play size={14} className="fill-current" aria-hidden />
             </button>
           </div>

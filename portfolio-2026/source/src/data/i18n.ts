@@ -4,6 +4,8 @@ export interface UIStrings {
   role: string;
   newChat: string;
   caseStudies: string;
+  personalProjects: string;
+  dsProject: { title: string; tag: string };
   quickAccess: string;
   viewCV: string;
   contactEmail: string;
@@ -53,7 +55,9 @@ export const ui: Record<Lang, UIStrings> = {
   fr: {
     role: 'Product Designer · AI & Design Ops',
     newChat: 'Nouvelle conversation',
-    caseStudies: 'Études de cas',
+    caseStudies: 'Projets',
+    personalProjects: 'Projets personnels',
+    dsProject: { title: 'Design System appliqué par l’IA', tag: '2026 · Portfolio · Skill IA' },
     quickAccess: 'Accès rapide et contact',
     viewCV: 'Voir et télécharger le CV',
     contactEmail: 'Contacter par email',
@@ -127,7 +131,9 @@ export const ui: Record<Lang, UIStrings> = {
   en: {
     role: 'Product Designer · AI & Design Ops',
     newChat: 'New conversation',
-    caseStudies: 'Case studies',
+    caseStudies: 'Projects',
+    personalProjects: 'Personal projects',
+    dsProject: { title: 'AI-applied Design System', tag: '2026 · Portfolio · AI skill' },
     quickAccess: 'Quick access and contact',
     viewCV: 'View and download the CV',
     contactEmail: 'Contact by email',

@@ -35,7 +35,7 @@ export default function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const [activeProject, setActiveProject] = useState<string | null>(null);
-  const [prototypeOpen, setPrototypeOpen] = useState(false);
+  const [prototype, setPrototype] = useState<'covenant' | null>(null);
 
   const t = ui[lang];
   const chat = useChat(lang, model);
@@ -72,8 +72,8 @@ export default function App() {
   }, []);
   const openCV = useCallback(() => openDoc('cv'), [openDoc]);
   const openDesignSystem = useCallback(() => openDoc('ds'), [openDoc]);
-  const openPrototype = useCallback(() => setPrototypeOpen(true), []);
-  const closePrototype = useCallback(() => setPrototypeOpen(false), []);
+  const openPrototype = useCallback((id: 'covenant') => setPrototype(id), []);
+  const closePrototype = useCallback(() => setPrototype(null), []);
 
   /** Écrire à Anne-Sophie ouvre directement la messagerie de la personne. */
   const openEmail = () => {
@@ -131,11 +131,12 @@ export default function App() {
         theme={theme}
         open={drawerOpen}
         collapsed={collapsed}
-        activeProject={activeProject}
+        activeProject={view === 'chat' ? activeProject : null}
         onClose={() => setDrawerOpen(false)}
         onNew={newChat}
         onProject={openProject}
         onDesignSystem={openDesignSystem}
+        designSystemActive={view === 'ds'}
         onCV={openCV}
         onEmail={openEmail}
         setLang={setLang}
@@ -203,7 +204,7 @@ export default function App() {
         {view === 'chat' && <PromptInput t={t} isStreaming={chat.isStreaming} onSend={send} onStop={chat.stop} />}
       </main>
 
-      {prototypeOpen && (
+      {prototype && (
         <PrototypeViewer
           src={COVENANT_PROTOTYPE}
           title={flowStrings[lang].viewerTitle}

@@ -1,4 +1,4 @@
-<!-- source-hash: 77fb53e886d9 -->
+<!-- source-hash: bcf579b2c98a -->
 # Components
 
 All the portfolio's components, organised by function. Every component follows the same outline: when to use it, example, anatomy, states, do, don't. Reuse what exists before creating; if you need a component that is not here, build it with the same building blocks (pill, card, badge) and say so when you deliver.
@@ -325,7 +325,7 @@ The button that collapses or opens the menu is part of the component: a navigati
 1. Collapse button: an `icon-btn` at the start of the top bar, to the left of the title
 2. Identity: monogram, name, job title
 3. “New conversation” button, neutral
-4. Project list, numbered in their order of presentation
+4. Project list, numbered in their order of presentation, then a collapsible “Personal projects” folder: folder icon, name, number of projects, chevron on the right. It is closed by default and opens when one of its projects is displayed
 5. Shortcuts: contact by email as `btn-primary`, CV as `btn-secondary`
 6. Settings: two segmented controls side by side, language (FR / EN, without icon) and theme (Light / Dark, with icon). Always both.
 
@@ -453,6 +453,35 @@ One tile per figure: the figure in large, what it measures below.
 
 - Colouring a figure.
 - Two figures on the same line without a grid.
+
+### Before / after comparison
+
+Two versions of the same screen, stacked, with a divider you drag to move from one to the other.
+
+#### Example
+
+<!-- exemple: compare -->
+
+#### Anatomy
+
+1. The two images, framed the same way
+2. A “Before” tag on the left, an “After” tag on the right
+3. The divider and its round handle, in dark neutral
+4. A caption under the image
+
+#### Do
+
+- Compare two screens that show the same thing: the same page, before and after.
+
+#### Don't
+
+- Colouring the handle: it moves, it triggers nothing.
+- Comparing two unrelated screens: the divider would no longer make sense.
+
+#### Accessibility
+
+- The divider is a slider (`input type="range"`): it moves with the keyboard and carries an `aria-label`.
+- The caption says in words what the two images show.
 
 ### Step flow
 

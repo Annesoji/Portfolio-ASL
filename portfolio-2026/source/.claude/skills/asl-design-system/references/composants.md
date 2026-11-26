@@ -324,7 +324,7 @@ Le bouton qui replie ou ouvre le menu fait partie du composant : un menu latéra
 1. Bouton de repli : un `icon-btn` au début de la barre du haut, à gauche du titre
 2. Identité : monogramme, nom, métier
 3. Bouton « Nouvelle conversation », neutre
-4. Liste des projets, numérotés dans leur ordre de présentation
+4. Liste des projets, numérotés dans leur ordre de présentation, puis un dossier repliable « Projets personnels » : icône de dossier, nom, nombre de projets, chevron à droite. Il est fermé par défaut et s'ouvre quand l'un de ses projets est affiché
 5. Accès rapides : contact par email en `btn-primary`, CV en `btn-secondary`
 6. Réglages : deux sélecteurs segmentés côte à côte, la langue (FR / EN, sans icône) et le thème (Light / Dark, avec icône). Toujours les deux.
 
@@ -452,6 +452,35 @@ Une tuile par chiffre : le chiffre en grand, ce qu'il mesure en dessous.
 
 - Colorer un chiffre.
 - Deux chiffres sur la même ligne sans grille.
+
+### Comparaison avant / après
+
+Deux versions d'un même écran, superposées, avec une séparation que l'on fait glisser pour passer de l'une à l'autre.
+
+#### Exemple
+
+<!-- exemple: compare -->
+
+#### Anatomie
+
+1. Les deux images, cadrées de la même façon
+2. Un tag « Avant » à gauche, un tag « Après » à droite
+3. La séparation et sa poignée ronde, en neutre foncé
+4. Une légende sous l'image
+
+#### À faire
+
+- Comparer deux écrans qui montrent la même chose : la même page, avant et après.
+
+#### À éviter
+
+- Colorer la poignée : elle se déplace, elle ne déclenche rien.
+- Comparer deux écrans sans rapport : la séparation n'aurait plus de sens.
+
+#### Accessibilité
+
+- La séparation est un curseur (`input type="range"`) : elle se déplace au clavier et porte un `aria-label`.
+- La légende dit en mots ce que montrent les deux images.
 
 ### Parcours en étapes
 
