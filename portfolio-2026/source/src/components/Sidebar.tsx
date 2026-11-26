@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowDownToLine, ChevronDown, Folder, FolderOpen, Linkedin, Mail, Moon, Phone, Plus, Sun, X } from 'lucide-react';
 import type { UIStrings } from '../data/i18n';
 import { contact, personalProjects, projects } from '../data/profile';
@@ -68,8 +68,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Sidebar(p: Props) {
   const { t, lang } = p;
   const [folderOpen, setFolderOpen] = useState(false);
-  // Le dossier s'ouvre de lui-même quand son projet est affiché
-  const showFolder = folderOpen || p.designSystemActive || personalProjects.some((pr) => pr.id === p.activeProject);
+  // Le dossier s'ouvre de lui-même quand l'un de ses projets devient actif, mais reste repliable à la main
+  const activeInFolder = p.designSystemActive || personalProjects.some((pr) => pr.id === p.activeProject);
+  useEffect(() => {
+    if (activeInFolder) setFolderOpen(true);
+  }, [activeInFolder]);
+  const showFolder = folderOpen;
   const FolderIcon = showFolder ? FolderOpen : Folder;
   return (
     <>
@@ -110,7 +114,7 @@ export default function Sidebar(p: Props) {
           </button>
         </div>
 
-        {/* Études de cas */}
+        {/* Projets */}
         <nav className="min-h-0 flex-1 overflow-y-auto px-5 pb-3">
           <SectionLabel>{t.caseStudies}</SectionLabel>
           <ul className="-mx-2 mt-2">

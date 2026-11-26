@@ -94,7 +94,7 @@ export const ui: Record<Lang, UIStrings> = {
     commands: 'Commandes',
     slash: [
       { cmd: '/cv', desc: 'Son CV' },
-      { cmd: '/projets', desc: 'Lister les études de cas' },
+      { cmd: '/projets', desc: 'Lister les projets' },
       { cmd: '/skills', desc: 'Compétences clés' },
       { cmd: '/contact', desc: 'Écrire à Anne-Sophie' },
       { cmd: '/stack', desc: 'Outils et stack' },
@@ -170,7 +170,7 @@ export const ui: Record<Lang, UIStrings> = {
     commands: 'Commands',
     slash: [
       { cmd: '/cv', desc: 'Her CV' },
-      { cmd: '/projects', desc: 'List case studies' },
+      { cmd: '/projects', desc: 'List the projects' },
       { cmd: '/skills', desc: 'Key skills' },
       { cmd: '/contact', desc: 'Write to Anne-Sophie' },
       { cmd: '/stack', desc: 'Tools and stack' },

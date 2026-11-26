@@ -430,7 +430,7 @@ The file below is the real one: it is also the one the Design System page displa
       fr: "Montre-moi l'étude de cas Covenant monitoring : comment a-t-elle conçu un suivi des covenants assisté par IA pour une banque d'investissement ?",
       en: 'Show me the Covenant monitoring case study: how did she design AI-assisted covenant monitoring for an investment bank?',
     },
-    chip: { fr: 'Étude de cas Covenant monitoring', en: 'Covenant monitoring case study' },
+    chip: { fr: 'Covenant monitoring assisté par IA', en: 'AI-assisted covenant monitoring' },
     keywords: [
       ['covenant', 8], ['covenants', 8], ['monitoring', 4], ['compliance certificate', 6], ['breach', 5],
       ['waiver', 4], ['matching', 4], ['rapprochement', 4], ['extraction', 4], ['mycreditapp', 5],
@@ -1940,31 +1940,49 @@ The button below opens a pre-filled email with the subject of your choice.`,
     ],
     answer: {
       fr: {
-        standard: `Trois études de cas, à explorer dans la barre latérale ou via les questions ci-dessous.
+        standard: `Trois missions en entreprise, puis des projets personnels, à explorer dans la barre latérale ou via les questions ci-dessous.
+
+### Missions
 
 | Projet | Sujet | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Cadrer une équipe UX augmentée par l'IA | ==+5 modules sur 17== · ==~1 500 utilisateurs== |
 | **Banque d'investissement** | Covenant monitoring assisté par IA | Parcours avant / après · prototype navigable |
-| **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |`,
+| **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |
+
+### Projets personnels
+- **Design System appliqué par l'IA** (2026) : le Design System de ce portfolio, écrit comme un skill que l'IA applique.
+- **Vitaliz** (2023, Master 2) : étude UX complète d'une application de bracelet connecté, des personas au prototype.
+- **Bloom Bar** (2023, Master 2) : direction artistique et illustration 3D d'une marque de barres aux fleurs.
+- **Rebranding de McDonald's** (2021, Master 1) : repositionner une marque connue pour une nouvelle cible.`,
         express: `- **BNP Paribas CIB** : équipe UX augmentée par l'IA — ==+5 modules sur 17==.
 - **Covenant monitoring** : parcours avant / après, prototype navigable.
-- **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.`,
+- **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.
+- **Projets personnels** : Design System appliqué par l'IA, Vitaliz, Bloom Bar, rebranding de McDonald's.`,
       },
       en: {
-        standard: `Three case studies, to explore in the sidebar or through the questions below.
+        standard: `Three client missions, then personal projects, to explore in the sidebar or through the questions below.
+
+### Missions
 
 | Project | Topic | Impact |
 |---|---|---|
 | **BNP Paribas CIB** | Framing an AI-augmented UX team | ==+5 of 17 modules== · ==~1,500 users== |
 | **Investment bank** | AI-assisted covenant monitoring | Before / after journey · navigable prototype |
-| **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |`,
+| **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |
+
+### Personal projects
+- **AI-applied Design System** (2026): this portfolio's Design System, written as a skill that AI applies.
+- **Vitaliz** (2023, Master's year 2): a full UX study of a connected wristband app, from personas to prototype.
+- **Bloom Bar** (2023, Master's year 2): art direction and 3D illustration for a brand of flower bars.
+- **McDonald's rebranding** (2021, Master's year 1): repositioning a well-known brand for a new audience.`,
         express: `- **BNP Paribas CIB**: AI-augmented UX team — ==+5 of 17 modules==.
 - **Covenant monitoring**: before / after journey, navigable prototype.
-- **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.`,
+- **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.
+- **Personal projects**: AI-applied Design System, Vitaliz, Bloom Bar, McDonald's rebranding.`,
       },
     },
-    followUps: ['bnp', 'covenant', 'grdf'],
+    followUps: ['bnp', 'covenant', 'grdf', 'vitalize'],
   },
 
   /* ------------------------------------------------------------------ */
