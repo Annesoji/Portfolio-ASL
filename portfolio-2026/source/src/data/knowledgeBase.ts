@@ -286,7 +286,7 @@ For her specific criteria — contract type, availability, scope — the most di
       fr: "Comment a-t-elle cadré le travail d'une équipe design augmentée par l'IA chez BNP Paribas CIB ?",
       en: 'How did she frame the work of an AI-augmented design team at BNP Paribas CIB?',
     },
-    chip: { fr: 'Cadrer une équipe UX augmentée', en: 'Framing an AI-augmented UX team' },
+    chip: { fr: 'Banque · Équipe UX augmentée par l’IA', en: 'Bank · AI-augmented UX team' },
     keywords: [
       ['bnp', 6], ['paribas', 6], ['cib', 5], ['credit', 5], ['banque', 4], ['bank', 4], ['mc2i', 4],
       ['conseil', 3], ['consult', 3], ['charge cognitive', 4], ['cognitive load', 4], ['actuel', 2],
@@ -430,7 +430,7 @@ The file below is the real one: it is also the one the Design System page displa
       fr: "Montre-moi l'étude de cas Covenant monitoring : comment a-t-elle conçu un suivi des covenants assisté par IA pour une banque d'investissement ?",
       en: 'Show me the Covenant monitoring case study: how did she design AI-assisted covenant monitoring for an investment bank?',
     },
-    chip: { fr: 'Covenant monitoring assisté par IA', en: 'AI-assisted covenant monitoring' },
+    chip: { fr: 'Banque · Covenant monitoring', en: 'Bank · Covenant monitoring' },
     keywords: [
       ['covenant', 8], ['covenants', 8], ['monitoring', 4], ['compliance certificate', 6], ['breach', 5],
       ['waiver', 4], ['matching', 4], ['rapprochement', 4], ['extraction', 4], ['mycreditapp', 5],
@@ -672,7 +672,7 @@ From September 2022 to December 2023, Anne-Sophie was a Product Designer at **Ke
       fr: 'Comment a-t-elle mené la refonte éco-conçue et accessible de la plateforme GRDF (Act4Gaz → justdecarb.grdf.fr) ?',
       en: 'How did she lead the eco-designed, accessible redesign of the GRDF platform (Act4Gaz → justdecarb.grdf.fr)?',
     },
-    chip: { fr: 'GRDF Refonte éco-conçue et RGAA', en: 'GRDF Eco-designed redesign and RGAA' },
+    chip: { fr: 'GRDF · Refonte éco-conçue et RGAA', en: 'GRDF · Eco-designed redesign and RGAA' },
     keywords: [
       ['grdf', 6], ['rgaa', 5], ['accessib', 5], ['a11y', 5], ['wcag', 4], ['eco', 3], ['ecoindex', 6],
       ['eco conception', 5], ['eco design', 5], ['ecoconcep', 5], ['justdecarb', 6], ['act4gaz', 6],
@@ -1207,7 +1207,7 @@ Figma (Expert), Storybook, Zeroheight.`,
       fr: "Parle-moi de Vitaliz : comment a-t-elle mené une étude UX complète, des personas à l'application ?",
       en: 'Tell me about Vitaliz: how did she run a full UX study, from personas to the app?',
     },
-    chip: { fr: 'Vitaliz, étude UX complète', en: 'Vitaliz, full UX study' },
+    chip: { fr: 'Vitaliz · Des personas à l’application', en: 'Vitaliz · From personas to the app' },
     keywords: [
       ['vitalize', 9], ['vitaliz', 9], ['bracelet', 7], ['montre', 6], ['watch', 6], ['wristband', 7], ['blueprint', 7], ['service blueprint', 8],
       ['charte graphique', 6], ['brand guidelines', 6], ['projet de master', 6], ['master project', 6], ['master 2', 5], ['sport', 4],
@@ -1341,7 +1341,7 @@ Reasoning held from end to end: a need of the audience, a decision, a screen. An
       fr: "Parle-moi de Bloom Bar : comment a-t-elle créé l'univers visuel d'un nouveau produit ?",
       en: 'Tell me about Bloom Bar: how did she create the visual world of a new product?',
     },
-    chip: { fr: 'Bloom Bar, direction artistique', en: 'Bloom Bar, art direction' },
+    chip: { fr: 'Bloom Bar · Direction artistique', en: 'Bloom Bar · Art direction' },
     keywords: [
       ['bloom bar', 9], ['bloombar', 9], ['bloom', 7], ['barre', 5], ['cereale', 5], ['fleur', 5], ['flower', 5],
       ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4],
@@ -1439,7 +1439,7 @@ A complete art direction, from 3D illustration to packaging: a visual craft that
       fr: "Parle-moi du rebranding de McDonald's : comment a-t-elle repositionné une marque connue pour une autre cible ?",
       en: "Tell me about the McDonald's rebranding: how did she reposition a well-known brand for a different audience?",
     },
-    chip: { fr: "Rebranding de McDonald's", en: "McDonald's rebranding" },
+    chip: { fr: 'McDonald’s · Rebranding', en: 'McDonald’s · Rebranding' },
     keywords: [
       ['mcdo', 7], ['mcdonald', 7], ['mc donald', 7], ['rebranding', 6], ['rebrand', 6], ['identite visuelle', 6], ['visual identity', 6],
       ['direction artistique', 6], ['art direction', 6], ['logo', 5], ['branding', 5], ['photoshop', 5], ['illustrator', 5],
@@ -1558,7 +1558,7 @@ An identity built end to end, from the logo to the screens: art direction in the
       fr: 'Peut-on voir le Design System de ce portfolio ?',
       en: 'Can I see this portfolio’s Design System?',
     },
-    chip: { fr: 'Le Design System du portfolio', en: 'The portfolio’s Design System' },
+    chip: { fr: 'Portfolio · Design System automatisé', en: 'Portfolio · AI-automated Design System' },
     keywords: [
       ['design system du portfolio', 9], ['design system de ce portfolio', 9], ['design system du site', 9],
       ['design system de ce site', 9], ['design system of this portfolio', 9], ['portfolio design system', 9],
@@ -1951,14 +1951,14 @@ The button below opens a pre-filled email with the subject of your choice.`,
 | **GRDF** | Refonte éco-conçue justdecarb.grdf.fr | ==Note C EcoIndex== + RGAA |
 
 ### Projets personnels
-- **Design System appliqué par l'IA** (2026) : le Design System de ce portfolio, écrit comme un skill que l'IA applique.
-- **Vitaliz** (2023, Master 2) : étude UX complète d'une application de bracelet connecté, des personas au prototype.
-- **Bloom Bar** (2023, Master 2) : direction artistique et illustration 3D d'une marque de barres aux fleurs.
-- **Rebranding de McDonald's** (2021, Master 1) : repositionner une marque connue pour une nouvelle cible.`,
+- **Portfolio · Design System automatisé avec l'IA** (2026) : le Design System de ce portfolio, écrit comme un skill que l'IA applique.
+- **Vitaliz · Des personas à l'application mobile** (2023, Master 2) : étude UX complète d'une application de bracelet connecté, des personas au prototype.
+- **Bloom Bar · Direction artistique et illustration 3D** (2023, Master 2) : direction artistique et illustration 3D d'une marque de barres aux fleurs.
+- **McDonald's · Rebranding pour une nouvelle cible** (2021, Master 1) : repositionner une marque connue pour une nouvelle cible.`,
         express: `- **BNP Paribas CIB** : équipe UX augmentée par l'IA — ==+5 modules sur 17==.
 - **Covenant monitoring** : parcours avant / après, prototype navigable.
 - **GRDF** : refonte éco-conçue — ==Note C EcoIndex== + RGAA.
-- **Projets personnels** : Design System appliqué par l'IA, Vitaliz, Bloom Bar, rebranding de McDonald's.`,
+- **Projets personnels** : Design System du portfolio, Vitaliz, Bloom Bar, McDonald's.`,
       },
       en: {
         standard: `Three client missions, then personal projects, to explore in the sidebar or through the questions below.
@@ -1972,14 +1972,14 @@ The button below opens a pre-filled email with the subject of your choice.`,
 | **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |
 
 ### Personal projects
-- **AI-applied Design System** (2026): this portfolio's Design System, written as a skill that AI applies.
-- **Vitaliz** (2023, Master's year 2): a full UX study of a connected wristband app, from personas to prototype.
-- **Bloom Bar** (2023, Master's year 2): art direction and 3D illustration for a brand of flower bars.
-- **McDonald's rebranding** (2021, Master's year 1): repositioning a well-known brand for a new audience.`,
+- **Portfolio · AI-automated Design System** (2026): this portfolio's Design System, written as a skill that AI applies.
+- **Vitaliz · From personas to the mobile app** (2023, Master's year 2): a full UX study of a connected wristband app, from personas to prototype.
+- **Bloom Bar · Art direction and 3D illustration** (2023, Master's year 2): art direction and 3D illustration for a brand of flower bars.
+- **McDonald's · Rebranding for a new audience** (2021, Master's year 1): repositioning a well-known brand for a new audience.`,
         express: `- **BNP Paribas CIB**: AI-augmented UX team — ==+5 of 17 modules==.
 - **Covenant monitoring**: before / after journey, navigable prototype.
 - **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.
-- **Personal projects**: AI-applied Design System, Vitaliz, Bloom Bar, McDonald's rebranding.`,
+- **Personal projects**: portfolio Design System, Vitaliz, Bloom Bar, McDonald's.`,
       },
     },
     followUps: ['bnp', 'covenant', 'grdf', 'vitalize'],
