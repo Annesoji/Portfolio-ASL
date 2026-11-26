@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, Bot, Check, ChevronsLeftRight, ClipboardList, Code2, PenTool, UserCheck, X } from 'lucide-react';
 import { GRDF_PROTOTYPE, GRDF_PROTOTYPE_LINK, GRDF_SITE, grdfStrings } from '../data/grdfFlow';
-import { VITALIZE_PROTOTYPE, VITALIZE_PROTOTYPE_LINK, vitalizeStrings } from '../data/vitalize';
+import { VITALIZE_PROTOTYPE, VITALIZE_PROTOTYPE_LINK, vitalizDecisions, vitalizeStrings } from '../data/vitalize';
 import type { Lang, Localized } from '../types';
 
 /**
@@ -459,6 +459,39 @@ export function VitalizeShot({ lang, shot }: { lang: Lang; shot: VitalizeShotId 
       <img src={src} alt={caption} loading="lazy" className="block h-auto w-full" />
       <span className="block border-t border-line px-4 py-2.5 text-[12.5px] font-light leading-snug text-muted">{caption}</span>
     </a>
+  );
+}
+
+/** Problème et réponse : un besoin de la cible, la décision prise, et les écrans qui la montrent. */
+export function VitalizDecision({ lang, n }: { lang: Lang; n: number }) {
+  const d = vitalizDecisions[n];
+  const t = vitalizeStrings[lang];
+  return (
+    <section className="my-4 overflow-hidden rounded-2xl border border-line bg-elevated">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-4 p-5 sm:grid-cols-2">
+        <div className="min-w-0">
+          <span className="tag border border-rule text-ink">{t.problem}</span>
+          <p className="mt-2 text-[13.5px] font-light leading-relaxed text-ink">{d.problem[lang]}</p>
+        </div>
+        <div className="min-w-0">
+          <span className="tag bg-olive-tint text-olive-text">{t.answer}</span>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-ink">{d.answer[lang]}</p>
+        </div>
+      </div>
+      <ul className="flex justify-center gap-4 border-t border-line bg-surface-2 p-5">
+        {d.screens.map((screen) => (
+          <li key={screen.file} className="min-w-0 max-w-[180px] flex-1">
+            <img
+              src={`${import.meta.env.BASE_URL}vitalize/${screen.file}.jpg`}
+              alt={screen.caption[lang]}
+              loading="lazy"
+              className="block h-auto w-full rounded-xl border border-rule"
+            />
+            <span className="mt-2 block text-center text-[12.5px] font-light leading-snug text-muted">{screen.caption[lang]}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

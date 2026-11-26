@@ -1,4 +1,4 @@
-<!-- source-hash: 27ae0c0e0ba5 -->
+<!-- source-hash: b5674750b788 -->
 # Components
 
 All the portfolio's components, organised by function. Every component follows the same outline: when to use it, example, anatomy, states, do, don't. Reuse what exists before creating; if you need a component that is not here, build it with the same building blocks (pill, card, badge) and say so when you deliver.
@@ -502,6 +502,27 @@ A full-page mockup is too tall to be shown in one block. It is displayed in a fi
 #### Accessibility
 
 - The frame takes focus (`tabIndex={0}`) and carries an `aria-label`, so it can be scrolled with the keyboard.
+
+### Problem and answer
+
+A design decision in a case study: the audience's need, the answer given, and the screens that prove it. The reader reads the reason before seeing the screen.
+
+#### Anatomy
+
+1. A card (`rounded-2xl border border-line bg-elevated`)
+2. At the top, two columns: a neutral “Problem” tag with its sentence, a pale green “Answer” tag with its sentence
+3. At the bottom, on a `bg-surface-2` background, one to three mobile screens side by side, centred (`max-w-[180px]`, `rounded-xl border border-rule`)
+4. A short caption under each screen
+
+#### Do
+
+- One decision per card, with a section title above that names it.
+- Say in the answer what has not been designed, rather than letting people look for it.
+
+#### Don't
+
+- More than three screens: they become unreadable.
+- A screen without a caption, or an answer that no screen shows.
 
 ### Step flow
 

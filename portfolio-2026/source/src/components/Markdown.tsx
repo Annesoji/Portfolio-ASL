@@ -89,7 +89,7 @@ export default function Markdown({ text, anchorPrefix, embeds }: Props) {
 
     // Composant inséré : [[nom]] seul sur sa ligne (une ligne incomplète est ignorée pendant le streaming)
     if (line.trimStart().startsWith('[[')) {
-      const m = line.trim().match(/^\[\[([a-z-]+)\]\]$/);
+      const m = line.trim().match(/^\[\[([a-z0-9-]+)\]\]$/);
       if (m && embeds?.[m[1]]) out.push(<Fragment key={key++}>{embeds[m[1]]}</Fragment>);
       i++;
       continue;

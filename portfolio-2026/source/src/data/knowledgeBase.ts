@@ -1224,14 +1224,14 @@ Dernier projet de Master : imaginer une marque de bracelets connectés de sport
 Le marché du bracelet connecté est saturé, et l'acheteur doute : quel modèle choisir, et les données sont-elles fiables ? Comment faire exister une nouvelle marque, et rassurer avant l'achat ?
 
 ### Son rôle
-Cibles et personas, carte d'expérience, service blueprint, identité de marque et charte graphique, prototype mobile, supports promotionnels.
+Cibles et personas, carte d'expérience, service blueprint, écrans et prototype de l'application, identité de marque et charte graphique, supports promotionnels.
 
 ### La solution
-Une marque sportive et rassurante, dont chaque choix répond à un besoin de la cible. Sa signature : « Votre vie, au centre de tout ».
+Trois décisions de conception, chacune partie d'un besoin de la cible, et une marque pour les porter. Sa signature : « Votre vie, au centre de tout ».
 
 **Un seul modèle par persona** : l'acheteur n'a plus à comparer une gamme entière, il reconnaît le bracelet fait pour lui.
 
-### 1 · Les cibles
+### 1 · La cible
 Quatre cibles, de la plus large au cœur de cible : des actifs urbains de 27 à 37 ans, qui veulent rester motivés, suivre leur progression et relier le bracelet à leurs autres appareils.
 
 *Personas et parcours sont des hypothèses de travail : l'exercice ne prévoyait pas d'utilisateurs réels.*
@@ -1241,37 +1241,35 @@ Quatre cibles, de la plus large au cœur de cible : des actifs urbains de 27 à
 - **Sa motivation** : un suivi fiable, des données poussées, une interface intuitive.
 - **Ses freins avant l'achat** : la robustesse du produit, la fiabilité des données de sport et de santé.
 
-### 2 · La carte d'expérience
 [[vitalize-map]]
 
 - **Le doute grandit jusqu'à la décision** : motivé au départ, puis perdu devant l'offre, prudent, inquiet de se tromper.
-- **Chaque friction devient une opportunité** : être trouvé en premier, lister les bénéfices, montrer les tests de fiabilité, offrir une garantie.
+- **Côté service**, un blueprint déroule le même parcours, de la prise de conscience au support : ce que la marque montre, et ce qu'elle doit faire en coulisses.
 
-### 3 · Le service blueprint
-Le parcours est ensuite déroulé côté service, de la prise de conscience au support : ce que fait le client, ce que la marque lui montre, et ce qu'elle doit faire en coulisses pour que cela tienne.
+### 2 · Un programme à soi
+[[vitaliz-decision-1]]
 
-### 4 · L'identité de marque
+### 3 · Des données choisies
+[[vitaliz-decision-2]]
+
+### 4 · L'envie de revenir
+[[vitaliz-decision-3]]
+
+### 5 · La marque
 [[vitalize-brand]]
 
 - **Un logo en mouvement** : des lettres coupées, un « V » qui arrive comme un saut. La version miniature dessine une attache de montre.
 - **Une charte qui encadre l'usage** : zones de protection, tailles minimales, interdits, échelle typographique.
 - **Une marque pour tous, pas seulement pour les grands sportifs**. La garantie de trois ans répond au premier frein du persona : la fiabilité.
 
-### 5 · L'application
-- **Tout le suivi au même endroit** : activité, sommeil, alimentation, santé.
-- **Le partage et le jeu** : des défis à relever avec d'autres membres. Prendre soin de sa santé devient ludique, et l'on revient pour les autres autant que pour soi.
-
-Le prototype est à essayer en bas de page.
-
-### 6 · Les supports
 [[vitalize-shop]]
 
 ### Ce que ce projet montre
-Une démarche complète, menée dans l'ordre : la cible d'abord, puis le parcours, le service, la marque et l'application.`,
+Un raisonnement tenu de bout en bout : un besoin de la cible, une décision, un écran. Et une marque construite pour porter l'ensemble.`,
         express: `- **Contexte** : dernier projet de Master — une marque de bracelets connectés de sport et son application mobile, pour suivre activité, sommeil, alimentation et santé. Projet d'école, marque fictive.
 - **Problématique** : faire exister une nouvelle marque sur un marché saturé, et rassurer sur la fiabilité avant l'achat.
 - **Son rôle** : personas, parcours, blueprint, identité, prototype, supports.
-- **Solution** : un seul modèle par persona pour faciliter le choix, une marque rassurante et une application mobile prototypée.`,
+- **Solution** : un programme personnalisé, un accueil aux informations choisies, des challenges et un classement entre amis pour revenir ; un seul modèle par persona et une marque rassurante.`,
       },
       en: {
         standard: `### Context
@@ -1283,14 +1281,14 @@ Final Master's project: invent a brand of connected sports wristbands, Vitaliz, 
 The connected wristband market is saturated, and buyers hesitate: which model to choose, and is the data reliable? How do you make a new brand exist, and reassure before purchase?
 
 ### Her role
-Audiences and personas, experience map, service blueprint, brand identity and guidelines, mobile prototype, promotional material.
+Audiences and personas, experience map, service blueprint, app screens and prototype, brand identity and guidelines, promotional material.
 
 ### The solution
-A sporty, reassuring brand where every choice answers a need of the audience. Its tagline: “Votre vie, au centre de tout” (your life, at the centre of everything).
+Three design decisions, each starting from a need of the audience, and a brand to carry them. Its tagline: “Votre vie, au centre de tout” (your life, at the centre of everything).
 
 **One model per persona**: buyers no longer have to compare a whole range, they recognise the wristband made for them.
 
-### 1 · The audiences
+### 1 · The audience
 Four audiences, from the broadest to the core target: urban professionals aged 27 to 37 who want to stay motivated, track their progress and connect the wristband to their other devices.
 
 *Personas and journeys are working hypotheses: the exercise did not involve real users.*
@@ -1300,37 +1298,35 @@ Four audiences, from the broadest to the core target: urban professionals aged 2
 - **His motivation**: reliable tracking, detailed data, an intuitive interface.
 - **His barriers before buying**: how robust the product is, how reliable the sports and health data are.
 
-### 2 · The experience map
 [[vitalize-map]]
 
 - **Doubt grows until the decision**: motivated at first, then lost in the offer, cautious, worried about choosing wrong.
-- **Each pain point becomes an opportunity**: be found first, list the benefits, show the reliability tests, offer a warranty.
+- **On the service side**, a blueprint lays out the same journey, from awareness to support: what the brand shows, and what it has to do backstage.
 
-### 3 · The service blueprint
-The journey is then laid out on the service side, from awareness to support: what the customer does, what the brand shows, and what it has to do backstage to make it hold.
+### 2 · A programme of your own
+[[vitaliz-decision-1]]
 
-### 4 · The brand identity
+### 3 · Chosen data
+[[vitaliz-decision-2]]
+
+### 4 · A reason to come back
+[[vitaliz-decision-3]]
+
+### 5 · The brand
 [[vitalize-brand]]
 
 - **A logo in motion**: cut letters, a “V” that lands like a jump. The compact version draws a watch clasp.
 - **Guidelines that frame its use**: clear space, minimum sizes, don'ts, type scale.
 - **A brand for everyone, not only for serious athletes**. The three-year warranty answers the persona's first barrier: reliability.
 
-### 5 · The app
-- **All tracking in one place**: activity, sleep, nutrition, health.
-- **Sharing and play**: challenges to take on with other members. Looking after your health becomes fun, and you come back for the others as much as for yourself.
-
-The prototype can be tried at the bottom of the page.
-
-### 6 · The promotional material
 [[vitalize-shop]]
 
 ### What this project shows
-A complete approach, done in order: the audience first, then the journey, the service, the brand and the app.`,
+Reasoning held from end to end: a need of the audience, a decision, a screen. And a brand built to carry it all.`,
         express: `- **Context**: final Master's project — a brand of connected sports wristbands and its mobile app, to track activity, sleep, nutrition and health. School project, fictional brand.
 - **Problem**: make a new brand exist in a saturated market, and reassure on reliability before purchase.
 - **Her role**: personas, journeys, blueprint, identity, prototype, promotional material.
-- **Solution**: one model per persona to make choosing easier, a reassuring brand and a prototyped mobile app.`,
+- **Solution**: a personalised programme, a home screen with chosen information, challenges and a ranking among friends to come back; one model per persona and a reassuring brand.`,
       },
     },
     attachment: 'vitalize',

@@ -502,6 +502,27 @@ Une maquette de page entière est trop haute pour être montrée d'un bloc. Elle
 
 - Le cadre reçoit le focus (`tabIndex={0}`) et porte un `aria-label`, pour se faire défiler au clavier.
 
+### Problème et réponse
+
+Une décision de conception dans une étude de cas : le besoin de la cible, la réponse apportée, et les écrans qui la prouvent. Le lecteur lit la raison avant de voir l'écran.
+
+#### Anatomie
+
+1. Une carte (`rounded-2xl border border-line bg-elevated`)
+2. En haut, deux colonnes : un tag neutre « Problème » et sa phrase, un tag vert pâle « Réponse » et sa phrase
+3. En bas, sur fond `bg-surface-2`, un à trois écrans mobiles côte à côte, centrés (`max-w-[180px]`, `rounded-xl border border-rule`)
+4. Une légende courte sous chaque écran
+
+#### À faire
+
+- Une seule décision par carte, et un titre de section au-dessus qui la nomme.
+- Dire dans la réponse ce qui n'est pas maquetté, plutôt que de le laisser chercher.
+
+#### À éviter
+
+- Plus de trois écrans : ils deviennent illisibles.
+- Un écran sans légende, ou une réponse qui ne se voit dans aucun écran.
+
 ### Parcours en étapes
 
 Qui fait quoi, étape par étape, et où ça coince. Utilise `src/components/FlowBoard.tsx` avec des données, sur le modèle de `src/data/covenantFlow.ts`.
