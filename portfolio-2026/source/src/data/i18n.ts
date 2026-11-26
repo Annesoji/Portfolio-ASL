@@ -55,7 +55,7 @@ export const ui: Record<Lang, UIStrings> = {
   fr: {
     role: 'Product Designer · AI & Design Ops',
     newChat: 'Nouvelle conversation',
-    caseStudies: 'Projets',
+    caseStudies: 'Projets professionnels',
     personalProjects: 'Projets personnels',
     dsProject: { title: 'Design System appliqué par l’IA', tag: '2026 · Portfolio · Skill IA' },
     quickAccess: 'Accès rapide et contact',
@@ -131,7 +131,7 @@ export const ui: Record<Lang, UIStrings> = {
   en: {
     role: 'Product Designer · AI & Design Ops',
     newChat: 'New conversation',
-    caseStudies: 'Projects',
+    caseStudies: 'Work projects',
     personalProjects: 'Personal projects',
     dsProject: { title: 'AI-applied Design System', tag: '2026 · Portfolio · AI skill' },
     quickAccess: 'Quick access and contact',

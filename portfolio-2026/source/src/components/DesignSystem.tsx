@@ -1,7 +1,7 @@
 import { useRef, useState, type ReactNode } from 'react';
 import {
   ArrowDownToLine, ArrowRight, ArrowUp, ArrowUpRight, BarChart3, Bot, Check, ChevronDown, Compass, Copy,
-  FileText, Mail, Menu, Moon, PanelLeft, Play, Repeat, Square, Sun, TriangleAlert, UserRound, X,
+  FileText, Folder, FolderOpen, Mail, Menu, Moon, PanelLeft, Play, Repeat, Square, Sun, TriangleAlert, UserRound, X,
 } from 'lucide-react';
 import { covenantBoard } from '../data/covenantFlow';
 import { dsGroups, dsStrings, getDsPages, type DsPage as DsPageBase } from '../data/designSystem';
@@ -45,7 +45,7 @@ const SAMPLE: Localized<Record<string, string>> = {
     caption: 'Légende ou détail', label: 'Petit libellé', figure: 'Chiffre clé', display: 'Titre d’accueil',
     card: 'Carte', control: 'Bouton, tag, pastille', inner: 'Élément interne', promptZone: 'Zone de saisie',
     noShadow: 'Carte : pas d’ombre', yes: 'Oui', no: 'Non', ordered: 'Des étapes : numéros', unordered: 'Des sujets : icônes',
-    step1: 'Comprendre', step2: 'Concevoir', topic1: 'Profil', topic2: 'Impact', projects: 'Projets',
+    step1: 'Comprendre', step2: 'Concevoir', topic1: 'Profil', topic2: 'Impact', projects: 'Projets professionnels', personal: 'Projets personnels',
     p1: 'Cadrer une équipe UX augmentée', p2: 'Covenant monitoring', ctx: 'Contexte', approach: 'Démarche', outcome: 'Résultat',
     tableMd: '| Cas | Ce que fait l’outil |\n|---|---|\n| Document reçu | Extraction par l’IA |\n| Valeur douteuse | Signalée à l’analyste |\n| Seuil dépassé | Alerte |',
     s1: 'Profil & valeur ajoutée', s1t: 'Résume le profil d’Anne-Sophie en quelques lignes.', s2: 'Impact & chiffres clés', s2t: 'Quels sont ses résultats mesurables ?',
@@ -68,7 +68,7 @@ const SAMPLE: Localized<Record<string, string>> = {
     caption: 'Caption or detail', label: 'Small label', figure: 'Key figure', display: 'Welcome title',
     card: 'Card', control: 'Button, tag, badge', inner: 'Inner element', promptZone: 'Prompt area',
     noShadow: 'Card: no shadow', yes: 'Do', no: 'Don’t', ordered: 'Steps: numbers', unordered: 'Topics: icons',
-    step1: 'Understand', step2: 'Design', topic1: 'Profile', topic2: 'Impact', projects: 'Projects',
+    step1: 'Understand', step2: 'Design', topic1: 'Profile', topic2: 'Impact', projects: 'Work projects', personal: 'Personal projects',
     p1: 'Framing an AI-augmented UX team', p2: 'Covenant monitoring', ctx: 'Context', approach: 'Approach', outcome: 'Outcome',
     tableMd: '| Case | What the tool does |\n|---|---|\n| Document received | AI extraction |\n| Doubtful value | Flagged to the analyst |\n| Threshold exceeded | Alert |',
     s1: 'Profile & added value', s1t: 'Sum up Anne-Sophie’s profile in a few lines.', s2: 'Impact & key figures', s2t: 'What are her measurable results?',
@@ -420,14 +420,23 @@ function Specimen({ id, lang, t }: { id: string; lang: Lang; t: UIStrings }) {
               <Monogram size={32} />
               <p className="min-w-0 flex-1 truncate font-display text-[14px] font-semibold text-ink">Anne-Sophie Leroy</p>
             </div>
-            <p className="eyebrow mt-5 text-muted">{s.projects}</p>
-            <ul className="mt-2 space-y-2">
+            <p className="mt-5 flex items-center gap-2 text-[12.5px] font-medium text-ink">
+              <FolderOpen size={13} className="shrink-0 text-accent-text" aria-hidden />
+              <span className="min-w-0 flex-1 truncate">{s.projects}</span>
+              <ChevronDown size={13} className="rotate-180 text-muted" aria-hidden />
+            </p>
+            <ul className="mt-2 space-y-2 pl-2">
               {[s.p1, s.p2].map((p, i) => (
                 <li key={p} className="flex items-baseline gap-2.5 text-[12.5px] leading-snug text-ink">
                   <span className="font-display text-[12px] font-medium italic text-accent-text">0{i + 1}</span> {p}
                 </li>
               ))}
             </ul>
+            <p className="mt-3 flex items-center gap-2 text-[12.5px] font-medium text-ink">
+              <Folder size={13} className="shrink-0 text-accent-text" aria-hidden />
+              <span className="min-w-0 flex-1 truncate">{s.personal}</span>
+              <ChevronDown size={13} className="text-muted" aria-hidden />
+            </p>
             <span className="mt-auto inline-flex items-center justify-between rounded-full bg-olive py-1.5 pl-3.5 pr-1.5 text-[12px] font-semibold text-olive-fg">
               {s.email}
               <span className="icon-chip !h-5 !w-5 bg-olive-fg text-olive"><Mail size={11} aria-hidden /></span>

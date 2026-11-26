@@ -1,4 +1,4 @@
-<!-- source-hash: b5674750b788 -->
+<!-- source-hash: da9feafc9322 -->
 # Components
 
 All the portfolio's components, organised by function. Every component follows the same outline: when to use it, example, anatomy, states, do, don't. Reuse what exists before creating; if you need a component that is not here, build it with the same building blocks (pill, card, badge) and say so when you deliver.
@@ -325,7 +325,7 @@ The button that collapses or opens the menu is part of the component: a navigati
 1. Collapse button: an `icon-btn` at the start of the top bar, to the left of the title
 2. Identity: monogram, name, job title
 3. “New conversation” button, neutral
-4. Project list, numbered in their order of presentation, then a collapsible “Personal projects” folder: folder icon, name, number of projects, chevron on the right. It is closed by default and opens when one of its projects is displayed
+4. Two collapsible folders, “Work projects” then “Personal projects”. Each has a title (folder icon, name, number of projects, chevron on the right) and its projects, numbered in their order of presentation, with their year and context. Only one folder is open at a time: work projects by default; the folder of the displayed project opens by itself, and can still be collapsed by hand
 5. Shortcuts: contact by email as `btn-primary`, CV as `btn-secondary`
 6. Settings: two segmented controls side by side, language (FR / EN, without icon) and theme (Light / Dark, with icon). Always both.
 

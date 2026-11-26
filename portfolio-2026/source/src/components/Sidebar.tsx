@@ -65,16 +65,94 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+interface FolderItem {
+  id: string;
+  title: string;
+  tag: string;
+  active: boolean;
+  onClick: () => void;
+}
+
+/** Un dossier de projets : un titre repliable (icône, nom, nombre, chevron) et ses projets numérotés. */
+function ProjectFolder({ id, label, open, onToggle, items }: { id: string; label: string; open: boolean; onToggle: () => void; items: FolderItem[] }) {
+  const Icon = open ? FolderOpen : Folder;
+  return (
+    <div>
+      <button
+        onClick={onToggle}
+        aria-expanded={open}
+        aria-controls={id}
+        className="t-all -mx-2 flex w-[calc(100%+1rem)] items-center gap-2.5 rounded-2xl px-2 py-2 text-left hover:bg-surface-2"
+      >
+        <Icon size={15} className="shrink-0 text-accent-text" aria-hidden />
+        <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-ink">{label}</span>
+        <span className="text-[11px] font-normal text-muted">{items.length}</span>
+        <ChevronDown size={15} className={`t-all shrink-0 text-muted ${open ? 'rotate-180' : ''}`} aria-hidden />
+      </button>
+      {open && (
+        <ul id={id} className="-mx-2 mt-1 pl-3">
+          {items.map((it, i) => (
+            <li key={it.id}>
+              <button
+                onClick={it.onClick}
+                aria-current={it.active ? 'page' : undefined}
+                className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
+                  it.active ? 'bg-surface-2' : 'hover:bg-surface-2'
+                }`}
+              >
+                <span
+                  className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
+                    it.active ? 'text-vermillion' : 'text-accent-text'
+                  }`}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="min-w-0">
+                  <span className={`block text-[13.5px] leading-snug text-ink ${it.active ? 'font-semibold' : 'font-normal'}`}>{it.title}</span>
+                  <span className="mt-1 block text-[11px] font-normal text-muted">{it.tag}</span>
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function Sidebar(p: Props) {
   const { t, lang } = p;
-  const [folderOpen, setFolderOpen] = useState(false);
-  // Le dossier s'ouvre de lui-même quand l'un de ses projets devient actif, mais reste repliable à la main
-  const activeInFolder = p.designSystemActive || personalProjects.some((pr) => pr.id === p.activeProject);
+  // Un seul dossier ouvert à la fois, pour garder le menu lisible : les projets professionnels par défaut
+  const [openFolder, setOpenFolder] = useState<'work' | 'personal' | null>('work');
+  const activeWork = projects.some((pr) => pr.id === p.activeProject);
+  const activePersonal = p.designSystemActive || personalProjects.some((pr) => pr.id === p.activeProject);
+  // Le dossier du projet affiché s'ouvre de lui-même, mais reste repliable à la main
   useEffect(() => {
-    if (activeInFolder) setFolderOpen(true);
-  }, [activeInFolder]);
-  const showFolder = folderOpen;
-  const FolderIcon = showFolder ? FolderOpen : Folder;
+    if (activeWork) setOpenFolder('work');
+  }, [activeWork]);
+  useEffect(() => {
+    if (activePersonal) setOpenFolder('personal');
+  }, [activePersonal]);
+  const toggle = (f: 'work' | 'personal') => setOpenFolder((o) => (o === f ? null : f));
+
+  const workItems: FolderItem[] = projects.map((pr) => ({
+    id: pr.id,
+    title: pr.title[lang],
+    tag: pr.tag[lang],
+    active: p.activeProject === pr.id,
+    onClick: () => p.onProject(pr.id),
+  }));
+  const personalItems: FolderItem[] = [
+    { id: 'ds', title: t.dsProject.title, tag: t.dsProject.tag, active: p.designSystemActive, onClick: p.onDesignSystem },
+    ...personalProjects.map((pr) => ({
+      id: pr.id,
+      title: pr.title[lang],
+      tag: pr.tag[lang],
+      active: p.activeProject === pr.id,
+      onClick: () => p.onProject(pr.id),
+    })),
+  ];
+
   return (
     <>
       {/* Overlay mobile */}
@@ -114,111 +192,10 @@ export default function Sidebar(p: Props) {
           </button>
         </div>
 
-        {/* Projets */}
-        <nav className="min-h-0 flex-1 overflow-y-auto px-5 pb-3">
-          <SectionLabel>{t.caseStudies}</SectionLabel>
-          <ul className="-mx-2 mt-2">
-            {projects.map((pr, i) => {
-              const active = p.activeProject === pr.id;
-              return (
-                <li key={pr.id}>
-                  <button
-                    onClick={() => p.onProject(pr.id)}
-                    aria-current={active ? 'page' : undefined}
-                    className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
-                      active ? 'bg-surface-2' : 'hover:bg-surface-2'
-                    }`}
-                  >
-                    <span
-                      className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
-                        active ? 'text-vermillion' : 'text-accent-text'
-                      }`}
-                    >
-                      0{i + 1}
-                    </span>
-                    <span className="min-w-0">
-                      <span className={`block text-[13.5px] leading-snug text-ink ${active ? 'font-semibold' : 'font-normal'}`}>
-                        {pr.title[lang]}
-                      </span>
-                      <span className="mt-1 block text-[11px] font-normal text-muted">
-                        {pr.tag[lang]}
-                      </span>
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Projets personnels : un dossier repliable, fermé par défaut pour alléger le menu */}
-          <div className="mt-3">
-            <button
-              onClick={() => setFolderOpen((o) => !o)}
-              aria-expanded={showFolder}
-              aria-controls="personal-projects"
-              className="t-all -mx-2 flex w-[calc(100%+1rem)] items-center gap-2.5 rounded-2xl px-2 py-2 text-left hover:bg-surface-2"
-            >
-              <FolderIcon size={15} className="shrink-0 text-accent-text" aria-hidden />
-              <span className="min-w-0 flex-1 truncate text-[13.5px] font-medium text-ink">{t.personalProjects}</span>
-              <span className="text-[11px] font-normal text-muted">{personalProjects.length + 1}</span>
-              <ChevronDown size={15} className={`t-all shrink-0 text-muted ${showFolder ? 'rotate-180' : ''}`} aria-hidden />
-            </button>
-            {showFolder && (
-              <ul id="personal-projects" className="-mx-2 mt-1 pl-3">
-                <li>
-                  <button
-                    onClick={p.onDesignSystem}
-                    aria-current={p.designSystemActive ? 'page' : undefined}
-                    className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
-                      p.designSystemActive ? 'bg-surface-2' : 'hover:bg-surface-2'
-                    }`}
-                  >
-                    <span
-                      className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
-                        p.designSystemActive ? 'text-vermillion' : 'text-accent-text'
-                      }`}
-                    >
-                      01
-                    </span>
-                    <span className="min-w-0">
-                      <span className={`block text-[13.5px] leading-snug text-ink ${p.designSystemActive ? 'font-semibold' : 'font-normal'}`}>
-                        {t.dsProject.title}
-                      </span>
-                      <span className="mt-1 block text-[11px] font-normal text-muted">{t.dsProject.tag}</span>
-                    </span>
-                  </button>
-                </li>
-                {personalProjects.map((pr, i) => {
-                  const active = p.activeProject === pr.id;
-                  return (
-                    <li key={pr.id}>
-                      <button
-                        onClick={() => p.onProject(pr.id)}
-                        aria-current={active ? 'page' : undefined}
-                        className={`t-all group flex w-full items-baseline gap-3 rounded-2xl px-2 py-2.5 text-left ${
-                          active ? 'bg-surface-2' : 'hover:bg-surface-2'
-                        }`}
-                      >
-                        <span
-                          className={`t-all w-6 shrink-0 font-display text-[13px] font-medium italic leading-none ${
-                            active ? 'text-vermillion' : 'text-accent-text'
-                          }`}
-                        >
-                          0{i + 2}
-                        </span>
-                        <span className="min-w-0">
-                          <span className={`block text-[13.5px] leading-snug text-ink ${active ? 'font-semibold' : 'font-normal'}`}>
-                            {pr.title[lang]}
-                          </span>
-                          <span className="mt-1 block text-[11px] font-normal text-muted">{pr.tag[lang]}</span>
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
+        {/* Projets : deux dossiers repliables, un seul ouvert à la fois */}
+        <nav className="min-h-0 flex-1 space-y-1 overflow-y-auto px-5 pb-3">
+          <ProjectFolder id="work-projects" label={t.caseStudies} open={openFolder === 'work'} onToggle={() => toggle('work')} items={workItems} />
+          <ProjectFolder id="personal-projects" label={t.personalProjects} open={openFolder === 'personal'} onToggle={() => toggle('personal')} items={personalItems} />
         </nav>
 
         {/* Accès rapide & contact */}

@@ -1,4 +1,4 @@
-<!-- source-hash: df62a5704dae -->
+<!-- source-hash: 84ab3c194b63 -->
 # Foundations
 
 What applies to every screen, whatever the component: accessibility, layout, content.
@@ -22,16 +22,16 @@ Ratios calculated from the values in `src/index.css`. WCAG AA threshold: 4.5 for
 
 | Pair | Light | Dark |
 |---|---|---|
-| `text-ink` on `bg-bg` | 14.8 | 13.8 |
-| `text-muted` on `bg-bg` | 6.7 | 8.4 |
-| `text-muted` on `bg-elevated` | 7.3 | 7.5 |
-| `text-olive-fg` on `bg-olive` | 6.5 | 5.4 |
+| `text-ink` on `bg-bg` | 14.8 | 14.4 |
+| `text-muted` on `bg-bg` | 6.7 | 7.9 |
+| `text-muted` on `bg-elevated` | 7.3 | 7.1 |
+| `text-olive-fg` on `bg-olive` | 6.5 | 5.3 |
 | `text-accent-fg` on `bg-accent` | 12.8 | 7.0 |
-| Pale olive tag | 7.5 | 6.5 |
-| AI tag | 4.9 | 6.9 |
-| Friction tag | 6.3 | 5.6 |
-| `text-vermillion` on `bg-bg` | 3.3 | 5.3 |
-| `border-line` on `bg-bg` | 1.4 | 1.3 |
+| Pale olive tag | 7.5 | 7.7 |
+| AI tag | 4.9 | 8.0 |
+| Friction tag | 6.3 | 6.8 |
+| `text-vermillion` on `bg-bg` | 3.3 | 5.6 |
+| `border-line` on `bg-bg` | 1.4 | 1.4 |
 
 All text pairs pass AA in both themes. Vermilion does not pass for text in the light theme: it remains punctuation. `border-line` is a decorative line: it must never be the only cue for a state. If you create a new pair, calculate its contrast before using it.
 

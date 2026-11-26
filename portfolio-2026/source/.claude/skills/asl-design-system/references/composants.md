@@ -324,7 +324,7 @@ Le bouton qui replie ou ouvre le menu fait partie du composant : un menu latéra
 1. Bouton de repli : un `icon-btn` au début de la barre du haut, à gauche du titre
 2. Identité : monogramme, nom, métier
 3. Bouton « Nouvelle conversation », neutre
-4. Liste des projets, numérotés dans leur ordre de présentation, puis un dossier repliable « Projets personnels » : icône de dossier, nom, nombre de projets, chevron à droite. Il est fermé par défaut et s'ouvre quand l'un de ses projets est affiché
+4. Deux dossiers repliables, « Projets professionnels » puis « Projets personnels ». Chacun a un titre (icône de dossier, nom, nombre de projets, chevron à droite) et ses projets numérotés dans leur ordre de présentation, avec leur année et leur contexte. Un seul dossier est ouvert à la fois : les projets professionnels par défaut ; le dossier du projet affiché s'ouvre de lui-même, et reste repliable à la main
 5. Accès rapides : contact par email en `btn-primary`, CV en `btn-secondary`
 6. Réglages : deux sélecteurs segmentés côte à côte, la langue (FR / EN, sans icône) et le thème (Light / Dark, avec icône). Toujours les deux.
 

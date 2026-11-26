@@ -25,6 +25,14 @@ Chaque couleur a un seul sens. Tout passe par des tokens, qui changent de valeur
 
 Les fonds sont neutres et unis : pas de dégradé, pas de texture, pas de fond translucide, pas de grande surface colorée.
 
+### Thème sombre
+
+Le thème sombre suit les mêmes tokens, avec des valeurs à part dans `src/index.css`.
+
+- Les fonds sont des gris presque neutres, à peine chauds : jamais de brun ni de bordeaux en grande surface. La couleur reste aux éléments qui portent un sens (olive, bordeaux, turquoise, orange, vermillon).
+- Le texte est un blanc cassé à peine crème, pas le crème de la palette : sur un fond sombre, un texte trop coloré se lit moins bien et ajoute une couleur de plus.
+- Les couleurs porteuses de sens s'éclaircissent pour garder leur contraste ; elles gardent le même sens.
+
 ### Couleurs porteuses de sens
 
 <!-- exemple: meanings -->

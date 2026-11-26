@@ -21,16 +21,16 @@ Rapports calculés sur les valeurs de `src/index.css`. Seuil WCAG AA : 4,5 pour 
 
 | Couple | Clair | Sombre |
 |---|---|---|
-| `text-ink` sur `bg-bg` | 14,8 | 13,8 |
-| `text-muted` sur `bg-bg` | 6,7 | 8,4 |
-| `text-muted` sur `bg-elevated` | 7,3 | 7,5 |
-| `text-olive-fg` sur `bg-olive` | 6,5 | 5,4 |
+| `text-ink` sur `bg-bg` | 14,8 | 14,4 |
+| `text-muted` sur `bg-bg` | 6,7 | 7,9 |
+| `text-muted` sur `bg-elevated` | 7,3 | 7,1 |
+| `text-olive-fg` sur `bg-olive` | 6,5 | 5,3 |
 | `text-accent-fg` sur `bg-accent` | 12,8 | 7,0 |
-| Tag olive pâle | 7,5 | 6,5 |
-| Tag IA | 4,9 | 6,9 |
-| Tag friction | 6,3 | 5,6 |
-| `text-vermillion` sur `bg-bg` | 3,3 | 5,3 |
-| `border-line` sur `bg-bg` | 1,4 | 1,3 |
+| Tag olive pâle | 7,5 | 7,7 |
+| Tag IA | 4,9 | 8,0 |
+| Tag friction | 6,3 | 6,8 |
+| `text-vermillion` sur `bg-bg` | 3,3 | 5,6 |
+| `border-line` sur `bg-bg` | 1,4 | 1,4 |
 
 Tous les couples de texte passent AA dans les deux thèmes. Le vermillon ne passe pas pour du texte en thème clair : il reste une ponctuation. `border-line` est un trait décoratif : il ne doit jamais être le seul indice d'un état. Si tu crées un nouveau couple, calcule son contraste avant de l'utiliser.
 

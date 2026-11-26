@@ -1,4 +1,4 @@
-<!-- source-hash: 8377417deca8 -->
+<!-- source-hash: 793e7e263f9c -->
 # Styles
 
 Colour, typography, shapes, elevation, icons. The source of truth for values remains `src/index.css`:
@@ -25,6 +25,14 @@ Each colour has a single meaning. Everything goes through tokens, which change v
 | `border-rule` | Strong line: heading rule, outlined button |
 
 Backgrounds are neutral and solid: no gradient, no texture, no translucent background, no large coloured surface.
+
+### Dark theme
+
+The dark theme uses the same tokens, with its own values in `src/index.css`.
+
+- Backgrounds are almost neutral greys, barely warm: never brown or burgundy over a large surface. Colour stays on the elements that carry a meaning (olive, burgundy, turquoise, orange, vermilion).
+- Text is an off-white with a hint of cream, not the palette's cream: on a dark background, overly coloured text reads less well and adds one more colour.
+- Meaningful colours get lighter to keep their contrast; they keep the same meaning.
 
 ### Colours that carry meaning
 
