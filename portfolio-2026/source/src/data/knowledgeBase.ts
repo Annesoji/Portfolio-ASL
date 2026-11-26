@@ -1202,6 +1202,144 @@ Figma (Expert), Storybook, Zeroheight.`,
 
   /* ------------------------------------------------------------------ */
   {
+    id: 'vitalize',
+    question: {
+      fr: "Parle-moi de Vitaliz : comment a-t-elle mené une étude UX complète, des personas à l'application ?",
+      en: 'Tell me about Vitaliz: how did she run a full UX study, from personas to the app?',
+    },
+    chip: { fr: 'Vitaliz, étude UX complète', en: 'Vitaliz, full UX study' },
+    keywords: [
+      ['vitalize', 9], ['vitaliz', 9], ['bracelet', 7], ['montre', 6], ['watch', 6], ['wristband', 7], ['blueprint', 7], ['service blueprint', 8],
+      ['charte graphique', 6], ['brand guidelines', 6], ['projet de master', 6], ['master project', 6], ['master 2', 5], ['sport', 4],
+      ['interview', 4], ['persona', 3], ['experience map', 4], ["carte d'experience", 4],
+    ],
+    answer: {
+      fr: {
+        standard: `### Contexte
+Dernier projet de Master : imaginer une marque de bracelets connectés de sport, Vitaliz, et concevoir son application mobile, des personas aux supports promotionnels. Le bracelet suit et aide à améliorer tout ce qui compte pour la pratique sportive et le quotidien : activité, sommeil, alimentation, santé.
+
+*Projet d'école : marque fictive.*
+
+### Problématique
+Le marché du bracelet connecté est saturé, et l'acheteur doute : quel modèle choisir, et les données sont-elles fiables ? Comment faire exister une nouvelle marque, et rassurer avant l'achat ?
+
+### Son rôle
+Cibles et personas, carte d'expérience, service blueprint, identité de marque et charte graphique, prototype mobile, supports promotionnels.
+
+### La solution
+Une marque sportive et rassurante, dont chaque choix répond à un besoin de la cible. Sa signature : « Votre vie, au centre de tout ».
+
+**Un seul modèle par persona** : l'acheteur n'a plus à comparer une gamme entière, il reconnaît le bracelet fait pour lui.
+
+### 1 · Les cibles
+Quatre cibles, de la plus large au cœur de cible : des actifs urbains de 27 à 37 ans, qui veulent rester motivés, suivre leur progression et relier le bracelet à leurs autres appareils.
+
+*Personas et parcours sont des hypothèses de travail : l'exercice ne prévoyait pas d'utilisateurs réels.*
+
+[[vitalize-persona]]
+
+- **Sa motivation** : un suivi fiable, des données poussées, une interface intuitive.
+- **Ses freins avant l'achat** : la robustesse du produit, la fiabilité des données de sport et de santé.
+
+### 2 · La carte d'expérience
+[[vitalize-map]]
+
+- **Le doute grandit jusqu'à la décision** : motivé au départ, puis perdu devant l'offre, prudent, inquiet de se tromper.
+- **Chaque friction devient une opportunité** : être trouvé en premier, lister les bénéfices, montrer les tests de fiabilité, offrir une garantie.
+
+### 3 · Le service blueprint
+Le parcours est ensuite déroulé côté service, de la prise de conscience au support : ce que fait le client, ce que la marque lui montre, et ce qu'elle doit faire en coulisses pour que cela tienne.
+
+### 4 · L'identité de marque
+[[vitalize-brand]]
+
+- **Un logo en mouvement** : des lettres coupées, un « V » qui arrive comme un saut. La version miniature dessine une attache de montre.
+- **Une charte qui encadre l'usage** : zones de protection, tailles minimales, interdits, échelle typographique.
+- **Une marque pour tous, pas seulement pour les grands sportifs**. La garantie de trois ans répond au premier frein du persona : la fiabilité.
+
+### 5 · L'application
+- **Tout le suivi au même endroit** : activité, sommeil, alimentation, santé.
+- **Le partage et le jeu** : des défis à relever avec d'autres membres. Prendre soin de sa santé devient ludique, et l'on revient pour les autres autant que pour soi.
+
+Le prototype est à essayer en bas de page.
+
+### 6 · Les supports
+[[vitalize-shop]]
+
+### Ce que ce projet montre
+Une démarche complète, menée dans l'ordre : la cible d'abord, puis le parcours, le service, la marque et l'application.`,
+        express: `- **Contexte** : dernier projet de Master — une marque de bracelets connectés de sport et son application mobile, pour suivre activité, sommeil, alimentation et santé. Projet d'école, marque fictive.
+- **Problématique** : faire exister une nouvelle marque sur un marché saturé, et rassurer sur la fiabilité avant l'achat.
+- **Son rôle** : personas, parcours, blueprint, identité, prototype, supports.
+- **Solution** : un seul modèle par persona pour faciliter le choix, une marque rassurante et une application mobile prototypée.`,
+      },
+      en: {
+        standard: `### Context
+Final Master's project: invent a brand of connected sports wristbands, Vitaliz, and design its mobile app, from personas to promotional material. The wristband tracks and helps improve everything that matters for sport and daily life: activity, sleep, nutrition, health.
+
+*School project: fictional brand.*
+
+### The problem
+The connected wristband market is saturated, and buyers hesitate: which model to choose, and is the data reliable? How do you make a new brand exist, and reassure before purchase?
+
+### Her role
+Audiences and personas, experience map, service blueprint, brand identity and guidelines, mobile prototype, promotional material.
+
+### The solution
+A sporty, reassuring brand where every choice answers a need of the audience. Its tagline: “Votre vie, au centre de tout” (your life, at the centre of everything).
+
+**One model per persona**: buyers no longer have to compare a whole range, they recognise the wristband made for them.
+
+### 1 · The audiences
+Four audiences, from the broadest to the core target: urban professionals aged 27 to 37 who want to stay motivated, track their progress and connect the wristband to their other devices.
+
+*Personas and journeys are working hypotheses: the exercise did not involve real users.*
+
+[[vitalize-persona]]
+
+- **His motivation**: reliable tracking, detailed data, an intuitive interface.
+- **His barriers before buying**: how robust the product is, how reliable the sports and health data are.
+
+### 2 · The experience map
+[[vitalize-map]]
+
+- **Doubt grows until the decision**: motivated at first, then lost in the offer, cautious, worried about choosing wrong.
+- **Each pain point becomes an opportunity**: be found first, list the benefits, show the reliability tests, offer a warranty.
+
+### 3 · The service blueprint
+The journey is then laid out on the service side, from awareness to support: what the customer does, what the brand shows, and what it has to do backstage to make it hold.
+
+### 4 · The brand identity
+[[vitalize-brand]]
+
+- **A logo in motion**: cut letters, a “V” that lands like a jump. The compact version draws a watch clasp.
+- **Guidelines that frame its use**: clear space, minimum sizes, don'ts, type scale.
+- **A brand for everyone, not only for serious athletes**. The three-year warranty answers the persona's first barrier: reliability.
+
+### 5 · The app
+- **All tracking in one place**: activity, sleep, nutrition, health.
+- **Sharing and play**: challenges to take on with other members. Looking after your health becomes fun, and you come back for the others as much as for yourself.
+
+The prototype can be tried at the bottom of the page.
+
+### 6 · The promotional material
+[[vitalize-shop]]
+
+### What this project shows
+A complete approach, done in order: the audience first, then the journey, the service, the brand and the app.`,
+        express: `- **Context**: final Master's project — a brand of connected sports wristbands and its mobile app, to track activity, sleep, nutrition and health. School project, fictional brand.
+- **Problem**: make a new brand exist in a saturated market, and reassure on reliability before purchase.
+- **Her role**: personas, journeys, blueprint, identity, prototype, promotional material.
+- **Solution**: one model per persona to make choosing easier, a reassuring brand and a prototyped mobile app.`,
+      },
+    },
+    attachment: 'vitalize',
+    anchors: true,
+    followUps: ['rebrand', 'grdf', 'background'],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
     id: 'rebrand',
     question: {
       fr: "Parle-moi du rebranding de McDonald's : comment a-t-elle repositionné une marque connue pour une autre cible ?",
@@ -1235,7 +1373,7 @@ Des familles urbaines, des parents de 30 à 45 ans attentifs à ce qu'ils mangen
 ### 2 · Le logo
 [[rebrand-logo]]
 
-- **Des cercles à la place des arches** : une assiette vue de dessus, et un clin d'œil rétro.
+- **Des cercles à la place des arches** : un clin d'œil aux cercles des Looney Tunes, pour garder le côté famille dans une identité rétro.
 - **Le rouge et le jaune restent**, adoucis : on reconnaît la marque. **Le vert s'ajoute**, pour le frais.
 - **Deux typographies** : un « Mc » à empattements, élégant ; un « Donald's » rond et gras, convivial. Le haut de gamme et la famille dans le même logo.
 
@@ -1285,7 +1423,7 @@ Urban families, parents aged 30 to 45 who care about what they eat. They want a 
 ### 2 · The logo
 [[rebrand-logo]]
 
-- **Circles instead of the arches**: a plate seen from above, with a retro wink.
+- **Circles instead of the arches**: a nod to the Looney Tunes rings, to keep the family feel within a retro identity.
 - **Red and yellow stay**, softened: the brand is recognisable. **Green is added**, for freshness.
 - **Two typefaces**: an elegant serif “Mc”; a round, bold, friendly “Donald's”. Premium and family in the same logo.
 
@@ -1316,7 +1454,7 @@ An identity built end to end, from the logo to the screens: art direction in the
       },
     },
     anchors: true,
-    followUps: ['portfoliods', 'grdf', 'background'],
+    followUps: ['vitalize', 'portfoliods', 'grdf'],
   },
 
   /* ------------------------------------------------------------------ */

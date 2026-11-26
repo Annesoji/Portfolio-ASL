@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, ArrowUpRight, Bot, Check, ChevronsLeftRight, ClipboardList, Code2, PenTool, UserCheck, X } from 'lucide-react';
 import { GRDF_PROTOTYPE, GRDF_PROTOTYPE_LINK, GRDF_SITE, grdfStrings } from '../data/grdfFlow';
+import { VITALIZE_PROTOTYPE, VITALIZE_PROTOTYPE_LINK, vitalizeStrings } from '../data/vitalize';
 import type { Lang, Localized } from '../types';
 
 /**
@@ -386,32 +387,94 @@ export function GrdfGallery({ lang, set }: { lang: Lang; set: GrdfSet }) {
   );
 }
 
-/** Le prototype Figma, en version mobile, intégré à la fin de l'étude de cas : il charge pendant la lecture. */
-export function GrdfPrototype({ id, lang }: { id: string; lang: Lang }) {
-  const t = grdfStrings[lang];
+interface PhoneProto {
+  id: string;
+  eyebrow: string;
+  title: string;
+  text: string;
+  embed: string;
+  frameTitle: string;
+  /** Écran plus haut que large : true pour un prototype au format téléphone récent */
+  tall?: boolean;
+  /** Liens sous le texte : le premier est l'action principale */
+  links: { label: string; href: string }[];
+}
+
+/** Un prototype Figma mobile intégré à la fin d'une étude de cas : il charge pendant la lecture. */
+function PhonePrototype({ id, eyebrow, title, text, embed, frameTitle, links, tall }: PhoneProto) {
   return (
     <section id={id} className="mt-6 scroll-mt-16 rounded-3xl border border-line bg-elevated p-5">
       <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto]">
         <div className="min-w-0">
-          <p className="eyebrow text-muted">{t.protoEyebrow}</p>
-          <h3 className="mt-1 font-display text-[1.2rem] font-semibold leading-tight tracking-[-0.02em] text-ink">{t.ctaTitle}</h3>
-          <p className="mt-2 text-[13.5px] font-light leading-relaxed text-muted">{t.ctaText}</p>
+          <p className="eyebrow text-muted">{eyebrow}</p>
+          <h3 className="mt-1 font-display text-[1.2rem] font-semibold leading-tight tracking-[-0.02em] text-ink">{title}</h3>
+          <p className="mt-2 text-[13.5px] font-light leading-relaxed text-muted">{text}</p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <a href={GRDF_SITE} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              {t.site} <ArrowUpRight size={15} aria-hidden />
-            </a>
-            <a href={GRDF_PROTOTYPE_LINK} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-              {t.openFigma} <ArrowUpRight size={15} aria-hidden />
-            </a>
+            {links.map((link, i) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className={i === 0 ? 'btn-primary' : 'btn-secondary'}>
+                {link.label} <ArrowUpRight size={15} aria-hidden />
+              </a>
+            ))}
           </div>
         </div>
         {/* ds-ignore: le prototype est toujours clair, son support reste blanc dans les deux thèmes */}
-        <div className="relative mx-auto aspect-[375/700] w-[300px] max-w-full overflow-hidden rounded-xl border border-rule bg-white">
+        <div className={`relative mx-auto w-[300px] max-w-full overflow-hidden rounded-xl border border-rule bg-white ${tall ? 'aspect-[375/812]' : 'aspect-[375/700]'}`}>
           {/* Le cadre Figma dépasse en haut et en bas : ses flèches de navigation sortent du champ et ne recouvrent plus le menu du prototype */}
-          <iframe src={GRDF_PROTOTYPE} title={t.viewerTitle} loading="eager" allowFullScreen className="absolute inset-x-0 -top-10 block h-[calc(100%+5rem)] w-full border-0" />
+          <iframe src={embed} title={frameTitle} loading="eager" allowFullScreen className="absolute inset-x-0 -top-10 block h-[calc(100%+5rem)] w-full border-0" />
         </div>
       </div>
     </section>
+  );
+}
+
+export function GrdfPrototype({ id, lang }: { id: string; lang: Lang }) {
+  const t = grdfStrings[lang];
+  return (
+    <PhonePrototype
+      id={id}
+      eyebrow={t.protoEyebrow}
+      title={t.ctaTitle}
+      text={t.ctaText}
+      embed={GRDF_PROTOTYPE}
+      frameTitle={t.viewerTitle}
+      links={[
+        { label: t.site, href: GRDF_SITE },
+        { label: t.openFigma, href: GRDF_PROTOTYPE_LINK },
+      ]}
+    />
+  );
+}
+
+/* ------------------------------------------------------------------ Vitalize : planches et prototype */
+
+type VitalizeShotId = 'persona' | 'map' | 'brand' | 'shop';
+const VITALIZE_FILES: Record<VitalizeShotId, string> = { persona: 'persona', map: 'parcours', brand: 'charte', shop: 'vitrine' };
+
+/** Une planche du projet : elle s'ouvre en grand dans un nouvel onglet. */
+export function VitalizeShot({ lang, shot }: { lang: Lang; shot: VitalizeShotId }) {
+  const caption = vitalizeStrings[lang][shot];
+  const src = `${import.meta.env.BASE_URL}vitalize/${VITALIZE_FILES[shot]}.jpg`;
+  return (
+    <a href={src} target="_blank" rel="noopener noreferrer" className="t-all my-4 block overflow-hidden rounded-2xl border border-line bg-elevated hover:border-rule">
+      <img src={src} alt={caption} loading="lazy" className="block h-auto w-full" />
+      <span className="block border-t border-line px-4 py-2.5 text-[12.5px] font-light leading-snug text-muted">{caption}</span>
+    </a>
+  );
+}
+
+export function VitalizePrototype({ id, lang }: { id: string; lang: Lang }) {
+  const t = vitalizeStrings[lang];
+  return (
+    <PhonePrototype
+      id={id}
+      eyebrow={t.protoEyebrow}
+      title={t.ctaTitle}
+      text={t.ctaText}
+      embed={VITALIZE_PROTOTYPE}
+      tall
+      frameTitle={t.viewerTitle}
+      links={[{ label: t.openFigma, href: VITALIZE_PROTOTYPE_LINK }]}
+    />
   );
 }
 

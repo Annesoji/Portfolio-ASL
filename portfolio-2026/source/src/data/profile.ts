@@ -55,6 +55,15 @@ export const projects: Project[] = [
 /** Projets personnels, rangés dans le dossier repliable du menu (après le Design System du portfolio). */
 export const personalProjects: Project[] = [
   {
+    id: 'vitalize',
+    intentId: 'vitalize',
+    title: {
+      fr: 'Vitaliz Des personas à l’application mobile',
+      en: 'Vitaliz From personas to the mobile app',
+    },
+    tag: { fr: '2023 · Master 2 · Étude UX complète', en: '2023 · Master’s year 2 · Full UX study' },
+  },
+  {
     id: 'rebrand',
     intentId: 'rebrand',
     title: {

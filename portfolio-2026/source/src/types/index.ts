@@ -2,7 +2,7 @@ export type Lang = 'fr' | 'en';
 export type Theme = 'light' | 'dark';
 export type ModelId = 'standard' | 'express' | 'deepdive';
 export type ActionId = 'cv' | 'email';
-export type AttachmentId = 'skill' | 'covenant' | 'ds' | 'grdf';
+export type AttachmentId = 'skill' | 'covenant' | 'ds' | 'grdf' | 'vitalize';
 
 export type Localized<T = string> = Record<Lang, T>;
 

@@ -11,7 +11,7 @@ import FlowBoard from './FlowBoard';
 import Markdown from './Markdown';
 import Monogram from './Monogram';
 import RepoMap from './RepoMap';
-import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RebrandScreens, RebrandShot, RelaySteps, RoleCards, SkillLessons, SkillTest } from './CaseVisuals';
+import { FigureTiles, PrincipleCards, GrdfCompare, GrdfGallery, GrdfPrototype, RebrandScreens, RebrandShot, RelaySteps, RoleCards, SkillLessons, SkillTest, VitalizePrototype, VitalizeShot } from './CaseVisuals';
 import SectionNav, { type SectionLink } from './SectionNav';
 import SkillPreview from './SkillPreview';
 
@@ -73,7 +73,7 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
     ? [
         ...(intent.flow && !flowInText ? [{ id: `${message.id}-flow`, label: intent.flow === 'covenant' ? fs.navFlow : fs.navUxFlow }] : []),
         ...[...full.matchAll(/^###\s+(.+)$/gm)].map((m, i) => ({ id: `${message.id}-s${i}`, label: m[1] })),
-        ...(intent.attachment === 'covenant' || intent.attachment === 'grdf' ? [{ id: `${message.id}-proto`, label: fs.navProto }] : []),
+        ...(intent.attachment === 'covenant' || intent.attachment === 'grdf' || intent.attachment === 'vitalize' ? [{ id: `${message.id}-proto`, label: fs.navProto }] : []),
       ]
     : [];
 
@@ -114,6 +114,10 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
                 'rebrand-logo': <RebrandShot lang={lang} shot="logo" />,
                 'rebrand-hero': <RebrandShot lang={lang} shot="hero" />,
                 'rebrand-screens': <RebrandScreens lang={lang} />,
+                'vitalize-persona': <VitalizeShot lang={lang} shot="persona" />,
+                'vitalize-map': <VitalizeShot lang={lang} shot="map" />,
+                'vitalize-brand': <VitalizeShot lang={lang} shot="brand" />,
+                'vitalize-shop': <VitalizeShot lang={lang} shot="shop" />,
                 'repo-map': <RepoMap lang={lang} />,
                 'bnp-figures': <FigureTiles lang={lang} />,
                 'ds-principles': <PrincipleCards lang={lang} />,
@@ -149,6 +153,7 @@ export default function ChatMessage({ message, lang, t, streamCount, isLast, onA
 
         {/* Le prototype est monté dès le début de la réponse : il charge pendant la lecture */}
         {!thinking && intent.attachment === 'grdf' && <GrdfPrototype id={`${message.id}-proto`} lang={lang} />}
+        {!thinking && intent.attachment === 'vitalize' && <VitalizePrototype id={`${message.id}-proto`} lang={lang} />}
 
         {complete && intent.attachment === 'covenant' && (
           <div
