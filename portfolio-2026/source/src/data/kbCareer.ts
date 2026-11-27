@@ -344,7 +344,8 @@ That is what led her to Product Design: a job that brings together creativity, t
     },
     chip: { fr: 'Comment ce portfolio est fait', en: 'How this portfolio is built' },
     keywords: [
-      ['chatgpt', 8], ['gpt', 6], ['tu es', 4], ['are you', 4], ['robot', 5], ['bot', 5], ['ia qui repond', 8],
+      ['chatgpt', 8], ['tu es une ia', 12], ['es tu une ia', 12], ['est ce une ia', 12], ['are you an ai', 12],
+      ['are you a bot', 12], ['parle a une ia', 11], ['talking to an ai', 11], ['gpt', 6], ['tu es', 4], ['are you', 4], ['robot', 5], ['bot', 5], ['ia qui repond', 8],
       ['ce portfolio', 7], ['this portfolio', 5], ['ce site', 5], ['this site', 5], ['code ce', 5], ['coded', 4],
       ['construit', 3], ['built', 4], ['react', 6], ['technolog', 4], ['comment marche', 5], ['how does this', 4],
       ['how it works', 4], ['fonctionne', 3], ['vraie ia', 6], ['real ai', 6], ['chatbot', 5], ['assistant', 3],
