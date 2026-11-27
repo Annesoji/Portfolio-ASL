@@ -1,4 +1,5 @@
 import type { Intent, Lang, ModelId } from '../types';
+import { careerIntents } from './kbCareer';
 
 /**
  * Base de connaissances d'Anne-Sophie Leroy.
@@ -31,9 +32,15 @@ export const intents: Intent[] = [
         standard: `**Anne-Sophie Leroy** est Product Designer — UX/UI, Design Ops & AI Workflows, basée à Paris.
 
 ### Ce qui la différencie
-- **Un double ADN créatif et technique** : un héritage issu des arts visuels et de la mode (Balmain, Indress), conjugué à une forte expertise Design System, *AI Skills* et *vibecoding*.
+- **Un double profil, technique et créatif** : une maîtrise pointue de l'UX et de l'UI, et des compétences de graphiste pour l'illustration et la création quand le projet le demande. Un héritage des arts visuels et de la mode (Balmain, Indress), conjugué à une forte expertise Design System, *AI Skills* et *vibecoding*.
+- **Six secteurs** : mode, retail, luxe, banque, énergie et secteur public.
 - **Des produits complexes rendus lisibles** : chaîne de crédit grandes entreprises chez BNP Paribas CIB, application Privilege Card du Groupe Kering, plateforme justdecarb.grdf.fr.
 - **L'industrialisation du design** : elle a cadré, avec son équipe, un Design System lisible par l'IA, et prototype en haute fidélité avec Claude Code pour accélérer le delivery.
+
+### Sa façon de travailler
+- **Curieuse et autodidacte** : passée des arts visuels et de la mode à l'UX, puis aux workflows IA, elle a appris seule Claude Code et les skills. Ce qu'elle aime : apprendre et relever de nouveaux défis.
+- **Sens du collectif** : elle fait travailler ensemble métiers, développeurs et équipes IA, en atelier comme au quotidien.
+- **Adaptable** : elle prend vite ses repères dans un nouveau métier et un nouveau contexte.
 
 ### En chiffres
 | Mission | Résultat |
@@ -45,7 +52,9 @@ export const intents: Intent[] = [
         express: `- **Product Designer** UX/UI, Design Ops & AI Workflows — Paris, chez mc2i depuis janvier 2024.
 - **Aujourd'hui** : BNP Paribas CIB, équipes IA et UX — ==+5 modules sur 17== optimisés par l'IA, ==~1 500 utilisateurs==.
 - **Avant** : Groupe Kering (==40 000 utilisateurs==), GRDF (==Note C EcoIndex== + RGAA).
-- **Sa signature** : le design augmenté par l'IA (*AI Skills*, *vibecoding* avec Claude Code), porté par un œil créatif issu de la mode.`,
+- **Sa signature** : le design augmenté par l'IA (*AI Skills*, *vibecoding* avec Claude Code), porté par un œil créatif issu de la mode.
+- **Six secteurs** : mode, retail, luxe, banque, énergie et secteur public.
+- **Sa façon de travailler** : curieuse et autodidacte, sens du collectif, adaptable.`,
         deep: `### Lecture Design Lead
 - **Positionnement** : à la jonction entre conception produit et outillage des équipes — elle ne livre pas seulement des écrans, elle fait évoluer la façon dont l'équipe les produit.
 - **Levier 1 — Cadre** : avec l'équipe, des principes pour qu'un Design System soit exploitable par des agents IA.
@@ -56,9 +65,15 @@ export const intents: Intent[] = [
         standard: `**Anne-Sophie Leroy** is a Product Designer — UX/UI, Design Ops & AI Workflows, based in Paris.
 
 ### What sets her apart
-- **A creative and technical DNA**: a heritage from visual arts and fashion (Balmain, Indress) combined with strong expertise in Design Systems, *AI Skills* and *vibecoding*.
+- **A dual profile, technical and creative**: in-depth UX and UI expertise, plus graphic design skills for illustration and creative work when the project calls for it. A heritage from visual arts and fashion (Balmain, Indress), combined with strong expertise in Design Systems, *AI Skills* and *vibecoding*.
+- **Six sectors**: fashion, retail, luxury, banking, energy and the public sector.
 - **Complex products made readable**: the large-corporate credit chain at BNP Paribas CIB, Kering Group's Privilege Card app, the justdecarb.grdf.fr platform.
 - **Industrialising design**: with her team she framed an AI-readable Design System, and builds high-fidelity prototypes with Claude Code to speed up delivery.
+
+### How she works
+- **Curious and self-taught**: from visual arts and fashion to UX, then to AI workflows, she taught herself Claude Code and skills. What she enjoys: learning and taking on new challenges.
+- **Team spirit**: she gets business teams, developers and AI teams working together, in workshops and day to day.
+- **Adaptable**: she quickly finds her bearings in a new business and a new context.
 
 ### In figures
 | Engagement | Result |
@@ -70,7 +85,9 @@ export const intents: Intent[] = [
         express: `- **Product Designer** UX/UI, Design Ops & AI Workflows — Paris, at mc2i since January 2024.
 - **Today**: BNP Paribas CIB, AI and UX teams — ==+5 of 17 modules== optimised with AI, ==~1,500 users==.
 - **Before**: Kering Group (==40,000 users==), GRDF (==EcoIndex grade C== + RGAA).
-- **Her signature**: AI-augmented design (*AI Skills*, *vibecoding* with Claude Code), driven by a creative eye trained in fashion.`,
+- **Her signature**: AI-augmented design (*AI Skills*, *vibecoding* with Claude Code), driven by a creative eye trained in fashion.
+- **Six sectors**: fashion, retail, luxury, banking, energy and the public sector.
+- **How she works**: curious and self-taught, team spirit, adaptable.`,
         deep: `### Design Lead reading
 - **Positioning**: at the junction of product design and team tooling — she doesn't only ship screens, she improves how the team produces them.
 - **Lever 1 — Framework**: with the team, principles that make a Design System usable by AI agents.
@@ -111,11 +128,11 @@ Avec son équipe, elle a développé puis formalisé une nouvelle façon de trav
 Pour maîtriser la mécanique, elle a conçu et testé, avec Claude Code, un skill sur le Design System de ce portfolio. En voici le fichier réel.
 
 ### Résultat
-==+5 modules sur 17== déjà optimisés par l'IA et déployés auprès d'environ ==1 500 utilisateurs==, avec une réduction significative de la dette design et une accélération du delivery.`,
+==+5 modules sur 17== déjà simplifiés grâce à l'IA et déployés auprès d'environ ==1 500 utilisateurs==, avec des retours positifs des utilisateurs cibles. Les composants sont unifiés, la navigation est homogène d'un module à l'autre, et le delivery s'accélère.`,
         express: `- **Cadre d'équipe** : un flow où l'IA génère et le designer juge, développé avec son équipe chez BNP Paribas CIB.
 - **Vibecoding** : prototypes haute fidélité fonctionnels avec Claude Code et les *AI Skills* du Design System, specs en \`.md\`.
 - **Skill** : un skill conçu et testé par elle, avec Claude Code, sur le Design System de ce portfolio.
-- **Impact** : ==+5 modules sur 17== optimisés par l'IA, ==~1 500 utilisateurs==, dette design réduite.`,
+- **Impact** : ==+5 modules sur 17== simplifiés grâce à l'IA, ==~1 500 utilisateurs==, composants et navigation unifiés.`,
         deep: `### Le dispositif (vue Design Lead)
 | Brique | Rôle dans le workflow |
 |---|---|
@@ -140,11 +157,11 @@ With her team, she developed then formalised a new way of working: a flow where 
 To master the mechanics, she designed and tested, with Claude Code, a skill on this portfolio's Design System. Here is the real file.
 
 ### Outcome
-==+5 of 17 modules== already optimised with AI and rolled out to around ==1,500 users==, with a significant reduction in design debt and faster delivery.`,
+==5+ of 17 modules== already simplified with AI and rolled out to around ==1,500 users==, with positive feedback from target users. Components are unified, navigation is consistent from one module to the next, and delivery is faster.`,
         express: `- **Team framework**: a flow where the AI generates and the designer judges, developed with her team at BNP Paribas CIB.
 - **Vibecoding**: functional high-fidelity prototypes with Claude Code and the Design System *AI Skills*, specs in \`.md\`.
 - **Skill**: a skill she designed and tested, with Claude Code, on this portfolio's Design System.
-- **Impact**: ==+5 of 17 modules== optimised with AI, ==~1,500 users==, less design debt.`,
+- **Impact**: ==5+ of 17 modules== simplified with AI, ==~1,500 users==, unified components and navigation.`,
         deep: `### The system (Design Lead view)
 | Building block | Role in the workflow |
 |---|---|
@@ -164,57 +181,72 @@ To master the mechanics, she designed and tested, with Claude Code, a skill on t
   {
     id: 'impact',
     question: {
-      fr: 'Quels sont ses principaux résultats mesurables ?',
-      en: 'What are her main measurable results?',
+      fr: 'Quel impact a eu son travail, mission par mission ?',
+      en: 'What impact has her work had, engagement by engagement?',
     },
-    chip: { fr: 'Ses résultats mesurables', en: 'Her measurable results' },
+    chip: { fr: 'L’impact de son travail', en: 'The impact of her work' },
     keywords: [
       ['impact', 5], ['resultat', 5], ['result', 5], ['chiffre', 5], ['figure', 4], ['kpi', 5], ['metric', 5],
       ['mesur', 4], ['measur', 4], ['performance', 3], ['roi', 4], ['succes', 3], ['success', 3],
-      ['achievement', 4], ['reussite', 4], ['numbers', 4],
+      ['achievement', 4], ['reussite', 4], ['numbers', 4], ['retours utilisateurs', 5],
+      ['user feedback', 5], ['dette design', 5], ['design debt', 5], ['apport', 3],
     ],
     answer: {
       fr: {
-        standard: `Voici les résultats mesurables d'Anne-Sophie, mission par mission.
+        standard: `Voici ce que le travail d'Anne-Sophie a changé, mission par mission.
 
-| Mission | Période | Impact |
+| Mission | Périmètre | Ce que son travail a changé |
 |---|---|---|
-| **BNP Paribas CIB** — chaîne de crédit | Août 2024 – aujourd'hui | ==+5 modules sur 17== optimisés par l'IA, déployés auprès de ==~1 500 utilisateurs== |
-| **Groupe Kering** — Privilege Card | Sept. 2022 – Déc. 2023 | ==40 000 utilisateurs== actifs sur l'application |
-| **GRDF** — justdecarb.grdf.fr | Janv. – Mai 2024 | ==Note C EcoIndex== + conformité ==RGAA== |
-| **Eden Park** — e-commerce | Janv. 2021 – Juil. 2022 | ==+20 % de ventes== en 1 an |
+| **BNP Paribas CIB** · chaîne de crédit · 2024 – aujourd'hui | 17 modules, ~1 500 utilisateurs | ==+5 modules== simplifiés grâce à l'IA |
+| **Groupe Kering** · Privilege Card · 2022 – 2023 | ==40 000 utilisateurs== actifs | Quotas d'achat et restrictions de vente fiabilisés |
+| **GRDF** · justdecarb.grdf.fr · 2024 | Plateforme grand public | ==Note C EcoIndex== et conformité ==RGAA== |
+| **Eden Park** · e-commerce · 2021 – 2022 | Site e-commerce | Contribution à ==+20 % de ventes== en un an |
 
-### Au-delà des chiffres
-- **BNP Paribas CIB** : réduction significative de la dette design et accélération du delivery.
-- **Kering** : fiabilisation de la gestion des quotas d'achat et du respect des restrictions de vente en boutique.
+### Chez BNP Paribas CIB
+- **+5 modules sur 17 simplifiés grâce à l'IA** : l'IA prend en charge les tâches chronophages, allège la charge cognitive et limite les erreurs de données. Les retours des utilisateurs cibles sont positifs.
+- **Une dette design réduite** : des composants unifiés et une navigation homogène, plus intuitive d'un module à l'autre.
+- **Une équipe qui travaille autrement** : des process co-construits entre les pôles IA et UX, des prototypes haute fidélité en *vibecoding* et des specs en \`.md\`.
+
+### Chez Eden Park
+- **Une contribution à +20 % de ventes en un an**, avec l'équipe e-commerce : refonte éditoriale du site, stratégie e-marketing, migration de Magento vers Shopify et suivi des tickets de maintenance.
+
+### Chez Kering et GRDF
+- **Kering** : la gestion des quotas d'achat et des restrictions de vente devient fiable en boutique.
 - **GRDF** : un Design System dédié, sobre et accessible.`,
-        express: `- **BNP Paribas CIB** : ==+5 modules sur 17== optimisés par l'IA · ==~1 500 utilisateurs==.
-- **Groupe Kering** : ==40 000 utilisateurs== actifs sur l'app Privilege Card.
-- **GRDF** : ==Note C EcoIndex== + conformité RGAA.
-- **Eden Park** : ==+20 % de ventes e-commerce== en 1 an.`,
+        express: `- **BNP Paribas CIB** : ==+5 modules sur 17== simplifiés grâce à l'IA, moins de tâches chronophages et d'erreurs, retours utilisateurs positifs.
+- **Groupe Kering** : quotas d'achat fiabilisés sur une app de ==40 000 utilisateurs==.
+- **GRDF** : ==Note C EcoIndex== et conformité RGAA.
+- **Eden Park** : contribution à ==+20 % de ventes e-commerce== en un an.`,
         deep: `### Comment ces résultats ont été obtenus
 - **BNP** : l'impact vient du couple Design System + AI Skills mis en place par l'équipe — moins d'écarts à corriger, des prototypes fonctionnels plus tôt dans le cycle.
 - **Kering** : recherche utilisateurs, cartographies de parcours complexes et tests itératifs avant chaque évolution de l'app.
 - **GRDF** : les audits UX et RGAA en amont ont cadré un Design System sobre, pensé mobile-first — la performance environnementale est une conséquence du design, pas un correctif.`,
       },
       en: {
-        standard: `Here are Anne-Sophie's measurable results, engagement by engagement.
+        standard: `Here is what Anne-Sophie's work changed, engagement by engagement.
 
-| Engagement | Period | Impact |
+| Engagement | Scope | What her work changed |
 |---|---|---|
-| **BNP Paribas CIB** — credit chain | Aug 2024 – present | ==+5 of 17 modules== optimised with AI, rolled out to ==~1,500 users== |
-| **Kering Group** — Privilege Card | Sep 2022 – Dec 2023 | ==40,000 active users== on the app |
-| **GRDF** — justdecarb.grdf.fr | Jan – May 2024 | ==EcoIndex grade C== + ==RGAA== compliance |
-| **Eden Park** — e-commerce | Jan 2021 – Jul 2022 | ==+20% sales== in one year |
+| **BNP Paribas CIB** · credit chain · 2024 – present | 17 modules, ~1,500 users | ==5+ modules== simplified with AI |
+| **Kering Group** · Privilege Card · 2022 – 2023 | ==40,000 active users== | Reliable purchase quotas and sales restrictions |
+| **GRDF** · justdecarb.grdf.fr · 2024 | Public-facing platform | ==EcoIndex grade C== and ==RGAA== compliance |
+| **Eden Park** · e-commerce · 2021 – 2022 | E-commerce site | Contribution to ==+20% sales== in one year |
 
-### Beyond the numbers
-- **BNP Paribas CIB**: significant reduction in design debt and faster delivery.
-- **Kering**: more reliable purchase-quota management and in-store sales restrictions.
+### At BNP Paribas CIB
+- **5+ of 17 modules simplified with AI**: AI takes over time-consuming tasks, lightens the cognitive load and limits data errors. Feedback from target users is positive.
+- **Less design debt**: unified components and consistent navigation, more intuitive from one module to the next.
+- **A team that works differently**: processes co-built between the AI and UX departments, high-fidelity prototypes through *vibecoding* and specs in \`.md\`.
+
+### At Eden Park
+- **A contribution to +20% sales in one year**, with the e-commerce team: editorial redesign of the site, e-marketing strategy, migration from Magento to Shopify and follow-up of maintenance tickets.
+
+### At Kering and GRDF
+- **Kering**: purchase-quota management and in-store sales restrictions become reliable.
 - **GRDF**: a dedicated, lean and accessible Design System.`,
-        express: `- **BNP Paribas CIB**: ==+5 of 17 modules== optimised with AI · ==~1,500 users==.
-- **Kering Group**: ==40,000 active users== on the Privilege Card app.
-- **GRDF**: ==EcoIndex grade C== + RGAA compliance.
-- **Eden Park**: ==+20% e-commerce sales== in one year.`,
+        express: `- **BNP Paribas CIB**: ==5+ of 17 modules== simplified with AI, fewer time-consuming tasks and errors, positive user feedback.
+- **Kering Group**: reliable purchase quotas on an app with ==40,000 users==.
+- **GRDF**: ==EcoIndex grade C== and RGAA compliance.
+- **Eden Park**: contribution to ==+20% e-commerce sales== in one year.`,
         deep: `### How these results were achieved
 - **BNP**: the impact comes from the Design System + AI Skills pairing set up by the team — fewer deviations to fix, functional prototypes earlier in the cycle.
 - **Kering**: user research, complex journey mapping and iterative testing before each evolution of the app.
@@ -236,43 +268,48 @@ To master the mechanics, she designed and tested, with Claude Code, a skill on t
       ['poste', 4], ['recherche t elle', 5], ['cherche', 3], ['looking for', 5], ['role', 3], ['job', 3],
       ['opportunit', 4], ['souhait', 3], ['ideal', 3], ['seeking', 4], ['type d equipe', 4], ['kind of team', 4],
       ['projet professionnel', 5], ['next step', 4], ['motivation', 4], ['ambition', 4], ['position', 3],
+      ['lead', 3], ['evoluer', 4], ['evolution', 3], ['growth', 3], ['secteur', 3], ['sector', 3],
     ],
     answer: {
       fr: {
-        standard: `Le positionnement d'Anne-Sophie est clair : **Product Designer à l'intersection de l'UX/UI, du Design Ops et des workflows IA**.
+        standard: `Anne-Sophie recherche un poste de **Product Designer en CDI**, avec la perspective d'évoluer vers un rôle de **lead design**.
 
-### Les environnements où son profil crée le plus de valeur
-- **Des produits métiers complexes** à rendre lisibles — comme la chaîne de crédit de BNP Paribas CIB.
-- **Des équipes qui veulent industrialiser leur design** : Design System, process transverses, handoff structuré.
-- **Des organisations qui intègrent l'IA dans la conception** : *AI Skills*, *vibecoding* avec Claude Code, specs en \`.md\`.
+### Ce qu'elle recherche
+- **Poste** : Product Designer, en CDI.
+- **Lieu** : Paris ou région PACA, en hybride.
+- **Évolution** : à terme, la possibilité de prendre un rôle de lead design.
+- **Secteur** : ouverte à tous les secteurs. Après plusieurs missions dans la banque, elle a envie de découvrir de nouveaux domaines.
 
-### Ce qu'elle apporte dès l'arrivée
-- Une pratique complète du cycle produit : discovery, ateliers, prototypage, tests utilisateurs.
-- Une expérience en grands groupes (banque, luxe, énergie, secteur public) et en contexte conseil.
+### Ce qu'elle apporte
+- **Un regard créatif**, formé aux arts visuels et à la mode.
+- **Une solide maîtrise de l'UX/UI**, de la recherche utilisateur au Design System.
+- **Une longueur d'avance technique sur l'IA** : skills, *vibecoding* avec Claude Code, prototypes fonctionnels.
 
-Pour ses critères précis — type de contrat, disponibilité, périmètre — le plus direct est d'échanger avec elle.`,
-        express: `- **Rôle** : Product Designer UX/UI avec une dimension Design Ops & workflows IA.
-- **Terrain de jeu** : produits métiers complexes, Design System à faire vivre, équipes qui intègrent l'IA.
-- **Atouts** : *AI Skills*, *vibecoding*, expérience grands groupes (BNP Paribas CIB, Kering, GRDF).
-- **Critères précis** (contrat, disponibilité) : à voir directement avec elle par email.`,
+Adaptable, elle est ouverte à échanger sur toute opportunité. Le plus simple est de lui écrire : elle vous répond directement.`,
+        express: `- **Poste** : Product Designer en CDI, avec la perspective d'évoluer vers le lead design.
+- **Lieu** : Paris ou région PACA, en hybride.
+- **Secteur** : ouverte à tous, avec l'envie de découvrir de nouveaux domaines après la banque.
+- **Ses atouts** : un regard créatif, une solide maîtrise de l'UX/UI, une longueur d'avance sur l'IA.`,
       },
       en: {
-        standard: `Anne-Sophie's positioning is clear: **Product Designer at the intersection of UX/UI, Design Ops and AI workflows**.
+        standard: `Anne-Sophie is looking for a **permanent Product Designer role**, with the prospect of growing into a **design lead** role.
 
-### Environments where her profile creates the most value
-- **Complex business products** that need to become readable — like the BNP Paribas CIB credit chain.
-- **Teams that want to industrialise their design**: Design System, cross-team processes, structured handoff.
-- **Organisations bringing AI into the design process**: *AI Skills*, *vibecoding* with Claude Code, \`.md\` specs.
+### What she is looking for
+- **Role**: Product Designer, permanent contract (CDI).
+- **Location**: Paris or the PACA region (south-east France), hybrid.
+- **Growth**: in time, the opportunity to take on a design lead role.
+- **Sector**: open to all sectors. After several engagements in banking, she is keen to discover new fields.
 
-### What she brings from day one
-- End-to-end product practice: discovery, workshops, prototyping, user testing.
-- Experience in large groups (banking, luxury, energy, public sector) and in a consulting context.
+### What she brings
+- **A creative eye**, trained in visual arts and fashion.
+- **Solid UX/UI expertise**, from user research to Design Systems.
+- **A technical head start on AI**: skills, *vibecoding* with Claude Code, functional prototypes.
 
-For her specific criteria — contract type, availability, scope — the most direct route is to talk to her.`,
-        express: `- **Role**: Product Designer UX/UI with a Design Ops & AI workflows dimension.
-- **Playing field**: complex business products, Design Systems to grow, teams adopting AI.
-- **Strengths**: *AI Skills*, *vibecoding*, large-group experience (BNP Paribas CIB, Kering, GRDF).
-- **Specific criteria** (contract, availability): best discussed directly with her by email.`,
+Adaptable, she is open to discussing any opportunity. The simplest way is to write to her: she replies directly.`,
+        express: `- **Role**: permanent Product Designer, with the prospect of growing into design lead.
+- **Location**: Paris or the PACA region, hybrid.
+- **Sector**: open to all, keen to discover new fields after banking.
+- **Strengths**: a creative eye, solid UX/UI expertise, a head start on AI.`,
       },
     },
     followUps: ['availability', 'softskills', 'profile'],
@@ -616,11 +653,11 @@ The design makes it readable: a message states which document is expected, and t
       fr: "Parle-moi de l'app Privilege Card du Groupe Kering : comment a-t-elle transformé une carte physique en application utilisée par 40 000 personnes ?",
       en: 'Tell me about the Kering Group Privilege Card app: how did she turn a physical card into an app used by 40,000 people?',
     },
-    chip: { fr: 'Kering — Privilege Card', en: 'Kering — Privilege Card' },
+    chip: { fr: 'Kering · Carte de réduction devenue application', en: 'Kering · Discount card turned into an app' },
     keywords: [
       ['kering', 6], ['privilege', 6], ['luxe', 4], ['luxury', 4], ['40k', 5], ['40 000', 5], ['40000', 5],
       ['carte', 3], ['card', 3], ['mobile', 3], ['application mobile', 4], ['mobile app', 4], ['quota', 5],
-      ['boutique', 3], ['retail', 3],
+      ['boutique', 3], ['retail', 3], ['projet mobile', 7], ['mobile project', 7],
     ],
     answer: {
       fr: {
@@ -862,7 +899,7 @@ Mobile first, then desktop, from a dedicated Design System.
       fr: "Quelle a été sa démarche pour refondre un outil métier de gestion de carrière à la Caisse des Dépôts ?",
       en: 'What was her approach to redesigning a career-management business tool at Caisse des Dépôts?',
     },
-    chip: { fr: 'Caisse des Dépôts — Outil métier', en: 'Caisse des Dépôts — Business tool' },
+    chip: { fr: 'Caisse des Dépôts · Outil métier', en: 'Caisse des Dépôts · Business tool' },
     keywords: [
       ['caisse des depots', 6], ['cdc', 5], ['outil metier', 5], ['business tool', 5], ['emaj', 6], ['rh', 4], ['hr', 4], ['carriere', 4], ['career management', 5],
       ['ressources humaines', 5], ['human resources', 5], ['outil interne', 4], ['internal tool', 4],
@@ -1348,7 +1385,7 @@ Reasoning held from end to end: a need of the audience, a decision, a screen. An
     chip: { fr: 'Bloom Bar · Direction artistique', en: 'Bloom Bar · Art direction' },
     keywords: [
       ['bloom bar', 9], ['bloombar', 9], ['bloom', 7], ['barre', 5], ['cereale', 5], ['fleur', 5], ['flower', 5],
-      ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4],
+      ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4], ['style graphique', 7], ['graphic style', 7], ['graphiste', 5],
     ],
     answer: {
       fr: {
@@ -1566,61 +1603,71 @@ An identity built end to end, from the logo to the screens: art direction in the
     keywords: [
       ['design system du portfolio', 9], ['design system de ce portfolio', 9], ['design system du site', 9],
       ['design system de ce site', 9], ['design system of this portfolio', 9], ['portfolio design system', 9],
-      ['design system of this site', 9], ['design system', 3], ['regles de design', 4], ['design rules', 4],
+      ['design system of this site', 9], ['lisible par l ia', 7], ['ai readable', 7], ['design system', 3], ['regles de design', 4], ['design rules', 4],
     ],
     answer: {
       fr: {
-        standard: `Oui : ce portfolio a son propre Design System, et il existe sous deux formes qui disent la même chose.
+        standard: `Oui : ce portfolio a son propre Design System, lisible par une personne comme par une IA. C'est la démarche qu'Anne-Sophie mène avec son équipe chez BNP Paribas CIB pour rendre un Design System exploitable par l'IA. Ici, elle l'a appliquée de bout en bout.
 
 ### Pour vous : une page à parcourir
 - **Fondations** : accessibilité, mise en page, contenu.
-- **Styles** : couleur, typographie, formes, élévation, icônes.
+- **Styles** : couleurs en tokens, typographie, formes, élévation, icônes, en thème clair et sombre.
 - **Composants** : rangés par fonction, chacun avec son exemple, son anatomie et ses états.
 
 ### Pour l'IA : un skill
 Un skill est un dossier d'instructions qu'un agent IA charge de lui-même quand la tâche s'y prête — ici, dès qu'on lui demande de créer ou de modifier un écran. Il contient :
 
-- **un fichier principal** : les quatre règles non négociables, chacune avec sa raison ;
-- **trois fichiers de référence**, ouverts seulement au besoin : fondations, styles, composants ;
+- **un fichier principal** : les quatre règles non négociables ;
+- **trois fichiers de référence** : fondations, styles, composants ;
 - **un script** que l'agent lance avant de livrer, pour vérifier ce qui peut l'être automatiquement (couleurs en dur, ombres, majuscules).
 
 Un Design System classique documente pour des personnes. Un skill rend ces mêmes règles **applicables par une IA**, et vérifiables.
 
-### Une seule source
-La page n'a pas de contenu à elle : elle affiche directement les fichiers du skill. Ce que vous lisez est ce que l'IA applique.
+### Ses choix de conception
+- **Chaque règle donne sa raison** : l'IA, comme un nouveau designer, comprend la règle au lieu de l'appliquer à l'aveugle, et sait quoi faire face à un cas imprévu.
+- **Des fichiers ouverts seulement au besoin** : l'agent lit l'essentiel, puis la seule référence utile à sa tâche.
+- **Des contrastes vérifiés** : chaque couple de couleurs est calculé dans les deux thèmes, et tous les textes passent le niveau AA des WCAG.
+
+### Gouvernance : une seule source
+La page n'a pas de contenu à elle : elle affiche directement les fichiers du skill. Un script vérifie que la version anglaise suit chaque modification de la version française. Ce que vous lisez est ce que l'IA applique.
 
 ### Ce que ça change
 Même demande confiée à deux agents, sur un projet vide : ==7 critères sur 7== respectés avec le skill, ==3 sur 7== sans. Anne-Sophie l'a conçu et testé avec Claude Code, en corrigeant la règle après chaque test.`,
-        express: `- **Le Design System de ce portfolio** se parcourt en trois niveaux : fondations, styles, composants.
-- **Un skill** : les mêmes règles, dans un dossier qu'un agent IA charge avant de créer ou de modifier un écran, avec un script de vérification.
-- **Une seule source** : la page affiche les fichiers du skill.
+        express: `- **Un Design System lisible par l'IA** : la démarche qu'elle mène avec son équipe chez BNP Paribas CIB, testée ici de bout en bout.
+- **Une page** en trois niveaux (fondations, styles, composants), avec des tokens, un thème clair et sombre, et des contrastes AA vérifiés.
+- **Un skill** : les mêmes règles, chacune avec sa raison, et un script de vérification.
 - **Résultat du test** : ==7 critères sur 7== avec le skill, ==3 sur 7== sans.`,
       },
       en: {
-        standard: `Yes: this portfolio has its own Design System, and it exists in two forms that say the same thing.
+        standard: `Yes: this portfolio has its own Design System, readable by a person as well as by an AI. It is the approach Anne-Sophie leads with her team at BNP Paribas CIB to make a Design System usable by AI. Here, she applied it end to end.
 
 ### For you: a page to browse
 - **Foundations**: accessibility, layout, content.
-- **Styles**: colour, typography, shape, elevation, icons.
+- **Styles**: colours as tokens, typography, shape, elevation, icons, in light and dark themes.
 - **Components**: grouped by function, each with its example, anatomy and states.
 
 ### For the AI: a skill
 A skill is a folder of instructions that an AI agent loads on its own when the task calls for it — here, whenever it is asked to create or change a screen. It contains:
 
-- **a main file**: the four non-negotiable rules, each with its reason;
-- **three reference files**, opened only when needed: foundations, styles, components;
+- **a main file**: the four non-negotiable rules;
+- **three reference files**: foundations, styles, components;
 - **a script** the agent runs before delivering, to check what can be checked automatically (hard-coded colours, shadows, capitals).
 
 A classic Design System documents for people. A skill makes those same rules **applicable by an AI**, and verifiable.
 
-### A single source
-The page has no content of its own: it displays the skill files directly. What you read is what the AI applies.
+### Her design choices
+- **Every rule gives its reason**: the AI, like a new designer, understands the rule instead of applying it blindly, and knows what to do in an unforeseen case.
+- **Files opened only when needed**: the agent reads the essentials, then only the reference its task needs.
+- **Checked contrasts**: every colour pair is calculated in both themes, and all text passes WCAG level AA.
+
+### Governance: a single source
+The page has no content of its own: it displays the skill files directly. A script checks that the English version follows every change to the French one. What you read is what the AI applies.
 
 ### What it changes
 The same request given to two agents, on an empty project: ==7 criteria out of 7== met with the skill, ==3 out of 7== without. Anne-Sophie designed and tested it with Claude Code, fixing the rule after each test.`,
-        express: `- **This portfolio’s Design System** is browsed on three levels: foundations, styles, components.
-- **A skill**: the same rules, in a folder an AI agent loads before creating or changing a screen, with a check script.
-- **A single source**: the page displays the skill files.
+        express: `- **An AI-readable Design System**: the approach she leads with her team at BNP Paribas CIB, tested here end to end.
+- **A page** on three levels (foundations, styles, components), with tokens, light and dark themes, and checked AA contrasts.
+- **A skill**: the same rules, each with its reason, and a check script.
 - **Test result**: ==7 criteria out of 7== with the skill, ==3 out of 7== without.`,
       },
     },
@@ -1636,7 +1683,8 @@ The same request given to two agents, on an empty project: ==7 criteria out of 7
     keywords: [
       ['formation', 5], ['diplome', 5], ['etudes', 3], ['master', 5], ['bachelor', 5], ['ecole', 4], ['school', 4],
       ['degree', 5], ['education', 5], ['studied', 4], ['etudie', 4], ['universit', 4], ['manaa', 6],
-      ['chardon savard', 6], ['digital school', 6], ['bac', 3], ['cursus', 5], ['academi', 4],
+      ['chardon savard', 6], ['digital school', 6], ['bac', 3], ['cursus', 5], ['academi', 4], ['certif', 7],
+      ['pspo', 7], ['numerique responsable', 7], ['responsible digital', 7],
     ],
     answer: {
       fr: {
@@ -1646,12 +1694,17 @@ The same request given to two agents, on an empty project: ==7 criteria out of 7
 |---|---|---|
 | **Master Design UX/UI & Gestion de projet** | Digital School of Paris | 2021 – 2023 |
 | **Bachelor Design de Mode & Textile** | Atelier Chardon Savard, Nantes | 2016 – 2020 |
-| **MANAA — Arts Appliqués** | IMAD, Caen | — |
+| **MANAA — Arts Appliqués** | IMAD, Caen | 2018 – 2019 |
+
+### Certifications
+- **Scrum PSPO I** (Professional Scrum Product Owner), 2026 : le cadre Scrum, le rôle du Product Owner et la gestion du Product Backlog.
+- **Certificat de connaissance Numérique Responsable**, 2026 : un numérique durable, éthique et inclusif.
 
 Ce socle créatif nourrit aujourd'hui son travail de Product Designer : sens du détail, culture visuelle et rigueur de gestion de projet.`,
         express: `- **Master** Design UX/UI & Gestion de projet — Digital School of Paris (2021 – 2023).
 - **Bachelor** Design de Mode & Textile — Atelier Chardon Savard, Nantes (2016 – 2020).
-- **MANAA** Arts Appliqués — IMAD, Caen.`,
+- **MANAA** Arts Appliqués — IMAD, Caen (2018 – 2019).
+- **Certifications** : Scrum PSPO I et Numérique Responsable (2026).`,
       },
       en: {
         standard: `An education linking **applied arts, fashion and digital design**.
@@ -1660,12 +1713,17 @@ Ce socle créatif nourrit aujourd'hui son travail de Product Designer : sens du
 |---|---|---|
 | **Master's in UX/UI Design & Project Management** | Digital School of Paris | 2021 – 2023 |
 | **Bachelor in Fashion & Textile Design** | Atelier Chardon Savard, Nantes | 2016 – 2020 |
-| **MANAA — Applied Arts foundation year** | IMAD, Caen | — |
+| **MANAA — Applied Arts foundation year** | IMAD, Caen | 2018 – 2019 |
+
+### Certifications
+- **Scrum PSPO I** (Professional Scrum Product Owner), 2026: the Scrum framework, the Product Owner role and Product Backlog management.
+- **Responsible Digital knowledge certificate**, 2026: sustainable, ethical and inclusive digital.
 
 This creative foundation feeds her work as a Product Designer today: attention to detail, visual culture and project-management rigour.`,
         express: `- **Master's** in UX/UI Design & Project Management — Digital School of Paris (2021 – 2023).
 - **Bachelor** in Fashion & Textile Design — Atelier Chardon Savard, Nantes (2016 – 2020).
-- **MANAA** Applied Arts — IMAD, Caen.`,
+- **MANAA** Applied Arts — IMAD, Caen (2018 – 2019).
+- **Certifications**: Scrum PSPO I and Responsible Digital (2026).`,
       },
     },
     followUps: ['background', 'languages', 'skills'],
@@ -1724,15 +1782,17 @@ This creative foundation feeds her work as a Product Designer today: attention t
       ['running', 5], ['engagement', 4], ['valeur', 3], ['values', 4], ['interet', 4], ['interests', 4],
       ['humain', 4], ['human', 3], ['collabor', 4], ['equipe', 3], ['team', 3], ['facilit', 4], ['communic', 4],
       ['caractere', 4], ['sport', 4], ['musique', 4], ['music', 4], ['en dehors', 4], ['outside work', 5],
-      ['leadership', 4], ['manag', 3], ['travaille t elle', 3],
+      ['leadership', 4], ['manag', 3], ['travaille t elle', 3], ['curieu', 5], ['curious', 5],
+      ['autodidact', 6], ['self taught', 6], ['adaptab', 5], ['sociable', 5], ['collectif', 4], ['team spirit', 5],
     ],
     answer: {
       fr: {
         standard: `Les soft skills d'Anne-Sophie se lisent dans ses missions autant que dans ses engagements.
 
 ### Dans le travail
-- **Facilitation** : elle anime des ateliers de co-création (Caisse des Dépôts, Kering).
-- **Esprit transverse** : coordination inter-équipes et co-construction de process entre les pôles IA et UX chez BNP Paribas CIB.
+- **Curieuse et autodidacte** : passée des arts visuels et de la mode à l'UX, puis aux workflows IA, elle a appris seule Claude Code et les skills.
+- **Sens du collectif** : elle anime des ateliers de co-création (Caisse des Dépôts, Kering) et co-construit les process entre les pôles IA et UX chez BNP Paribas CIB.
+- **Adaptable** : banque, luxe, énergie, secteur public. Elle prend vite ses repères dans un nouveau métier.
 - **Écoute** : entretiens et tests utilisateurs au cœur de chaque projet.
 - **Autonomie de bout en bout** : pilotage de projets digitaux complets chez Eden Park.
 
@@ -1740,8 +1800,9 @@ This creative foundation feeds her work as a Product Designer today: attention t
 - **Bénévolat** — accompagnement à l'inclusion sociale et orientation administrative pour les jeunes de l'Aide Sociale à l'Enfance.
 - **Piano classique** — plus de 5 ans de pratique : rigueur et régularité.
 - **Course à pied** — endurance et constance.`,
-        express: `- **Facilitation & écoute** : ateliers de co-création, entretiens et tests utilisateurs.
-- **Esprit transverse** : coordination inter-équipes, process IA × UX.
+        express: `- **Curieuse et autodidacte** : de la mode à l'UX, puis aux workflows IA.
+- **Sens du collectif** : ateliers de co-création, process IA × UX.
+- **Adaptable** : banque, luxe, énergie, secteur public.
 - **Engagement** : bénévolat auprès des jeunes de l'Aide Sociale à l'Enfance.
 - **Rigueur** : piano classique (+5 ans), course à pied.`,
       },
@@ -1749,8 +1810,9 @@ This creative foundation feeds her work as a Product Designer today: attention t
         standard: `Anne-Sophie's soft skills show in her engagements as much as in her commitments.
 
 ### At work
-- **Facilitation**: she runs co-creation workshops (Caisse des Dépôts, Kering).
-- **Cross-functional mindset**: cross-team coordination and co-building processes between the AI and UX departments at BNP Paribas CIB.
+- **Curious and self-taught**: from visual arts and fashion to UX, then to AI workflows, she taught herself Claude Code and skills.
+- **Team spirit**: she runs co-creation workshops (Caisse des Dépôts, Kering) and co-builds processes between the AI and UX departments at BNP Paribas CIB.
+- **Adaptable**: banking, luxury, energy, public sector. She quickly finds her bearings in a new business.
 - **Listening**: user interviews and testing at the heart of every project.
 - **End-to-end autonomy**: managed complete digital projects at Eden Park.
 
@@ -1758,8 +1820,9 @@ This creative foundation feeds her work as a Product Designer today: attention t
 - **Volunteering** — supporting social inclusion and administrative guidance for young people in child welfare care (Aide Sociale à l'Enfance).
 - **Classical piano** — over 5 years of practice: rigour and consistency.
 - **Running** — endurance and steadiness.`,
-        express: `- **Facilitation & listening**: co-creation workshops, user interviews and testing.
-- **Cross-functional mindset**: cross-team coordination, AI × UX processes.
+        express: `- **Curious and self-taught**: from fashion to UX, then to AI workflows.
+- **Team spirit**: co-creation workshops, AI × UX processes.
+- **Adaptable**: banking, luxury, energy, public sector.
 - **Commitment**: volunteering with young people in child welfare care.
 - **Rigour**: classical piano (5+ years), running.`,
       },
@@ -1812,36 +1875,39 @@ Anne-Sophie is happy to discuss it directly. The simplest route: email her with 
       ['notice', 5], ['localis', 5], ['location', 4], ['paris', 4], ['habite', 4], ['based', 4], ['relocat', 5],
       ['freelance', 5], ['cdi', 5], ['contrat', 4], ['contract', 4], ['quand', 2], ['when can', 4], ['start date', 5],
       ['commencer', 4], ['hybride', 5], ['hybrid', 5], ['demenag', 5], ['deplacement', 4], ['ville', 3], ['where', 2],
-      ['ou est', 3], ['full time', 4], ['temps plein', 4],
+      ['ou est', 3], ['full time', 4], ['temps plein', 4], ['paca', 6], ['marseille', 5],
+      ['provence', 5], ['sud', 2],
     ],
     answer: {
       fr: {
         standard: `### Localisation
-Anne-Sophie est basée à **Paris**, où elle a mené l'ensemble de ses missions.
+Anne-Sophie est basée à **Paris**. Elle recherche un poste à Paris ou en région PACA, en **hybride**.
 
 ### Situation actuelle
 Elle est en poste chez **mc2i** depuis janvier 2024, actuellement en mission chez BNP Paribas CIB.
 
-### Disponibilité, mobilité, télétravail
-Ces points dépendent du projet et se discutent au cas par cas. Le plus fiable est de lui poser la question directement : elle vous répondra avec précision.`,
-        express: `- **Basée à** : Paris.
+### Contrat et disponibilité
+Elle recherche un **CDI**. Pour sa date de disponibilité, le plus simple est de lui écrire : elle vous répondra directement.`,
+        express: `- **Basée à** : Paris. Poste recherché à Paris ou en région PACA, en hybride.
+- **Contrat** : CDI.
 - **Situation** : en poste chez mc2i, mission BNP Paribas CIB.
 - **Langues de travail** : français et anglais courant.
-- **Disponibilité & télétravail** : à préciser avec elle par email.`,
+- **Disponibilité** : à préciser avec elle par email.`,
       },
       en: {
         standard: `### Location
-Anne-Sophie is based in **Paris**, where she has carried out all her engagements.
+Anne-Sophie is based in **Paris**. She is looking for a role in Paris or the PACA region (south-east France), **hybrid**.
 
 ### Current situation
 She has been at **mc2i** since January 2024, currently on assignment at BNP Paribas CIB.
 
-### Availability, mobility, remote work
-These depend on the project and are discussed case by case. The most reliable way is to ask her directly: she will give you a precise answer.`,
-        express: `- **Based in**: Paris.
+### Contract and availability
+She is looking for a **permanent contract (CDI)**. For her start date, the simplest way is to write to her: she will answer directly.`,
+        express: `- **Based in**: Paris. Looking for a role in Paris or the PACA region, hybrid.
+- **Contract**: permanent (CDI).
 - **Situation**: employed at mc2i, on assignment at BNP Paribas CIB.
 - **Working languages**: French and fluent English.
-- **Availability & remote**: to be confirmed with her by email.`,
+- **Availability**: to be confirmed with her by email.`,
       },
     },
     followUps: ['search', 'languages', 'profile'],
@@ -1939,7 +2005,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
     question: { fr: 'Quels sont ses principaux projets ?', en: 'What are her main projects?' },
     chip: { fr: 'Ses projets', en: 'Her projects' },
     keywords: [
-      ['projet', 5], ['project', 5], ['etude de cas', 6], ['etudes de cas', 6], ['case stud', 6], ['portfolio', 5],
+      ['projet', 3], ['project', 2], ['her projects', 5], ['all projects', 5], ['etude de cas', 6], ['etudes de cas', 6], ['case stud', 6], ['portfolio', 5],
       ['realisation', 5], ['mission', 4], ['client', 4], ['travaux', 4], ['her work', 5], ['reference', 4],
     ],
     answer: {
@@ -1988,6 +2054,8 @@ The button below opens a pre-filled email with the subject of your choice.`,
     },
     followUps: ['bnp', 'covenant', 'grdf', 'vitalize'],
   },
+
+  ...careerIntents,
 
   /* ------------------------------------------------------------------ */
   {

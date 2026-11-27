@@ -106,19 +106,19 @@ export const experiences: Experience[] = [
             'Refonte complète de la chaîne de crédit pour grandes entreprises : automatisation de processus complexes par l’IA pour réduire significativement la charge cognitive des utilisateurs.',
             'Optimisation du workflow design par l’IA : utilisation du vibecoding pour générer des prototypes haute fidélité en cohérence avec le Design System. Génération des spécifications (.md) UX UI.',
             'Design Ops : co-construction de processus transverses entre les pôles Technique, UX et Produit pour fluidifier et accélérer le cycle de conception. Création de skills pour standardiser et accélérer le travail des équipes.',
-            'Gouvernance du Design System : gouvernance des composants UI pour l’IA.',
+            'Gouvernance du Design System : des composants UI pensés pour l’IA.',
             'Stratégie UX & recherche : conduite d’entretiens, cartographie de parcours et analyse de données pour traduire les exigences métier en solutions intuitives.',
             'Collaboration agile : alignement continu entre Product Managers, équipes Tech et utilisateurs finaux.',
-            'Résultats : +5 modules sur 17 optimisés par l’IA aujourd’hui (environ 1 500 utilisateurs) ; réduction significative de la dette design et accélération du delivery ; une optimisation par l’IA adoptée par les utilisateurs ; réduction significative des erreurs de données.',
+            'Résultats : +5 modules sur 17 optimisés par l’intégration de l’IA (environ 1 500 utilisateurs) ; réduction significative de la dette design, avec des composants unifiés et une navigation homogène ; une optimisation par l’IA adoptée, avec des retours positifs des utilisateurs cibles ; réduction significative des erreurs de données et accélération du delivery.',
           ],
           en: [
             'Full redesign of the credit chain for large corporates: AI automation of complex processes to significantly reduce users’ cognitive load.',
             'AI-optimised design workflow: vibecoding to generate high-fidelity prototypes consistent with the Design System. Generation of UX/UI specifications (.md).',
             'Design Ops: co-built cross-functional processes between the Tech, UX and Product teams to streamline and speed up the design cycle. Created skills to standardise and speed up the teams’ work.',
-            'Design System governance: governance of UI components for AI.',
+            'Design System governance: UI components designed for AI.',
             'UX strategy & research: interviews, journey mapping and data analysis to translate business requirements into intuitive solutions.',
             'Agile collaboration: continuous alignment between Product Managers, Tech teams and end users.',
-            'Results: +5 of 17 modules optimised with AI today (around 1,500 users); significant reduction of design debt and faster delivery; AI optimisation adopted by users; significant reduction of data errors.',
+            'Results: 5+ of 17 modules optimised by integrating AI (around 1,500 users); significant reduction of design debt, with unified components and consistent navigation; AI optimisation adopted, with positive feedback from target users; significant reduction of data errors and faster delivery.',
           ],
         },
       },
@@ -259,13 +259,23 @@ export const skillGroups: { label: Localized; items: Localized<string[]> }[] = [
   {
     label: { fr: 'Compétences relationnelles', en: 'Interpersonal skills' },
     items: {
-      fr: ['Communication transversale', 'Apprentissage adaptatif', 'Résolution de problèmes complexes'],
-      en: ['Cross-functional communication', 'Adaptive learning', 'Complex problem solving'],
+      fr: ['Curieuse et autodidacte', 'Sens du collectif', 'Adaptable'],
+      en: ['Curious and self-taught', 'Team spirit', 'Adaptable'],
     },
   },
 ];
 
 export const education: { title: Localized; school: string; period: string }[] = [
+  {
+    title: { fr: 'Certification Scrum PSPO I (Professional Scrum Product Owner)', en: 'Scrum PSPO I certification (Professional Scrum Product Owner)' },
+    school: 'Scrum.org',
+    period: '2026',
+  },
+  {
+    title: { fr: 'Certificat de connaissance Numérique Responsable', en: 'Responsible Digital knowledge certificate' },
+    school: 'Numérique durable, éthique et inclusif',
+    period: '2026',
+  },
   {
     title: { fr: 'Master Design UX/UI & Gestion de projet, en alternance', en: 'Master’s in UX/UI Design & Project Management, work-study' },
     school: 'Digital School of Paris',
