@@ -22,6 +22,7 @@ export const intents: Intent[] = [
     },
     chip: { fr: 'Son profil en 30 secondes', en: 'Her profile in 30 seconds' },
     keywords: [
+      ['apporte de plus', 8], ['ce qu elle apporte', 7], ['makes her different', 8], ['different', 4],
       ['profil', 4], ['qui est', 4], ['who is', 4], ['present', 3], ['pitch', 4], ['differenci', 4],
       ['valeur ajoutee', 4], ['added value', 4], ['summar', 3], ['resum', 2], ['30 secondes', 4],
       ['30 seconds', 4], ['about her', 4], ['sets her apart', 5], ['pourquoi elle', 4], ['why her', 4],
@@ -78,12 +79,12 @@ export const intents: Intent[] = [
 ### In figures
 | Engagement | Result |
 |---|---|
-| BNP Paribas CIB | ==+5 of 17 modules== optimised with AI · ==~1,500 users== |
+| BNP Paribas CIB | ==5+ of 17 modules== optimised with AI · ==~1,500 users== |
 | Kering Group | ==40,000 active users== |
 | GRDF | ==EcoIndex grade C== + RGAA compliance |
 | Eden Park | ==+20% e-commerce sales== in one year |`,
         express: `- **Product Designer** UX/UI, Design Ops & AI Workflows — Paris, at mc2i since January 2024.
-- **Today**: BNP Paribas CIB, AI and UX teams — ==+5 of 17 modules== optimised with AI, ==~1,500 users==.
+- **Today**: BNP Paribas CIB, AI and UX teams — ==5+ of 17 modules== optimised with AI, ==~1,500 users==.
 - **Before**: Kering Group (==40,000 users==), GRDF (==EcoIndex grade C== + RGAA).
 - **Her signature**: AI-augmented design (*AI Skills*, *vibecoding* with Claude Code), driven by a creative eye trained in fashion.
 - **Six sectors**: fashion, retail, luxury, banking, energy and the public sector.
@@ -108,7 +109,7 @@ export const intents: Intent[] = [
     },
     chip: { fr: 'IA, vibecoding & AI Skills', en: 'AI, vibecoding & AI Skills' },
     keywords: [
-      ['ai skill', 6], ['skill md', 6], ['ia', 4], ['ai', 4], ['vibecod', 6], ['vibe coding', 6], ['claude', 5],
+      ['ai skill', 6], ['skill md', 6], ['ia', 4], ['ai', 4], ['travaille t elle avec l ia', 8], ['work with ai', 6], ['vibecod', 6], ['vibe coding', 6], ['claude', 5],
       ['agent', 3], ['prompt', 4], ['workflow', 4], ['automatis', 3], ['automat', 3], ['design ops', 5],
       ['designops', 5], ['intelligence artificielle', 5], ['artificial intelligence', 5], ['llm', 4],
       ['genai', 4], ['industrialis', 4], ['industrializ', 4],
@@ -174,7 +175,7 @@ To master the mechanics, she designed and tested, with Claude Code, a skill on t
       },
     },
     attachment: 'skill',
-    followUps: ['covenant', 'bnp', 'designsystem'],
+    followUps: ['bnp', 'responsibleai', 'designsystem'],
   },
 
   /* ------------------------------------------------------------------ */
@@ -253,7 +254,7 @@ To master the mechanics, she designed and tested, with Claude Code, a skill on t
 - **GRDF**: upfront UX and RGAA audits framed a lean, mobile-first Design System — environmental performance is a consequence of the design, not a patch.`,
       },
     },
-    followUps: ['bnp', 'kering', 'grdf'],
+    followUps: ['success', 'bnp', 'kering'],
   },
 
   /* ------------------------------------------------------------------ */
@@ -312,7 +313,7 @@ Adaptable, she is open to discussing any opportunity. The simplest way is to wri
 - **Strengths**: a creative eye, solid UX/UI expertise, a head start on AI.`,
       },
     },
-    followUps: ['availability', 'softskills', 'profile'],
+    followUps: ['whyleave', 'future', 'availability'],
     actions: ['email', 'cv'],
   },
 
@@ -325,6 +326,7 @@ Adaptable, she is open to discussing any opportunity. The simplest way is to wri
     },
     chip: { fr: 'Banque · Équipe UX augmentée par l’IA', en: 'Bank · AI-augmented UX team' },
     keywords: [
+      ['ux augmentee', 10], ['equipe ux', 8], ['augmentee par l ia', 10],
       ['bnp', 6], ['paribas', 6], ['cib', 5], ['credit', 5], ['banque', 4], ['bank', 4], ['mc2i', 4],
       ['conseil', 3], ['consult', 3], ['charge cognitive', 4], ['cognitive load', 4], ['actuel', 2],
     ],
@@ -332,6 +334,8 @@ Adaptable, she is open to discussing any opportunity. The simplest way is to wri
       fr: {
         standard: `### Contexte
 Cellule design « AI First » chez **BNP Paribas CIB**, sur la refonte de la chaîne de crédit pour grandes entreprises.
+
+Les skills et les documents produits en mission sont confidentiels. Les schémas de cette page illustrent le cadre sans reprendre les documents réels.
 
 [[bnp-figures]]
 
@@ -364,7 +368,7 @@ Un assistant par rôle, chargé du même cadre.
 [[relay]]
 
 ### En pratique
-Pour passer du cadre à la pratique, elle a conçu, avec Claude Code, un skill pour le Design System de ce portfolio : les règles qu'un agent IA lit avant de créer ou de modifier un écran.
+Comme les skills de mission ne peuvent pas être montrés, elle a conçu, avec Claude Code, un skill pour le Design System de ce portfolio : les règles qu'un agent IA lit avant de créer ou de modifier un écran.
 
 Elle l'a ensuite testé : la même demande confiée à deux agents, l'un avec le skill, l'autre sans.
 
@@ -382,7 +386,7 @@ Le fichier ci-dessous est le vrai : c'est aussi lui que la page Design System a
 - **Problématique** : quand l'IA produit un écran en quelques minutes, garantir la cohérence avec le Design System, une même façon de travailler et un savoir qui ne se perd pas.
 - **Son rôle** : développer avec son équipe un nouveau cadre de travail, puis le formaliser ; créer des skills et gouverner les composants UI pour l'IA.
 - **Solution** : un cadre commun (flow design, Design System AI-ready, connaissance, relais) où l'IA génère plusieurs solutions et le designer juge et décide.
-- **En pratique** : un skill conçu et testé par elle, avec Claude Code, sur le Design System de ce portfolio.`,
+- **En pratique** : les skills de mission étant confidentiels, un skill conçu et testé par elle, avec Claude Code, sur le Design System de ce portfolio.`,
         deep: `### Design Lead
 - **Le Design System change de nature** : ce n'est plus seulement une bibliothèque de composants, c'est le contexte que l'agent charge avant de générer.
 - **Un prompt robuste tient en trois clés** : des cas d'usage explicites (succès, erreur, états limites), les règles de gestion, et une auto-vérification exigée de l'IA.
@@ -394,6 +398,8 @@ Le fichier ci-dessous est le vrai : c'est aussi lui que la page Design System a
       en: {
         standard: `### Context
 “AI First” design unit at **BNP Paribas CIB**, on the redesign of the credit chain for large corporates.
+
+The skills and documents produced on the engagement are confidential. The diagrams on this page illustrate the framework without reproducing the real documents.
 
 [[bnp-figures]]
 
@@ -426,7 +432,7 @@ One assistant per role, loaded with the same framework.
 [[relay]]
 
 ### In practice
-To move from framework to practice, she designed, with Claude Code, a skill for this portfolio's Design System: the rules an AI agent reads before creating or changing a screen.
+As the engagement's skills cannot be shown, she designed, with Claude Code, a skill for this portfolio's Design System: the rules an AI agent reads before creating or changing a screen.
 
 She then tested it: the same request given to two agents, one with the skill, one without.
 
@@ -440,11 +446,11 @@ The skill was not right the first time. After each test she looked at the screen
 It is the same principle as in the team: the AI produces, the designer judges, and that judgement becomes a rule the AI will apply next time.
 
 The file below is the real one: it is also the one the Design System page displays.`,
-        express: `- **Context**: “AI First” design unit at BNP Paribas CIB, credit-chain redesign — ==+5 of 17 modules==, ==~1,500 users==.
+        express: `- **Context**: “AI First” design unit at BNP Paribas CIB, credit-chain redesign — ==5+ of 17 modules==, ==~1,500 users==.
 - **Problem**: when the AI produces a screen in minutes, guaranteeing consistency with the Design System, one way of working, and knowledge that is not lost.
 - **Her role**: developing a new working framework with her team, then formalising it; creating skills and governing the UI components for AI.
 - **Solution**: a shared framework (design flow, AI-ready Design System, knowledge, handoffs) where the AI generates several solutions and the designer judges and decides.
-- **In practice**: a skill she designed and tested, with Claude Code, on this portfolio's Design System.`,
+- **In practice**: as the engagement's skills are confidential, a skill she designed and tested, with Claude Code, on this portfolio's Design System.`,
         deep: `### Design Lead
 - **The Design System changes nature**: no longer just a component library, it is the context the agent loads before generating.
 - **A robust prompt has three keys**: explicit use cases (success, error, edge states), the business rules, and a self-check required from the AI.
@@ -457,7 +463,7 @@ The file below is the real one: it is also the one the Design System page displa
     attachment: 'skill',
     flow: 'ux',
     anchors: true,
-    followUps: ['covenant', 'ai', 'designsystem'],
+    followUps: ['covenant', 'confidential', 'ai'],
   },
 
   /* ------------------------------------------------------------------ */
@@ -469,7 +475,8 @@ The file below is the real one: it is also the one the Design System page displa
     },
     chip: { fr: 'Banque · Clauses de crédit et IA', en: 'Bank · Loan clauses and AI' },
     keywords: [
-      ['covenant', 8], ['covenants', 8], ['monitoring', 4], ['compliance certificate', 6], ['breach', 5],
+      ['covenant', 8], ['covenants', 8], ['monitoring', 4], ['clauses de credit', 10], ['clause de credit', 10],
+      ['loan clause', 10], ['suivi des clauses', 10], ['clause', 5], ['compliance certificate', 6], ['breach', 5],
       ['waiver', 4], ['matching', 4], ['rapprochement', 4], ['extraction', 4], ['mycreditapp', 5],
       ['workspace ai', 5], ['suivi des engagements', 5], ['ecran', 3], ['screen', 3], ['maquette', 4],
       ['mockup', 4], ['prototype', 3], ['ux case', 5], ['cas ux', 5],
@@ -1250,7 +1257,8 @@ Figma (Expert), Storybook, Zeroheight.`,
     },
     chip: { fr: 'Vitaliz · Des personas à l’application', en: 'Vitaliz · From personas to the app' },
     keywords: [
-      ['vitalize', 9], ['vitaliz', 9], ['bracelet', 7], ['montre', 6], ['watch', 6], ['wristband', 7], ['blueprint', 7], ['service blueprint', 8],
+      ['sante', 6], ['health', 6], ['application de sante', 8],
+      ['vitalize', 9], ['vitaliz', 9], ['bracelet', 7], ['montre connectee', 8], ['smartwatch', 7], ['watch', 6], ['wristband', 7], ['blueprint', 7], ['service blueprint', 8],
       ['charte graphique', 6], ['brand guidelines', 6], ['projet de master', 6], ['master project', 6], ['master 2', 5], ['sport', 4],
       ['interview', 4], ['persona', 3], ['experience map', 4], ["carte d'experience", 4],
     ],
@@ -1385,7 +1393,7 @@ Reasoning held from end to end: a need of the audience, a decision, a screen. An
     chip: { fr: 'Bloom Bar · Direction artistique', en: 'Bloom Bar · Art direction' },
     keywords: [
       ['bloom bar', 9], ['bloombar', 9], ['bloom', 7], ['barre', 5], ['cereale', 5], ['fleur', 5], ['flower', 5],
-      ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4], ['style graphique', 7], ['graphic style', 7], ['graphiste', 5],
+      ['illustration 3d', 8], ['3d', 6], ['packaging', 7], ['direction artistique', 5], ['art direction', 5], ['illustrator', 4], ['style graphique', 7], ['culture graphique', 7], ['graphic style', 7], ['graphiste', 5],
     ],
     answer: {
       fr: {
@@ -1601,9 +1609,10 @@ An identity built end to end, from the logo to the screens: art direction in the
     },
     chip: { fr: 'Portfolio · Design System automatisé', en: 'Portfolio · AI-automated Design System' },
     keywords: [
+      ['montre moi le design system', 10], ['voir le design system', 10], ['show me the design system', 10],
       ['design system du portfolio', 9], ['design system de ce portfolio', 9], ['design system du site', 9],
       ['design system de ce site', 9], ['design system of this portfolio', 9], ['portfolio design system', 9],
-      ['design system of this site', 9], ['lisible par l ia', 7], ['ai readable', 7], ['design system', 3], ['regles de design', 4], ['design rules', 4],
+      ['design system of this site', 9], ['portfolio s design system', 9], ['lisible par l ia', 7], ['ai readable', 7], ['design system', 3], ['regles de design', 4], ['design rules', 4],
     ],
     answer: {
       fr: {
@@ -1871,6 +1880,7 @@ Anne-Sophie is happy to discuss it directly. The simplest route: email her with 
     },
     chip: { fr: 'Localisation & disponibilité', en: 'Location & availability' },
     keywords: [
+      ['bouger', 5], ['a nice', 6], ['toulon', 5], ['aix', 4], ['montpellier', 3],
       ['dispon', 6], ['availab', 6], ['mobilit', 6], ['remote', 5], ['teletravail', 6], ['preavis', 6],
       ['notice', 5], ['localis', 5], ['location', 4], ['paris', 4], ['habite', 4], ['based', 4], ['relocat', 5],
       ['freelance', 5], ['cdi', 5], ['contrat', 4], ['contract', 4], ['quand', 2], ['when can', 4], ['start date', 5],
@@ -2005,7 +2015,8 @@ The button below opens a pre-filled email with the subject of your choice.`,
     question: { fr: 'Quels sont ses principaux projets ?', en: 'What are her main projects?' },
     chip: { fr: 'Ses projets', en: 'Her projects' },
     keywords: [
-      ['projet', 3], ['project', 2], ['her projects', 5], ['all projects', 5], ['etude de cas', 6], ['etudes de cas', 6], ['case stud', 6], ['portfolio', 5],
+      ['ses projets', 6], ['show me her work', 7],
+      ['projet', 3], ['project', 2], ['her projects', 5], ['all projects', 5], ['main projects', 6], ['principaux projets', 6], ['etude de cas', 6], ['etudes de cas', 6], ['case stud', 6], ['portfolio', 5],
       ['realisation', 5], ['mission', 4], ['client', 4], ['travaux', 4], ['her work', 5], ['reference', 4],
     ],
     answer: {
@@ -2037,7 +2048,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 
 | Project | Topic | Impact |
 |---|---|---|
-| **BNP Paribas CIB** | Framing an AI-augmented UX team | ==+5 of 17 modules== · ==~1,500 users== |
+| **BNP Paribas CIB** | Framing an AI-augmented UX team | ==5+ of 17 modules== · ==~1,500 users== |
 | **Investment bank** | AI-assisted monitoring of loan clauses | Before / after journey · navigable prototype |
 | **GRDF** | Eco-designed redesign of justdecarb.grdf.fr | ==EcoIndex grade C== + RGAA |
 
@@ -2046,7 +2057,7 @@ The button below opens a pre-filled email with the subject of your choice.`,
 - **Vitaliz · From personas to the mobile app** (2023, Master's year 2): a full UX study of a connected wristband app, from personas to prototype.
 - **Bloom Bar · Art direction and 3D illustration** (2023, Master's year 2): art direction and 3D illustration for a brand of flower bars.
 - **McDonald's · Rebranding for a new audience** (2021, Master's year 1): repositioning a well-known brand for a new audience.`,
-        express: `- **BNP Paribas CIB**: AI-augmented UX team — ==+5 of 17 modules==.
+        express: `- **BNP Paribas CIB**: AI-augmented UX team — ==5+ of 17 modules==.
 - **Loan clauses**: AI-assisted monitoring, before / after journey, navigable prototype.
 - **GRDF**: eco-designed redesign — ==EcoIndex grade C== + RGAA.
 - **Personal projects**: portfolio Design System, Vitaliz, Bloom Bar, McDonald's.`,
@@ -2114,8 +2125,9 @@ I can tell you about her background, her projects (BNP Paribas CIB, Kering, GRDF
 
 ### Ce que je sais faire
 - **Présenter son profil** et ce qui la différencie.
-- **Détailler ses projets** : BNP Paribas CIB, Groupe Kering, GRDF, Caisse des Dépôts.
-- **Expliquer sa pratique** : Design Ops, Design System, *AI Skills*, *vibecoding*.
+- **Détailler ses projets** : BNP Paribas CIB, Groupe Kering, GRDF, Caisse des Dépôts, et ses projets personnels.
+- **Expliquer sa pratique** : méthode, collaboration, Design System, *AI Skills*, *vibecoding*.
+- **Répondre aux questions d'entretien** : séniorité, motivations, axes d'amélioration, ce qu'elle recherche.
 - **Répondre aux questions pratiques** : formation, langues, outils, localisation.
 
 Astuce : tapez \`/\` pour les commandes rapides (\`/cv\`, \`/projets\`, \`/skills\`, \`/contact\`, \`/stack\`). Et pour toute question précise, Anne-Sophie vous répondra directement.`,
@@ -2126,15 +2138,16 @@ Astuce : tapez \`/\` pour les commandes rapides (\`/cv\`, \`/projets\`, \`/skil
 
 ### What I can do
 - **Present her profile** and what sets her apart.
-- **Detail her projects**: BNP Paribas CIB, Kering Group, GRDF, Caisse des Dépôts.
-- **Explain her practice**: Design Ops, Design System, *AI Skills*, *vibecoding*.
+- **Detail her projects**: BNP Paribas CIB, Kering Group, GRDF, Caisse des Dépôts, and her personal projects.
+- **Explain her practice**: method, collaboration, Design System, *AI Skills*, *vibecoding*.
+- **Answer interview questions**: seniority, motivations, areas for growth, what she is looking for.
 - **Answer practical questions**: education, languages, tools, location.
 
 Tip: type \`/\` for quick commands (\`/cv\`, \`/projects\`, \`/skills\`, \`/contact\`, \`/stack\`). And for any specific question, Anne-Sophie will answer you directly.`,
         express: `I don't have that information. Try a question about her **profile**, **projects**, **skills** or **AI** — or contact her directly.`,
       },
     },
-    followUps: ['profile', 'projects', 'ai'],
+    followUps: ['profile', 'method', 'projects'],
     actions: ['cv', 'email'],
   },
 ];
